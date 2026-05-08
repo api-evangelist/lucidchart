@@ -1,0 +1,29 @@
+aid: lucidchart
+url: https://raw.githubusercontent.com/api-evangelist/lucidchart/refs/heads/main/apis.yml
+name: Lucidchart
+x-type: company
+description: >-
+  Lucidchart is a web-based intelligent diagramming application by Lucid Software. The Lucid Developer Platform exposes APIs for documents, embeds, OAuth, SCIM, and webhooks across Lucidchart, Lucidspark, and Lucidscale.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Productivity
+  - Diagramming
+  - Visualization
+  - Visual Workspace
+  - SaaS
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://www.lucidchart.com/
+  - type: Plans
+    url: plans/lucidchart-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/lucidchart-rate-limits.yml
+  - type: FinOps
+    url: finops/lucidchart-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
