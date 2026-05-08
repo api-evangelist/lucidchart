@@ -1,6 +1,6 @@
 # Lucidchart (lucidchart)
 
-Lucidchart is a web-based intelligent diagramming application by Lucid Software. The Lucid Developer Platform exposes APIs for documents, embeds, OAuth, SCIM, and webhooks across Lucidchart, Lucidspark, and Lucidscale.
+Lucidchart is a web-based intelligent diagramming application by Lucid Software, part of the Lucid Visual Collaboration Suite (Lucidchart, Lucidspark, Lucidscale). The Lucid Developer Platform exposes a REST API for documents/folders/collaborators/content, an Extension API for in-editor extensions, an Embed SDK, and a SCIM API for enterprise provisioning.
 
 **URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/lucidchart/refs/heads/main/apis.yml)
 
@@ -19,20 +19,35 @@ Lucidchart is a web-based intelligent diagramming application by Lucid Software.
 - **Created:** 2026-05-08
 - **Modified:** 2026-05-08
 
+## APIs
+
+| API | Description |
+|---|---|
+| Lucid REST API | Documents, folders, collaborators, embeds. |
+| Lucid Document Content / Import-Export API | Read structured document content; import VSDX/Gliffy/draw.io; export PNG/PDF/SVG/CSV. |
+| Lucid Embed SDK & API | Embed Lucid diagrams and whiteboards in external apps. |
+| Lucid Extension API | In-editor extensions (canvas access, data import, custom shape libraries). |
+| Lucid OAuth 2.0 API | OAuth authorization-code flow for REST API access. |
+| Lucid SCIM API | SCIM 2.0 user/group provisioning for Enterprise. |
+| Lucid Webhooks API | Document/folder event subscriptions. |
+
 ## Common Properties
 
 - [Website](https://www.lucidchart.com/)
-- [Plans](plans/lucidchart-plans-pricing.yml) — API Commons Plans 0.1 (placeholder; pipeline will replace with real pricing)
-- [RateLimits](rate-limits/lucidchart-rate-limits.yml) — API Commons Rate Limits 0.1 (placeholder)
-- [FinOps](finops/lucidchart-finops.yml) — FOCUS-aligned FinOps Framework 1.0 (placeholder)
+- [Developer Portal](https://developer.lucid.co/)
+- [Pricing](https://www.lucidchart.com/pages/pricing/lucidchart)
+- [GitHub](https://github.com/lucidsoftware)
+- [Plans](plans/lucidchart-plans-pricing.yml) — API Commons Plans 0.1
+- [RateLimits](rate-limits/lucidchart-rate-limits.yml) — API Commons Rate Limits 0.1
+- [FinOps](finops/lucidchart-finops.yml) — FOCUS-aligned FinOps Framework 1.0
 
 ## Artifacts
 
 | Artifact | Path | Notes |
 |---|---|---|
-| Plans | `plans/lucidchart-plans-pricing.yml` | Placeholder — pipeline will fetch real pricing |
-| Rate Limits | `rate-limits/lucidchart-rate-limits.yml` | Placeholder — pipeline will fetch real limits |
-| FinOps | `finops/lucidchart-finops.yml` | FOCUS-aligned placeholder |
+| Plans | `plans/lucidchart-plans-pricing.yml` | Free / Individual $7.95 / Team $9 (chart) or $12 (Suite) / Enterprise |
+| Rate Limits | `rate-limits/lucidchart-rate-limits.yml` | Per-OAuth-client rate limit; SCIM scoped per org |
+| FinOps | `finops/lucidchart-finops.yml` | Per-user subscription billing |
 
 ## Maintainers
 

@@ -5,7 +5,7 @@ provider: Lucidchart
 providerId: lucidchart
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Productivity
 - Diagramming
@@ -15,11 +15,13 @@ tags:
 - FinOps
 - Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for Lucidchart. Pipeline will replace with the provider's
-  real billing-model details once researched.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: FOCUS-aligned FinOps profile for Lucidchart. Lucidchart bills as a per-user
+  monthly subscription across Free, Individual, Team, and Enterprise. Team and Enterprise
+  are sold as part of the Lucid Visual Collaboration Suite (Lucidchart + Lucidspark +
+  Lucidscale) for a single per-user fee. Developer API use does not add metered API charges.
 sources:
-- https://www.lucidchart.com/
+- https://www.lucidchart.com/pages/pricing/lucidchart
+- https://developer.lucid.co/
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -27,41 +29,47 @@ alignedWith:
   dataSpec: FOCUS
   dataSpecVersion: '1.3'
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
-publisherName: Lucidchart
+publisherName: Lucid Software
 serviceCategory: Productivity
 billingModel:
-  pricingCategory: To Be Reconciled
-  billingFrequency: Monthly
+  pricingCategory: Subscription (Per Seat)
+  billingFrequency: Monthly or Annual
   billingCurrency: USD
   chargeCategories:
-  - Usage
   - Purchase
   - Adjustment
 focusColumns:
   ServiceName: Lucidchart
   ServiceCategory: Productivity
-  ProviderName: Lucidchart
-  PublisherName: Lucidchart
-  InvoiceIssuerName: Lucidchart
+  ProviderName: Lucid Software
+  PublisherName: Lucid Software
+  InvoiceIssuerName: Lucid Software
   BillingCurrency: USD
-  ChargeCategory: Usage
+  ChargeCategory: Purchase
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation against the provider's published metering.
-  unit: varies
+- name: user_seats
+  description: Per-user monthly subscription. Individual $7.95, Team $9 (Lucidchart)
+    or $12 (Suite), Enterprise contract.
+  unit: seat
   aggregation: sum
   dimensions:
   - account
-  - resource
+  - plan
+  - product
 principles:
 - name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+  description: Use Lucid admin console license reports to inventory active users and plan
+    tier.
 - name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
+  description: Allocate user seats by team membership; tag enterprise contract spend to
+    procuring business units.
 - name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+  description: Reclaim seats from inactive users; downgrade Suite seats to Lucidchart-only
+    where the user does not use Lucidspark/Lucidscale; choose annual billing for the
+    discount.
 - name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  description: Assign an admin owner per Lucid account; review quarterly seat counts
+    against active-user reports.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

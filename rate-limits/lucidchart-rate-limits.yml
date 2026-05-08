@@ -15,22 +15,43 @@ tags:
 - Rate Limiting
 - Quotas
 - Throttling
-description: Placeholder rate-limit artifact for Lucidchart. Replace with real limits once the pipeline
-  researches the provider's rate-limit documentation.
-notes: Initial scaffold — limits have not yet been reconciled against the provider's documentation.
+description: Lucid REST API enforces rate limits per OAuth client. The platform returns
+  429 with a Retry-After header when limits are exceeded. Specific per-second numbers are
+  not consistently published; high-volume use is expected to coordinate with Lucid through
+  the developer portal.
+notes: Per-second/per-minute thresholds are not prominently published. Always honor the
+  Retry-After header. SCIM endpoints are scoped per organization.
 sources:
-- https://www.lucidchart.com/
+- https://developer.lucid.co/
 responseCodes:
   throttled: 429
 limits:
-- name: Default
-  scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+- name: REST API per OAuth Client
+  scope: oauth_client
+  metric: request
+  limit: published per-app
+  timeFrame: per-minute
+  notes: Per-OAuth-client request rate; honor Retry-After on 429.
+- name: SCIM
+  scope: organization
+  metric: request
+  limit: published per-org
+  notes: SCIM provisioning is enterprise-tier; coordinate large bulk imports with Lucid
+    support.
+- name: Webhooks Delivery
+  scope: subscription
+  metric: callback
+  limit: not published
+  notes: Webhook deliveries are best-effort; subscribers should respond promptly to keep
+    deliveries flowing.
 policies:
 - name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+  description: Exponential backoff with jitter on 429; honor Retry-After header.
+- name: Use Webhooks Instead of Polling
+  description: Subscribe to document/folder events rather than polling for changes.
+- name: Coordinate Large Bulk Operations
+  description: Contact Lucid developer support before running large bulk imports or
+    exports across many documents.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
