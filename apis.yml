@@ -1,7 +1,7 @@
 aid: lucidchart
 url: https://raw.githubusercontent.com/api-evangelist/lucidchart/refs/heads/main/apis.yml
 name: Lucidchart
-x-type: company
+kind: company
 description: >-
   Lucidchart is a web-based intelligent diagramming application by Lucid Software, part of the Lucid Visual Collaboration Suite (Lucidchart, Lucidspark, Lucidscale). The Lucid Developer Platform exposes a REST API for documents/folders/collaborators/content, an Extension API for in-editor extensions, an Embed SDK for embedding diagrams in external apps, and a SCIM API for enterprise provisioning.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
@@ -28,7 +28,7 @@ apis:
       - url: https://developer.lucid.co/
         type: Documentation
       - url: https://developer.lucid.co/api/v1/
-        type: API Reference
+        type: APIReference
     description: >-
       Programmatically create, search, read, copy, trash, and restore Lucid documents and folders. Manage collaborators and document permissions. Transfer content (import/export) and embed Lucid documents in other apps.
   - aid: lucidchart:lucid-content-api
@@ -42,7 +42,7 @@ apis:
     baseURL: https://api.lucid.co
     properties:
       - url: https://developer.lucid.co/api/v1/
-        type: API Reference
+        type: APIReference
     description: >-
       Read structured document content (shapes, lines, pages) and import standard formats (Visio VSDX, Gliffy, draw.io, Mermaid, AWS architecture). Export to PNG, PDF, JPEG, SVG, and CSV.
   - aid: lucidchart:lucid-embed-api
@@ -99,7 +99,7 @@ apis:
     baseURL: https://users.lucid.app/scim/v2
     properties:
       - url: https://developer.lucid.co/scim-api/
-        type: API Reference
+        type: APIReference
     description: >-
       SCIM 2.0 API for Enterprise customers. Provisions users and groups from Okta, Azure AD, OneLogin, and other IdPs across the Lucid Visual Collaboration Suite.
   - aid: lucidchart:lucid-webhooks-api
@@ -112,7 +112,7 @@ apis:
     baseURL: https://api.lucid.co
     properties:
       - url: https://developer.lucid.co/api/v1/#tag/Events
-        type: API Reference
+        type: APIReference
     description: >-
       Subscribe to events on documents and folders (create, update, trash, restore) and receive HTTP callbacks at your endpoint.
 common:
