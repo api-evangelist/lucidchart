@@ -116,6 +116,8 @@ apis:
     description: >-
       Subscribe to events on documents and folders (create, update, trash, restore) and receive HTTP callbacks at your endpoint.
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/showcase/lucidchart
   - type: Website
     url: https://www.lucidchart.com/
   - type: DeveloperPortal
