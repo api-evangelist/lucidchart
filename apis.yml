@@ -132,6 +132,8 @@ common:
     url: rate-limits/lucidchart-rate-limits.yml
   - type: FinOps
     url: finops/lucidchart-finops.yml
+  - type: LLMsTxt
+    url: https://developer.lucid.co/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
