@@ -4,7 +4,7 @@ name: Lucidchart
 kind: company
 description: >-
   Lucidchart is a web-based intelligent diagramming application by Lucid Software, part of the Lucid Visual Collaboration Suite (Lucidchart, Lucidspark, Lucidscale). The Lucid Developer Platform exposes a REST API for documents/folders/collaborators/content, an Extension API for in-editor extensions, an Embed SDK for embedding diagrams in external apps, and a SCIM API for enterprise provisioning.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Productivity
   - Diagramming
@@ -21,7 +21,7 @@ apis:
       - Documents
       - Folders
       - REST
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://developer.lucid.co/api/v1/
     baseURL: https://api.lucid.co
     properties:
@@ -37,7 +37,7 @@ apis:
       - Content
       - Import
       - Export
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://developer.lucid.co/api/v1/
     baseURL: https://api.lucid.co
     properties:
@@ -51,7 +51,7 @@ apis:
       - Embed
       - SDK
       - Browser
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://developer.lucid.co/embed-sdk/
     baseURL: https://lucid.app
     properties:
@@ -65,7 +65,7 @@ apis:
       - Extensions
       - SDK
       - In-Editor
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://developer.lucid.co/extension-api/
     baseURL: https://api.lucid.co
     properties:
@@ -80,7 +80,7 @@ apis:
     tags:
       - OAuth
       - Authorization
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://developer.lucid.co/api/v1/#section/Authentication
     baseURL: https://lucid.app
     properties:
@@ -94,7 +94,7 @@ apis:
       - SCIM
       - Identity
       - Provisioning
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://developer.lucid.co/scim-api/
     baseURL: https://users.lucid.app/scim/v2
     properties:
@@ -107,7 +107,7 @@ apis:
     tags:
       - Webhooks
       - Events
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://developer.lucid.co/api/v1/#tag/Events
     baseURL: https://api.lucid.co
     properties:
