@@ -116,6 +116,10 @@ apis:
     description: >-
       Subscribe to events on documents and folders (create, update, trash, restore) and receive HTTP callbacks at your endpoint.
 common:
+  - type: DomainSecurity
+    url: security/lucidchart-domain-security.yml
+  - type: Authentication
+    url: authentication/lucidchart-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/showcase/lucidchart
   - type: Website
@@ -134,6 +138,8 @@ common:
     url: finops/lucidchart-finops.yml
   - type: LlmsText
     url: https://developer.lucid.co/llms.txt
+  - url: https://lucid.co/blog
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
