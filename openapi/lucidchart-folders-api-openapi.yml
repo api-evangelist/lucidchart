@@ -1,0 +1,82 @@
+openapi: 3.1.0
+info:
+  title: Lucid REST Documents Folders API
+  description: 'The Lucid REST API allows developers to programmatically create, read,
+
+    update, and manage Lucid documents and folders across Lucidchart,
+
+    Lucidspark, and Lucidscale. Authentication is via OAuth 2.0 bearer tokens
+
+    or API keys.
+
+    '
+  version: '1.0'
+  contact:
+    name: Lucid Developer Platform
+    url: https://developer.lucid.co/
+  license:
+    name: Proprietary
+    url: https://www.lucidchart.com/pages/tos
+servers:
+- url: https://api.lucid.co
+  description: Lucid REST API
+security:
+- BearerAuth: []
+tags:
+- name: Folders
+paths:
+  /v1/folders:
+    post:
+      tags:
+      - Folders
+      summary: Create a folder
+      operationId: createFolder
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - name
+              - type
+              properties:
+                name:
+                  type: string
+                type:
+                  type: string
+                  description: Folder type (e.g., personal, team, app)
+                parent:
+                  type: number
+      responses:
+        '201':
+          description: The created folder
+          content:
+            application/json:
+              schema:
+                type: object
+  /v1/folders/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Folders
+      summary: Retrieve a folder
+      operationId: getFolder
+      responses:
+        '200':
+          description: The folder
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: OAuth 2.0 access token

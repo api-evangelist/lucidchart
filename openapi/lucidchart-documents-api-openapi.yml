@@ -1,12 +1,16 @@
 openapi: 3.1.0
 info:
-  title: Lucid REST API
-  description: |
-    The Lucid REST API allows developers to programmatically create, read,
+  title: Lucid REST Documents API
+  description: 'The Lucid REST API allows developers to programmatically create, read,
+
     update, and manage Lucid documents and folders across Lucidchart,
+
     Lucidspark, and Lucidscale. Authentication is via OAuth 2.0 bearer tokens
+
     or API keys.
-  version: "1.0"
+
+    '
+  version: '1.0'
   contact:
     name: Lucid Developer Platform
     url: https://developer.lucid.co/
@@ -14,17 +18,17 @@ info:
     name: Proprietary
     url: https://www.lucidchart.com/pages/tos
 servers:
-  - url: https://api.lucid.co
-    description: Lucid REST API
+- url: https://api.lucid.co
+  description: Lucid REST API
 security:
-  - BearerAuth: []
+- BearerAuth: []
 tags:
-  - name: Documents
-  - name: Folders
+- name: Documents
 paths:
   /v1/documents:
     post:
-      tags: [Documents]
+      tags:
+      - Documents
       summary: Create a document
       operationId: createDocument
       requestBody:
@@ -33,13 +37,17 @@ paths:
           application/json:
             schema:
               type: object
-              required: [title, product]
+              required:
+              - title
+              - product
               properties:
                 title:
                   type: string
                 product:
                   type: string
-                  enum: [lucidchart, lucidspark]
+                  enum:
+                  - lucidchart
+                  - lucidspark
                 parent:
                   type: number
                   description: Optional parent folder ID
@@ -54,15 +62,18 @@ paths:
           description: The created document
           content:
             application/json:
-              schema: { type: object }
+              schema:
+                type: object
   /v1/documents/{id}:
     parameters:
-      - name: id
-        in: path
-        required: true
-        schema: { type: string }
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
     get:
-      tags: [Documents]
+      tags:
+      - Documents
       summary: Retrieve a document
       operationId: getDocument
       responses:
@@ -70,54 +81,16 @@ paths:
           description: The document
           content:
             application/json:
-              schema: { type: object }
+              schema:
+                type: object
     delete:
-      tags: [Documents]
+      tags:
+      - Documents
       summary: Trash a document
       operationId: deleteDocument
       responses:
         '204':
           description: Document trashed
-  /v1/folders:
-    post:
-      tags: [Folders]
-      summary: Create a folder
-      operationId: createFolder
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [name, type]
-              properties:
-                name: { type: string }
-                type:
-                  type: string
-                  description: Folder type (e.g., personal, team, app)
-                parent: { type: number }
-      responses:
-        '201':
-          description: The created folder
-          content:
-            application/json:
-              schema: { type: object }
-  /v1/folders/{id}:
-    parameters:
-      - name: id
-        in: path
-        required: true
-        schema: { type: string }
-    get:
-      tags: [Folders]
-      summary: Retrieve a folder
-      operationId: getFolder
-      responses:
-        '200':
-          description: The folder
-          content:
-            application/json:
-              schema: { type: object }
 components:
   securitySchemes:
     BearerAuth:
