@@ -1,0 +1,16 @@
+{
+  "provider": "lucidchart",
+  "sources": [
+    "lucidchart-documents-api-openapi.yml",
+    "lucidchart-folders-api-openapi.yml"
+  ],
+  "outputs": [
+    "lucidchart-documents-api-openapi.yml",
+    "lucidchart-folders-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
