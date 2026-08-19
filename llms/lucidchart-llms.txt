@@ -1,0 +1,1504 @@
+# Lucid Developer Documentation Documentation
+
+> Lucid provides powerful APIs that enable developers to add visual collaboration to their product or workflow.
+
+## Guides
+- [Introduction](https://lucid.readme.io/docs/welcome.md): Introduction to Lucid's Developer Platform
+- [Unlocking developer tools](https://lucid.readme.io/docs/guides-unlocking-developer-tools.md): Unlocking developer tools
+- [Application collaborator roles](https://lucid.readme.io/docs/application-collaborator-roles.md): This page goes over Application Collaborator roles - what they are and how to use them
+- [Admin controls](https://lucid.readme.io/docs/admin-controls.md): Admin controls
+- [OAuth 2.0 client creation](https://lucid.readme.io/docs/oauth-20-client-creation.md): This page discusses how to create an OAuth client to be used with Lucid's REST APIs
+- [API Keys](https://lucid.readme.io/docs/api-keys.md): This page describes what API keys are used for and how to create them.
+- [Publishing](https://lucid.readme.io/docs/publishing.md): This page goes over the process of publishing an extension to Lucid's Marketplace
+- [Custom shape libraries](https://lucid.readme.io/docs/custom-shape-libraries.md): An overview of Lucid's custom shape libraries
+- [Link unfurling](https://lucid.readme.io/docs/link-unfurling.md): Unfurl link
+- [Data import and sync](https://lucid.readme.io/docs/data-import-and-sync.md): A summary on importing data and keeping it up to date
+- [Using web frameworks](https://lucid.readme.io/docs/guides-using-web-frameworks.md): Using web frameworks
+- [External embeds](https://lucid.readme.io/docs/external-embeds.md): Learn to embed a Lucid diagram on another website
+- [Embed API FAQs](https://lucid.readme.io/docs/embed-api-faqs.md): Frequently asked questions about Lucid's Embed API
+- [Tutorial: Cookie-based embeds](https://lucid.readme.io/docs/tutorial-cookie-embeds.md): Learn how to build a basic Lucid embed integration
+- [Tutorial: Token-based embeds](https://lucid.readme.io/docs/tutorial-token-embeds.md): Learn how to build an advanced Lucid embed integration
+- [Lucid Cards Overview](https://lucid.readme.io/docs/lucid-cards-overview.md): An overview
+- [Lucid Card Integrations](https://lucid.readme.io/docs/lucid-card-integrations.md): A complete walk through on how to make a Lucid card integration via Todoist
+- [Data Visualization](https://lucid.readme.io/docs/data-visualization.md): How to build customized data visualizations using Lucid's advanced diagramming features
+- [Enterprise Shield API](https://lucid.readme.io/docs/enterprise-shield-api.md): Enterprise Shield encompasses powerful APIs tailored to enhance security and compliance within your organization.
+- [AI Tools](https://lucid.readme.io/docs/ai-tools.md): Use AI tools with Lucid docs by connecting MCP, indexing with llms.txt, and choosing the right Lucid extension skills
+- [MCP](https://lucid.readme.io/docs/mcp.md)
+- [Skill: Create Extensions](https://lucid.readme.io/docs/skill-create-extensions.md): Use this skill when you want your AI tool to scaffold and run a new Lucid editor extension.
+- [Skill: Edit Extensions](https://lucid.readme.io/docs/skill-edit-extensions.md): Use this skill when you want your AI tool to modify an existing Lucid editor extension or answer questions about the `lucid-extension-sdk`.
+- [Lucid Extension API](https://lucid.readme.io/docs/lucid-extension-api.md)
+- [Getting started](https://lucid.readme.io/docs/extension-api-getting-started.md)
+- [Core concepts](https://lucid.readme.io/docs/coreconcepts.md)
+- [Extension packages](https://lucid.readme.io/docs/extension-packages.md)
+- [Editor extensions](https://lucid.readme.io/docs/editor-extensions.md)
+- [Document content](https://lucid.readme.io/docs/editor-extension-document-content.md)
+- [Pages](https://lucid.readme.io/docs/editor-extension-pages.md)
+- [Items](https://lucid.readme.io/docs/editor-extension-items.md)
+- [Blocks](https://lucid.readme.io/docs/editor-extension-blocks.md)
+- [Images](https://lucid.readme.io/docs/editor-extension-images.md)
+- [Lines](https://lucid.readme.io/docs/editor-extension-lines.md): A _line_ is a connector with two endpoints. Each endpoint may or may not be connected to a block, or to another line.
+- [Groups](https://lucid.readme.io/docs/editor-extension-groups.md): A _group_ is a set of other items, which acts in many ways like a single block.
+- [Managing text](https://lucid.readme.io/docs/editor-extension-managing-text.md)
+- [Menus](https://lucid.readme.io/docs/editor-extension-menus.md)
+- [Modals](https://lucid.readme.io/docs/editor-extension-modals.md)
+- [Users](https://lucid.readme.io/docs/editor-extension-users.md)
+- [File upload](https://lucid.readme.io/docs/editor-extension-file-upload.md)
+- [Links](https://lucid.readme.io/docs/editor-extension-links.md)
+- [iFrames](https://lucid.readme.io/docs/editor-extension-iframes.md)
+- [Drag and drop blocks from a panel](https://lucid.readme.io/docs/drag-and-drop-blocks-from-a-panel.md)
+- [Using OAuth APIs](https://lucid.readme.io/docs/editor-extension-using-oauth-apis.md)
+- [Data](https://lucid.readme.io/docs/editor-extension-data.md)
+- [Lucid cards](https://lucid.readme.io/docs/editor-extension-lucid-cards.md)
+- [i18n](https://lucid.readme.io/docs/editor-extension-i18n.md)
+- [Package settings](https://lucid.readme.io/docs/editor-extension-package-settings.md)
+- [Quick actions](https://lucid.readme.io/docs/quick-actions.md)
+- [Block Class Names](https://lucid.readme.io/docs/block-class-names.md)
+- [Shape libraries](https://lucid.readme.io/docs/shape-libraries.md)
+- [Data connectors](https://lucid.readme.io/docs/data-connectors.md)
+- [Building a data connector](https://lucid.readme.io/docs/building-a-data-connector.md)
+- [Data actions](https://lucid.readme.io/docs/data-actions.md)
+- [Data connector security](https://lucid.readme.io/docs/data-connector-security.md)
+- [lucid-package CLI](https://lucid.readme.io/docs/lucid-package-cli.md)
+- [lucid-package](https://lucid.readme.io/docs/lucid-package.md): [npm package](https://npmjs.com/package/lucid-package)
+- [lucid-extension-sdk](https://lucid.readme.io/docs/lucid-extension-sdk.md): [npm package](https://npmjs.com/package/lucid-extension-sdk)
+- [Custom Shapes](https://lucid.readme.io/docs/custom-shapes-introduction.md): Introduction to Lucid's custom shapes
+- [Getting started](https://lucid.readme.io/docs/custom-shapes-getting-started.md)
+- [HJSON](https://lucid.readme.io/docs/hjson.md)
+- [Getting started with the Extension API](https://lucid.readme.io/docs/getting-started-with-the-extension-api.md)
+- [Custom shape library](https://lucid.readme.io/docs/custom-shape-library.md)
+- [Geometry](https://lucid.readme.io/docs/geometry.md)
+- [Geometry schema](https://lucid.readme.io/docs/geometry-schema.md)
+- [Rectangle](https://lucid.readme.io/docs/custom-shapes-rectangle.md)
+- [Ellipse](https://lucid.readme.io/docs/custom-shapes-ellipse.md)
+- [Polygon](https://lucid.readme.io/docs/custom-shapes-polygon.md)
+- [Path](https://lucid.readme.io/docs/custom-shapes-path.md)
+- [Boolean operation](https://lucid.readme.io/docs/custom-shapes-boolean-operation.md)
+- [Render style](https://lucid.readme.io/docs/render-style.md)
+- [Sub-shapes](https://lucid.readme.io/docs/sub-shapes.md)
+- [Bounds](https://lucid.readme.io/docs/bounds.md)
+- [Formulas](https://lucid.readme.io/docs/formulas.md)
+- [Interpolated strings](https://lucid.readme.io/docs/interpolated-strings.md)
+- [Shape data properties](https://lucid.readme.io/docs/shape-data-properties.md)
+- [Definitions](https://lucid.readme.io/docs/custom-shapes-definitions.md)
+- [Textareas](https://lucid.readme.io/docs/textareas.md)
+- [Clipping](https://lucid.readme.io/docs/clipping.md)
+- [Shape constraints](https://lucid.readme.io/docs/shape-constraints.md)
+- [Extension click handler](https://lucid.readme.io/docs/extension-click-handler.md)
+- [Rounded Progress Bar](https://lucid.readme.io/docs/rounded-progress-bar.md)
+- [Signal Strength](https://lucid.readme.io/docs/signal-strength.md)
+- [Star Rating](https://lucid.readme.io/docs/star-rating.md)
+- [Multiplexer Shape](https://lucid.readme.io/docs/multiplexer-shape.md)
+- [Center-Growing Progress Bar](https://lucid.readme.io/docs/center-growing-progress-bar.md)
+- [Greeting Shape](https://lucid.readme.io/docs/greeting-shape.md)
+- [Shape with controls](https://lucid.readme.io/docs/shape-with-controls.md)
+- [Definitions](https://lucid.readme.io/docs/custom-shapes-appendices-definitions.md)
+- [Formulas](https://lucid.readme.io/docs/formulas-getting-started.md): Getting started with Lucid's Formulas
+- [Types](https://lucid.readme.io/docs/types-formulas.md)
+- [Attributes](https://lucid.readme.io/docs/attributes-syntax.md)
+- [Operators](https://lucid.readme.io/docs/operators.md)
+- [References](https://lucid.readme.io/docs/references.md)
+- [Functions](https://lucid.readme.io/docs/functions.md)
+- [Advanced Syntax](https://lucid.readme.io/docs/advanced-syntax.md)
+- [ANCESTORS](https://lucid.readme.io/docs/ancestors.md): Returns a deep list of the shape's parents, starting with the shape's parent (then the parent's parent, etc.), up to the containing page.
+- [CHILDREN](https://lucid.readme.io/docs/children.md)
+- [CONNECTED](https://lucid.readme.io/docs/connected.md)
+- [CONNECTEDDEEP](https://lucid.readme.io/docs/connecteddeep.md)
+- [CONTAINED](https://lucid.readme.io/docs/contained.md)
+- [CONTAINEDBY](https://lucid.readme.io/docs/containedby.md)
+- [DESCENDANTS](https://lucid.readme.io/docs/descendants.md)
+- [DOWNSTREAM](https://lucid.readme.io/docs/downstream.md)
+- [DOWNSTREAMDEEP](https://lucid.readme.io/docs/downstreamdeep.md)
+- [PAGE](https://lucid.readme.io/docs/page.md)
+- [PARENT](https://lucid.readme.io/docs/parent.md)
+- [SIBLINGS](https://lucid.readme.io/docs/siblings.md)
+- [THIS](https://lucid.readme.io/docs/this.md)
+- [UPSTREAM](https://lucid.readme.io/docs/upstream.md)
+- [UPSTREAMDEEP](https://lucid.readme.io/docs/upstreamdeep.md)
+- [FIELDLOOKUP](https://lucid.readme.io/docs/fieldlookup.md): Uses a reference key and the collection name to find a data property.
+- [FINDSHAPEBYLABEL](https://lucid.readme.io/docs/findshapebylabel.md): Finds a shape using its unique shape identifier.  Shape can exist anywhere in the document.  To get a shape's identifier use [LABEL](doc:label).
+- [INDEX](https://lucid.readme.io/docs/index-page.md): Returns the value at a given position from an array, starting from 1.
+- [LABEL](https://lucid.readme.io/docs/label.md): Gets the unique shape identifier for the current shape.
+- [LOOKUP / COLLECTION](https://lucid.readme.io/docs/lookup.md): Finds data from a collection using a reference key and returns an array of all the data associated with that reference key.
+- [ATTRIBUTES](https://lucid.readme.io/docs/attributes.md): Returns an array of all valid [formula attributes](doc:attributes) on the object. If no argument is provided, defaults to `ATTRIBUTES(THIS)`.
+- [ISVISIBLE](https://lucid.readme.io/docs/isvisible.md): Returns true if the shape is visible. The visibilty of shapes is controlled by the visibility of its containing layer.
+- [ITEMTYPE](https://lucid.readme.io/docs/itemtype.md): Gets the type of the current item or the specified item(s). Item type is one of: Line, Block, Group, Page.
+- [SHAPEACTIONS](https://lucid.readme.io/docs/shapeactions.md): Gets all actions added to the current shape or specified shape(s). Shape actions are objects with an action type value and additional values specific to the type of action.
+- [SHAPETYPE](https://lucid.readme.io/docs/shapetype.md): Gets the specific type of shape for the current shape or the specified shape(s).
+- [SHAPELIBRARY](https://lucid.readme.io/docs/shapelibrary.md): Gets the specific shape library for the current shape or the specified shape(s).
+- [CREATEDTIME](https://lucid.readme.io/docs/createdtime.md): Gets the creation date and time of the document.
+- [CREATORNAME](https://lucid.readme.io/docs/creatorname.md): Gets the name of the creator of the document.
+- [DOCUMENTNAME](https://lucid.readme.io/docs/documentname.md): Gets the current name of the document.
+- [DOCUMENTPAGES](https://lucid.readme.io/docs/documentpages.md): Gets the current pages of the document.
+- [DOCUMENTSTATUS](https://lucid.readme.io/docs/documentstatus.md): Gets the current approval status of the document.
+- [LASTMODIFIEDBY](https://lucid.readme.io/docs/lastmodifiedby.md): Gets the name of the user who last modified the document.
+- [LASTMODIFIEDTIME](https://lucid.readme.io/docs/lastmodifiedtime.md): Gets the last modified date and time of the document.
+- [PAGENAME](https://lucid.readme.io/docs/pagename.md): Gets the name of the current page.
+- [PAGENUMBER](https://lucid.readme.io/docs/pagenumber.md): Gets the page number of the current page.
+- [AND](https://lucid.readme.io/docs/and.md): Returns true if all of the given expressions/values are true, and false otherwise
+- [COALESCE](https://lucid.readme.io/docs/coalesce.md): Returns the first non-empty value, or NONE if all values are empty. A value is non-empty if `ISNOTEMPTY(<expr>)` returns true. If there are no values passed in, it returns `NONE`.
+- [IF](https://lucid.readme.io/docs/if.md): Checks the value of an expression and returns a specified value if the expression is true, and returns a different value if not.
+- [IFERROR](https://lucid.readme.io/docs/iferror.md): Checks if the expression has an error and, returns a replacement value, if so, or the original value otherwise.
+- [IFS](https://lucid.readme.io/docs/ifs.md): Returns the first matching condition from a list of conditions and corresponding results.
+- [ISEMPTY](https://lucid.readme.io/docs/isempty.md)
+- [ISNOTEMPTY](https://lucid.readme.io/docs/isnotempty.md)
+- [NOT](https://lucid.readme.io/docs/not.md): Returns true if the given expression/values is false, and false if the given expression is true.
+- [OR](https://lucid.readme.io/docs/or.md): Returns true if any of the given expressions/values are true, and false otherwise
+- [RAND](https://lucid.readme.io/docs/rand.md): Returns a random value between 0 and 1 (inclusive of 0, exclusive of 1).
+- [RANDBETWEEN](https://lucid.readme.io/docs/randbetween.md): Returns a random integer between min and max (inclusive).
+- [SRAND](https://lucid.readme.io/docs/srand.md): Returns a seeded random value between 0 (inclusive) and 1 (exclusive).
+- [SRANDBETWEEN](https://lucid.readme.io/docs/srandbetween.md): Returns a seeded random integer between min and max (inclusive).
+- [SWITCH](https://lucid.readme.io/docs/switch.md): Returns the first matching value from a list of values and corresponding results with a specified value.
+- [XOR](https://lucid.readme.io/docs/xor.md): Returns true if an odd number of the given expressions/values are true, and false otherwise
+- [COUNT](https://lucid.readme.io/docs/count.md): Counts the number of elements in the specified array.
+- [COUNTDEEP](https://lucid.readme.io/docs/countdeep.md): Recursively counts the numbers of elements in the specified array.
+- [COUNTIF](https://lucid.readme.io/docs/countif.md): Counts the number of elements in an array that meet the specified condition
+- [COUNTIFDEEP](https://lucid.readme.io/docs/countifdeep.md): Recursively counts the number of elements in the specified array which satisfy the given condition.
+- [FILTER](https://lucid.readme.io/docs/filter.md): Returns a filtered list of items from a specified array that match a specified condition.
+- [FILTERDEEP](https://lucid.readme.io/docs/filterdeep.md): Returns a recursively filtered list of items from a specified array that match a specified condition.
+- [MAX](https://lucid.readme.io/docs/max.md): Calculates the maximum value of specified numbers.
+- [MEAN](https://lucid.readme.io/docs/mean.md): Calculates the mean (average) of specified numbers.
+- [MEDIAN](https://lucid.readme.io/docs/median.md): Calculates the median of a list of numbers or lists of numbers.
+- [MIN](https://lucid.readme.io/docs/min.md): Calculates the minimum value of specified numbers.
+- [SORT](https://lucid.readme.io/docs/sort.md): Sorts the specified list using an optional sort order and expression to control the ordering.
+- [SUM](https://lucid.readme.io/docs/sum.md): Calculates the arithmetic sum (total) of all specified numbers.
+- [ISARRAY](https://lucid.readme.io/docs/isarray.md): Returns true if the specified value is an array.
+- [ISBOOLEAN](https://lucid.readme.io/docs/isboolean.md): Returns true if the value is a boolean value (true or false).
+- [ISCOLOR](https://lucid.readme.io/docs/iscolor.md): Returns true if the specified value is a color value.
+- [ISDATE](https://lucid.readme.io/docs/isdate.md): Returns true if the specified value is a date value.
+- [ISERROR](https://lucid.readme.io/docs/iserror.md): Returns true if the provided expression results in an error.
+- [ISNOTERROR](https://lucid.readme.io/docs/isnoterror.md): Returns true if the provided expression does not result in an error.
+- [ISNUMBER](https://lucid.readme.io/docs/isnumber.md): Returns true if the specified value is a number value.
+- [ISTEXT / ISSTRING](https://lucid.readme.io/docs/istext.md): Returns true if the specified value is a text value.
+- [ISOBJECT](https://lucid.readme.io/docs/isobject.md): Returns true if the specified value is an object value.
+- [BETWEEN](https://lucid.readme.io/docs/between.md): Checks if a value is between two other values, inclusive. Returns true if the value is between the specified values, and false if it is not between those values.
+- [CONTAINS](https://lucid.readme.io/docs/contains.md): Returns true if a property or string contains a value, and returns false otherwise.
+- [DOESNOTCONTAIN](https://lucid.readme.io/docs/doesnotcontain.md): Returns true if a property or string does not contain a value, and returns false otherwise.
+- [ENDSWITH](https://lucid.readme.io/docs/endswith.md): Returns true if a property or string ends with a value, and returns false otherwise.
+- [ISEVEN](https://lucid.readme.io/docs/iseven.md): Returns true if the specified number is even and false if the number is odd.
+- [ISODD](https://lucid.readme.io/docs/isodd.md): Returns true if the specified number is odd and false if the number is even.
+- [NOTBETWEEN](https://lucid.readme.io/docs/notbetween.md): Checks if a value is not between two other values, inclusive. Returns true if the value is not between the specified values, and false if it is between those values.
+- [STARTSWITH](https://lucid.readme.io/docs/startswith.md): Returns true if a property or string starts with a value, and returns false otherwise.
+- [&](https://lucid.readme.io/docs/-amp-.md): Text concatenation. Combines two strings together into a single string. For example "Lucid" & "chart" produces the string "Lucidchart".
+- [ASSTRING](https://lucid.readme.io/docs/asstring.md): For simple arguments, this function converts the argument into a string representation. For references to Lucid shapes, extracts the string contents of the shape and returns it.
+- [CHAR / UNICHAR](https://lucid.readme.io/docs/char.md): Get a string from the given character code or codes.
+- [CODE / UNICODE](https://lucid.readme.io/docs/code.md): Convert a unicode string into their corresponding code point or points.
+- [CONCATENATE](https://lucid.readme.io/docs/concatenate.md): Creates a new string by combining all specified strings into a single string
+- [FIND](https://lucid.readme.io/docs/find.md): Returns the position in the specified string of a substring, starting at the specified start position.
+- [FROMJSON](https://lucid.readme.io/docs/fromjson.md): Parses the supplied JSON string and converts it into formula values, if valid.
+- [LEFT](https://lucid.readme.io/docs/left.md): Returns the specified number of characters from the start of the string.
+- [LEN](https://lucid.readme.io/docs/len.md): Returns the length of the string.
+- [LOWER](https://lucid.readme.io/docs/lower.md): Returns the specified string converted to lower-case.  #####
+- [REGEX_MATCHALL](https://lucid.readme.io/docs/regex_matchall.md): Returns all matches in the specified string found by the supplied regex.
+- [REGEX_REPLACE](https://lucid.readme.io/docs/regex_replace.md): Returns a new string created by replacing all matches in the specified string using the regex and a replacement string.
+- [REGEX_TEST](https://lucid.readme.io/docs/regex_test.md): Returns true if the specified string is matched by the supplied regex.
+- [REPLACE](https://lucid.readme.io/docs/replace.md): Splices a string into the specified string, replacing the characters in the original string from a range of characters.
+- [REPT](https://lucid.readme.io/docs/rept.md): Repeats a string a number of times.
+- [RIGHT](https://lucid.readme.io/docs/right.md): Returns the specified number of characters from the end of the string.
+- [SEARCH](https://lucid.readme.io/docs/search.md): Returns the position of the specified search string, starting at an optional start position. Start index can be negative. Allows the wildcard characters ? (to match any single character) and \* (to match one or more characters). A ~ before the ? or \* character (e.g. "~?" or "~\*") matches the specific character "?" or "\*".
+- [SPLIT](https://lucid.readme.io/docs/split.md): Splits the specified string into an array at the specified separator.
+- [SUBSTITUTE](https://lucid.readme.io/docs/substitute.md): Replaces a string with another string in a specified string. If an instance number is specified, only substitutes the instance-th match.
+- [SUBSTRING / MID](https://lucid.readme.io/docs/mid.md): Returns the specified number of characters from a string, starting at the specified start position.
+- [TRIM](https://lucid.readme.io/docs/trim.md): Returns a string where all whitespace characters (spaces, tabs, newlines, etc.) have been removed from both the start and end of the specified string.
+- [TRUNCATE](https://lucid.readme.io/docs/truncate.md): Returns the string truncated to the specified number of characters, with an ellipsis added at the end if truncation occurred.
+- [UPPER](https://lucid.readme.io/docs/upper.md): Returns the specified string converted to upper-case.
+- [ABS](https://lucid.readme.io/docs/abs.md): Calculates the absolute value of the specified number.
+- [ASNUMBER](https://lucid.readme.io/docs/asnumber.md): Converts a value into a number.
+- [ASPERCENT](https://lucid.readme.io/docs/aspercent.md): Formats a number as a percentage. The percentage is calculated as 100 times the number; for example, 0.25 will be formatted as 25%.
+- [CEIL](https://lucid.readme.io/docs/ceil.md): Rounds up (to a lesser absolute value) to the nearest multiple of the specified factor. Defaults to a factor of 1.
+- [CLAMP](https://lucid.readme.io/docs/clamp.md): Limits a value to a specified minimum and maximum value range. If the specified value is below the minimum value or above the maximum value, the minimum value or maximum value, respectively, is returned.
+- [EXP](https://lucid.readme.io/docs/exp.md): Calculates the value of Euler's constant (e) raised to the specified value. Equivalent to e<sup>value</sup>.
+- [FLOOR](https://lucid.readme.io/docs/floor.md): Rounds down (to a lesser absolute value) to the nearest multiple of the specified factor. Defaults to a factor of 1.
+- [FORMAT_NUMBER](https://lucid.readme.io/docs/format_number.md): Returns a string representing the number, formatted according to the given pattern.
+- [LERP / INTERPOLATE](https://lucid.readme.io/docs/lerp.md): Calculates the linearly interpolated value between two numbers, with a specified proportion.
+- [LN](https://lucid.readme.io/docs/ln.md): Calculates the natural log of the specified number
+- [LOG / LOG10](https://lucid.readme.io/docs/log.md): Calculates the base 10 logarithm of the specified number
+- [MOD / MODULUS](https://lucid.readme.io/docs/mod.md): Calculates the modulus of a specified number with a specified divisor. The resulting value is the remainder after division of the value by the divisor.
+- [NUMBER_PARSE](https://lucid.readme.io/docs/number_parse.md): Liberally parses the first number in an input string.
+- [POW / POWER](https://lucid.readme.io/docs/pow.md): Calculates the value of the specified number raised to a given exponent
+- [PRODUCT](https://lucid.readme.io/docs/product.md): Calculates the product of a list of numbers or arrays of numbers.
+- [ROUND](https://lucid.readme.io/docs/round.md): Rounds a number to specified number of digits.
+- [ROUNDDOWN](https://lucid.readme.io/docs/rounddown.md): Rounds a number down (to a lesser value) to the specified number of digits.
+- [ROUNDUP](https://lucid.readme.io/docs/roundup.md): Rounds a number up (to a greater value) to the specified number of digits.
+- [SIGN](https://lucid.readme.io/docs/sign.md): Calculates the sign of the specified number as -1, 0, or 1, depending on whether the specified number is negative, zero, or positive, respectively
+- [SQRT / SQUAREROOT](https://lucid.readme.io/docs/sqrt.md): Returns the square root of a number.
+- [TRUNC](https://lucid.readme.io/docs/trunc.md): Calculates the value of the specified number with its fractional component removed. The TRUNC function does not perform any rounding.
+- [Arrays](https://lucid.readme.io/docs/arrays.md): Elements of arrays can be accessed directly using bracket notation. The value to use as an index starts at the number 1.
+- [ASARRAY](https://lucid.readme.io/docs/asarray.md): If the argument is not an array, returns an array containing the argument. Otherwise, returns the argument array.
+- [ARRAY](https://lucid.readme.io/docs/array.md): Creates an array of all supplied values
+- [DIFFERENCE](https://lucid.readme.io/docs/difference.md): Takes two arrays, treated as sets (i.e. ignoring duplicate values), and returns a new array that contains all items from the first array that are not in the second array.
+- [FLATARRAY / FLATTEN](https://lucid.readme.io/docs/flatarray.md): Creates an array of all supplied values, flattening any arrays so that the array is a single array of values.
+- [IN](https://lucid.readme.io/docs/in.md): Returns a boolean indicating if a specified item (needle) is inside of a given set (haystack). Note that the haystack must be an array.
+- [INTERSECT](https://lucid.readme.io/docs/intersect.md): Takes two arrays, treated as sets (i.e. ignoring duplicate values), and returns a new array that contains only items that are contained in both. If the input arrays have no items in common, returns an empty array.
+- [JOIN](https://lucid.readme.io/docs/join.md): Creates a string from array elements connected by a specified separator.
+- [MAP](https://lucid.readme.io/docs/map.md): Transforms each value of the specified array into a new value using a formula.
+- [RANGE](https://lucid.readme.io/docs/range.md): Creates an array of numbers with values ranging from the start number to the end number, by repetitively adding the step value to calculate values.
+- [REDUCE](https://lucid.readme.io/docs/reduce.md): Returns a value resulting from applying a formula to each element of the array and the previous result.
+- [REVERSE](https://lucid.readme.io/docs/reverse.md): Reverses the order of an array.
+- [SCAN](https://lucid.readme.io/docs/scan.md): Returns an array constructed from each of the results of applying a formula to each element of the array and the previous result.
+- [SHUFFLE](https://lucid.readme.io/docs/shuffle.md): Randomly shuffles the values in the given array.
+- [SKIP](https://lucid.readme.io/docs/skip.md): Returns an array consisting of remaining items from an array after skipping the specified number of items at the beginning.
+- [SKIPWHILE](https://lucid.readme.io/docs/skipwhile.md): Returns an array consisting of remaining items from an array after skipping all items at the beginning which satisfy the specified condition.
+- [TAKE](https://lucid.readme.io/docs/take.md): Returns an array consisting of the specified number of items from the beginning of an array.
+- [TAKEWHILE](https://lucid.readme.io/docs/takewhile.md): Returns an array consisting of all items from the beginning of an array which satisfy the specified condition.
+- [UNION](https://lucid.readme.io/docs/union.md): Takes two arrays, treated as sets (i.e. ignoring duplicate values), and returns a new array that contains all distinct items from both inputs.
+- [UNIQUE](https://lucid.readme.io/docs/unique.md): Takes either a single array or a list of values and returns an array which contains each distinct value only once. In other words it turns either an array or a list of values into a set.
+- [ZIP](https://lucid.readme.io/docs/zip.md): Combines the items in several input arrays by putting the first item from each array into the first output array, the second item from each array into the second output array, and so on. Specifically, given n arrays of at least m values each, returns an array of m arrays of n values each, where the ith value in the jth output array is the jth value in the ith input array.
+- [ZIPALL](https://lucid.readme.io/docs/zipall.md): Combines the items in several input arrays by putting the first item from each array into the first output array, the second item from each array into the second output array, and so on, using the default value for any missing items. Specifically, given n arrays of as many as m values each, returns an array of m arrays of n values each, where the ith value in the jth output array is the jth value in the ith input array or a default value.
+- [CURRENTSECOND](https://lucid.readme.io/docs/currentsecond.md): The current time's seconds field.
+- [DATE](https://lucid.readme.io/docs/date.md): Creates a date from the specified values.
+- [DATEADD](https://lucid.readme.io/docs/dateadd.md): Creates a new date by adding an offset to a specified date.
+- [DATEDIFF](https://lucid.readme.io/docs/datediff.md): Calculates the difference between two specified dates in the given interval. If date2 is before date1, then the result will be negative.
+- [DAY](https://lucid.readme.io/docs/day.md): Gets the day component of the specified date.
+- [DAYOFWEEK](https://lucid.readme.io/docs/dayofweek.md): Calculates the day of the week (1-7) for a specified date where the week starts on Monday.
+- [DAYSAGO](https://lucid.readme.io/docs/daysago.md): Gets the number of days between the specified date and now.
+- [EXCELDATE](https://lucid.readme.io/docs/exceldate.md): This function is intended to create a date from a numeric Excel date value, assuming the value is stored as the number of days since Dec 30, 1899 (where 1 is 12/31/1899). Sometimes our system has already converted the Excel date value into Lucid's existing Date object, in which case we simply pass that date through unchanged.
+- [FORMAT_DATE](https://lucid.readme.io/docs/format_date.md): Returns a string representing the date, formatted according to the given pattern. Pattern formatting is generally the same as supported by Excel.
+- [HOUR](https://lucid.readme.io/docs/hour.md): Gets the hour component of the specified date.
+- [HOURSAGO](https://lucid.readme.io/docs/hoursago.md): Gets the number of hours between the specified date and now.
+- [ISODATE](https://lucid.readme.io/docs/isodate.md): Creates a date from an ISO8601-formatted string. See [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) formatting for more details.
+- [MINUTE](https://lucid.readme.io/docs/minute.md): Gets the minute component of the specified date.
+- [MINUTESAGO](https://lucid.readme.io/docs/minutesago.md): Gets the number of minutes between the specified date and now.
+- [MONTH](https://lucid.readme.io/docs/month.md): Gets the month component of the specified date.
+- [MONTHSAGO](https://lucid.readme.io/docs/monthsago.md): Gets the number of months between the specified date and now.
+- [NETWORKDAYS](https://lucid.readme.io/docs/networkdays.md): Gets the number of working days between a specified beginning and ending date, inclusive. Working days exclude weekends and any dates optionally provided as holidays.
+- [NOW](https://lucid.readme.io/docs/now.md): Returns the current date and time. Automatically updates every second.
+- [QUARTER](https://lucid.readme.io/docs/quarter.md): Gets the calendar quarter for the specified date. For more details see [Quarters](https://en.wikipedia.org/wiki/Calendar_year#Quarters).
+- [SECOND](https://lucid.readme.io/docs/second.md): Gets the second component of the specified date.
+- [SECONDSAGO](https://lucid.readme.io/docs/secondsago.md): Gets the number of seconds between the specified date and now.
+- [UNIXDATE](https://lucid.readme.io/docs/unixdate.md): Creates a date from the number of seconds since the Unix epoch (January 1, 1970, 00:00:00 UTC).
+- [UTCDATE](https://lucid.readme.io/docs/utcdate.md): Creates a date from the specified values.
+- [WEEK](https://lucid.readme.io/docs/week.md): Gets the week component of the specified date. For more information see [ISO Week Date](https://en.wikipedia.org/wiki/ISO_week_date).
+- [WEEKSAGO](https://lucid.readme.io/docs/weeksago.md): Gets the number of weeks between the specified date and now.
+- [WEEKYEAR](https://lucid.readme.io/docs/weekyear.md): Gets the year for the associated ISO week of the specified date. For more information see [ISO Week Date](https://en.wikipedia.org/wiki/ISO_week_date) Week Date.
+- [WORKDAY](https://lucid.readme.io/docs/workday.md): Given a start date, finds the date a specified number of working days later. A list of holidays can optionally be provided, indicating the given dates are not working days.
+- [YEAR](https://lucid.readme.io/docs/year.md): Gets the year component of the specified date.
+- [YEARSAGO](https://lucid.readme.io/docs/yearsago.md): Gets the number of years between the specified date and now.
+- [CURRENCY](https://lucid.readme.io/docs/currency.md): Creates a currency from the specified amount and type, defaulting to USD if the type isn't specified.
+- [CURRENCYADD](https://lucid.readme.io/docs/currencyadd.md): Creates a new currency by adding two currencies of the same type together.
+- [CURRENCYDIFF](https://lucid.readme.io/docs/currencydiff.md): Calculates the difference between two specified currencies of the same type.
+- [CURRENCYMULT](https://lucid.readme.io/docs/currencymult.md): Creates a new currency by multiplying a currency by a number.
+- [GET](https://lucid.readme.io/docs/get.md): Gets the associated value from an object for the specified key.
+- [GROUPBY](https://lucid.readme.io/docs/groupby.md): Creates an object from an array and a key expression which determines the key for each item, and a value expression which determines the value.
+- [HAS](https://lucid.readme.io/docs/has.md): Returns true if the object or reference has a value with the specified key.
+- [KEYS](https://lucid.readme.io/docs/keys.md): Return the array of strings which will can be referenced using [GET()](doc:get) on the parameter. Defaults to `THIS` if no argument provided.
+- [OBJECT](https://lucid.readme.io/docs/object.md): Creates an object that can be queried by key. Arguments are passed in as either an array of key-value pairs or as paired key and value parameters.
+- [VALUES](https://lucid.readme.io/docs/values.md): Returns the dereferenced values of all keys available on the specified parameter. Defaults to `THIS` if no argument provided. (When on a shape data property, `VALUES(THIS)` always returns at least one error value due to a circular reference.)",
+- [CONTAINER](https://lucid.readme.io/docs/container.md): Gets the container that contains the selected item in a Smart Container.
+- [CONTENTS](https://lucid.readme.io/docs/contents.md): Gets the contents of the selected Smart Container.
+- [ACOS](https://lucid.readme.io/docs/acos.md): Calculates the inverse cosine of the specified number (arccosine), in radians.
+- [ACOSH](https://lucid.readme.io/docs/acosh.md): Calculates the inverse hyperbolic cosine of the specified number.
+- [ACOT](https://lucid.readme.io/docs/acot.md): Calculates the inverse cotangent of the specified number (arccotangent), in radians.
+- [ACOTH](https://lucid.readme.io/docs/acoth.md)
+- [ASIN](https://lucid.readme.io/docs/asin.md): Calculates the inverse sine of the specified number (arcsine), in radians.
+- [ASINH](https://lucid.readme.io/docs/asinh.md): Calculates the inverse hyperbolic sine of the specified number.
+- [ATAN](https://lucid.readme.io/docs/atan.md): Calculates the inverse tangent of the specified number (arctangent), in radians.
+- [ATAN2](https://lucid.readme.io/docs/atan2.md): Calculates the inverse tangent of the specified x- and y-coordinates (arctangent).
+- [ATANH](https://lucid.readme.io/docs/atanh.md): Calculates the inverse hyperbolic tangent of the specified number.
+- [COS / COSINE](https://lucid.readme.io/docs/cos.md): Calculates the cosine, using the specified angle in radians.
+- [COSH](https://lucid.readme.io/docs/cosh.md): Calculates the hyperbolic cosine of the specified angle, in radians.
+- [COT](https://lucid.readme.io/docs/cot.md): Calculates the cotangent, using the specified angle in radians.
+- [DEGREES](https://lucid.readme.io/docs/degrees.md): Converts the specified angle from radians to degrees.
+- [RADIANS](https://lucid.readme.io/docs/radians.md): Converts the specified angle from degrees to radians.
+- [SIN / SINE](https://lucid.readme.io/docs/sin.md): Calculates the sine, using the specified angle in radians.
+- [SINH](https://lucid.readme.io/docs/sinh.md): Calculates the hyperbolic sine of the specified angle, in radians.
+- [TAN / TANGENT](https://lucid.readme.io/docs/tan.md): Calculates the tangent, using the specified angle in radians.
+- [TANH](https://lucid.readme.io/docs/tanh.md): Calculates the hyperbolic tangent of the specified angle, in radians.
+- [HEXCOLOR](https://lucid.readme.io/docs/hexcolor.md): Creates a new color from the specified hexadecimal color string.
+- [HSL / HSLA](https://lucid.readme.io/docs/hsl.md): Creates a new color from the specified hue, saturation, lightness and alpha values.
+- [HSV / HSVA](https://lucid.readme.io/docs/hsv.md): Creates a new color from the specified hue, saturation, value and alpha values.
+- [RGB / RGBA](https://lucid.readme.io/docs/rgb.md): Creates a new color from the specified red, green, blue and alpha values.
+- [ALPHA](https://lucid.readme.io/docs/alpha.md): Gets the alpha channel of the specified color. Returns a decimal from 0 to 1.
+- [BACKGROUNDCOLOR / FILLCOLOR](https://lucid.readme.io/docs/backgroundcolor.md): Returns the fill color of the referenced object.
+- [BLUE](https://lucid.readme.io/docs/blue.md): Gets the blue channel of the specified color in the RGB colorspace. Returns an integer from 0 to 255.  For more information about the RGB colorspace, see: <https://en.wikipedia.org/wiki/RGB>
+- [GREEN](https://lucid.readme.io/docs/green.md): Gets the green channel of the specified color in the RGB colorspace. Returns an integer from 0 to 255.  For more information about the RGB colorspace, see: <https://en.wikipedia.org/wiki/RGB>
+- [HSVHUE](https://lucid.readme.io/docs/hsvhue.md): Gets the hue channel of the specified color in the HSV colorspace. Returns an integer from 0 to 360.  For more information about hue, see: <https://en.wikipedia.org/wiki/Hue>
+- [HSVSATURATION](https://lucid.readme.io/docs/hsvsaturation.md): Gets the saturation channel of the specified color in the HSV colorspace. Returns a decimal number from 0 to 1.  For more information about hue, see: <https://en.wikipedia.org/wiki/HSL_and_HSV#Saturation>
+- [HSVVALUE](https://lucid.readme.io/docs/hsvvalue.md): Gets the value channel of the specified color in the HSV colorspace. Returns a decimal from 0 to 1.  For more information about value, see: <https://en.wikipedia.org/wiki/HSL_and_HSV#Hue_and_chroma>
+- [HUE](https://lucid.readme.io/docs/hue.md): Gets the hue channel of the specified color in the HSL colorspace. Returns an integer from 0 to 360.  For more information about hue, see: <https://en.wikipedia.org/wiki/Hue>
+- [LIGHTNESS](https://lucid.readme.io/docs/lightness.md): Gets the lightness channel of the specified color in the HSL colorspace. Returns a decimal number from 0 to 1.  For more information about hue, see: <https://en.wikipedia.org/wiki/HSL_and_HSV#Lightness>
+- [LUMINANCE](https://lucid.readme.io/docs/luminance.md): Calculates the luma (perceptual brightness) of the specified color. Uses SMPTE C / Rec. 709 coefficients, as recommended in WCAG 2.0.  For more information, see: <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef>
+- [RED](https://lucid.readme.io/docs/red.md): Gets the red channel of the specified color in the RGB colorspace. Returns an integer from 0 to 255.  For more information about the RGB colorspace, see: <https://en.wikipedia.org/wiki/RGB>
+- [SATURATION](https://lucid.readme.io/docs/saturation.md): Gets the saturation channel of the specified color in the HSL colorspace. Returns a decimal number from 0 to 1.  For more information about hue, see: <https://en.wikipedia.org/wiki/HSL_and_HSV#Saturation>
+- [CONTRAST](https://lucid.readme.io/docs/contrast.md): Determines which of the two specified colors has a higher contrast against the given color.
+- [DARKEN](https://lucid.readme.io/docs/darken.md): Creates a new color from the specified color by decreasing the lightness in the HSL color space.
+- [DESATURATE](https://lucid.readme.io/docs/desaturate.md): Creates a new color from the specified color by decreasing the saturation in the HSL color space.
+- [FADE](https://lucid.readme.io/docs/fade.md): Creates a new color from the specified color by setting the opacity to a specific value.
+- [FADEIN](https://lucid.readme.io/docs/fadein.md): Creates a new color from the specified color by increasing the opacity.
+- [FADEOUT](https://lucid.readme.io/docs/fadeout.md): Creates a new color from the specified color by decreasing the opacity.
+- [GRAYSCALE / GREYSCALE](https://lucid.readme.io/docs/grayscale.md): Creates a new color from the specified color by removing all saturation in the HSL color space.
+- [LIGHTEN](https://lucid.readme.io/docs/lighten.md): Creates a new color from the specified color by increasing the lightness in the HSL color space.
+- [MIX](https://lucid.readme.io/docs/mix.md): Creates a new color by combining two specified colors in a given proportion.
+- [SATURATE](https://lucid.readme.io/docs/saturate.md): Creates a new color from the specified color by increasing the saturation in the HSL color space.
+- [SHADE](https://lucid.readme.io/docs/shade.md): Creates a new color by mixing the specified color with black in a given proportion.
+- [SPIN](https://lucid.readme.io/docs/spin.md): Creates a new color from the specified color by rotating the hue in the HSL color space.
+- [TINT](https://lucid.readme.io/docs/tint.md): Creates a new color by mixing the specified color with white in a given proportion.
+- [BLENDMULTIPLY](https://lucid.readme.io/docs/blendmultiply.md): Creates a new color by multiplying the corresponding RGB channels of the specified colors, resulting in a darker color.
+- [BLENDSCREEN](https://lucid.readme.io/docs/blendscreen.md): Creates a new color by inverting and then multiplying the corresponding RGB channels of the specified colors, resulting in a lighter color.
+- [BLENDOVERLAY](https://lucid.readme.io/docs/blendoverlay.md): Creates a new color from the two provided by performing an overlay blend, making light colors lighter and dark colors darker.
+- [BLENDSOFTLIGHT](https://lucid.readme.io/docs/blendsoftlight.md): Creates a new color by performing a soft light blend.
+- [BLENDHARDLIGHT](https://lucid.readme.io/docs/blendhardlight.md): Creates a new color by performing a hard light blend.
+- [BLENDDIFFERENCE](https://lucid.readme.io/docs/blenddifference.md): Creates a new color by subtracting one provided color from the other.
+- [BLENDEXCLUSION](https://lucid.readme.io/docs/blendexclusion.md): Creates a new color by performing an exclusion blend.
+- [BLENDAVERAGE](https://lucid.readme.io/docs/blendaverage.md): Blends the two provided colors by averaging the respective values in each channel.
+- [BLENDNEGATION](https://lucid.readme.io/docs/blendnegation.md): Creates a new color from the two provided using a negation function.
+- [Overview](https://lucid.readme.io/docs/overview-si.md)
+- [Reference](https://lucid.readme.io/docs/reference-si.md)
+- [Pages](https://lucid.readme.io/docs/pages-si.md)
+- [Shapes](https://lucid.readme.io/docs/shapes-si.md)
+- [Standard Library](https://lucid.readme.io/docs/standard-library-si.md)
+- [Shape Library](https://lucid.readme.io/docs/shape-library-si.md)
+- [Container Library](https://lucid.readme.io/docs/container-library-si.md)
+- [Flowchart Library](https://lucid.readme.io/docs/flowchart-library-si.md)
+- [Lucidspark Library](https://lucid.readme.io/docs/lucidspark-library-si.md)
+- [BPMN 2.0 Library](https://lucid.readme.io/docs/bpmn-20-library-si.md)
+- [BPMN Shapes Reference](https://lucid.readme.io/docs/bpmn-shapes-reference-si.md)
+- [Table Library](https://lucid.readme.io/docs/table-library-si.md)
+- [AWS 2024 Library](https://lucid.readme.io/docs/aws-2024-library.md)
+- [Azure 2021 Library](https://lucid.readme.io/docs/azure-2021-library.md)
+- [Azure 2024 Library](https://lucid.readme.io/docs/azure-2024-library.md)
+- [GCP 2021 Library](https://lucid.readme.io/docs/gcp-2021-library.md)
+- [Data Backed Shapes](https://lucid.readme.io/docs/data-backed-shapes-si.md)
+- [Lines](https://lucid.readme.io/docs/lines-si.md)
+- [Groups](https://lucid.readme.io/docs/groups-si.md)
+- [Layers](https://lucid.readme.io/docs/layers-si.md)
+- [Images](https://lucid.readme.io/docs/images-si.md)
+- [Data](https://lucid.readme.io/docs/data-si.md)
+- [Troubleshooting](https://lucid.readme.io/docs/troubleshooting-si.md)
+- [Co-Marketing](https://lucid.readme.io/docs/co-marketing-guide.md)
+
+## API Reference
+- [Lucid REST API](https://lucid.readme.io/reference/overview.md)
+- [Headers](https://lucid.readme.io/reference/headers.md)
+- [Authentication Methods](https://lucid.readme.io/reference/authentication-methods.md)
+- [Keeping your API credentials secure](https://lucid.readme.io/reference/keeping-your-api-credentials-secure.md)
+- [Lucid's FedRAMP environment](https://lucid.readme.io/reference/lucids-fedramp-environment.md)
+- [Using API Keys](https://lucid.readme.io/reference/using-api-keys.md)
+- [Creating a key](https://lucid.readme.io/reference/creating-a-key.md)
+- [Using the key](https://lucid.readme.io/reference/using-the-key.md)
+- [API Key Grants](https://lucid.readme.io/reference/api-key-grants.md)
+- [Using OAuth 2.0](https://lucid.readme.io/reference/using-oauth-20.md)
+- [Client Creation](https://lucid.readme.io/reference/client-creation.md)
+- [Authorization endpoints](https://lucid.readme.io/reference/authorization-endpoints.md)
+- [Obtaining an access token](https://lucid.readme.io/reference/obtaining-an-access-token.md)
+- [Using the access token](https://lucid.readme.io/reference/using-the-access-token.md)
+- [Refreshing the access token](https://lucid.readme.io/reference/refreshing-the-access-token.md)
+- [Refresh token example script](https://lucid.readme.io/reference/refresh-token-example-script.md)
+- [Access Scopes](https://lucid.readme.io/reference/access-scopes.md)
+- [Limitations](https://lucid.readme.io/reference/limitations.md)
+- [General OAuth 2.0 errors](https://lucid.readme.io/reference/general-oauth-20-errors.md)
+- [Create or Refresh Access Token](https://lucid.readme.io/reference/createorrefreshaccesstoken.md)
+- [Introspect Access Token](https://lucid.readme.io/reference/introspectaccesstoken.md)
+- [Revoke Access Token](https://lucid.readme.io/reference/revokeaccesstoken.md): Regardless of which token is revoked, all tokens from that authorization grant will become invalid.
+- [Reference](https://lucid.readme.io/reference/reference-rest.md)
+- [Accounts](https://lucid.readme.io/reference/accounts.md)
+- [Get Account Information](https://lucid.readme.io/reference/getaccountinformation.md): Retrieves basic information about the authenticated account.
+- [Get Classifications](https://lucid.readme.io/reference/getclassifications.md): Returns the paginated list of classifications configured for the authenticated account. Deleted classifications are excluded from results.
+- [Get Statuses](https://lucid.readme.io/reference/getstatuses.md): Returns the paginated list of statuses configured for the authenticated account. Deleted statuses are excluded from results.
+- [Create Legal Hold](https://lucid.readme.io/reference/createlegalhold.md): Creates a new legal hold on an Enterprise Shield account with specified parameters including title, description, keywords, and start/end times.
+- [Get Legal Holds](https://lucid.readme.io/reference/getlegalholds.md): Retrieves all legal holds configured for the authenticated account. The results are paginated.
+- [Add Legal Hold Users](https://lucid.readme.io/reference/addlegalholdusers.md): Adds users to a specified legal hold. This action can only be performed for legal holds that have not yet started.
+- [Remove Legal Hold Users](https://lucid.readme.io/reference/removelegalholdusers.md): Removes users from a specified legal hold. This action can only be performed for legal holds that have not yet started.
+- [Edit Legal Hold](https://lucid.readme.io/reference/editlegalhold.md): Modifies an existing legal hold, allowing changes to the title, description, and end time. If the legal hold has not yet started, the start time and keywords can also be updated.
+- [Release Legal Hold](https://lucid.readme.io/reference/releaselegalhold.md): Releases a legal hold specified by the legalHoldId. Once released, it may take up to 24 hours for the documents to be fully removed from the legal hold restriction.
+- [Get Legal Hold Users](https://lucid.readme.io/reference/getlegalholdusers.md): Retrieves a paginated list of all users associated with a specified legal hold.
+- [Get Legal Hold Documents](https://lucid.readme.io/reference/getlegalholddocuments.md): Retrieves a paginated list of all documents associated with a specified legal hold. Documents may continue to appear for up to 24 hours after users are removed from the legal hold, as the system processes the release asynchronously.
+- [List Licenses for Subscription](https://lucid.readme.io/reference/listsubscriptionlicenses.md): Lists all licenses associated with a specific subscription. This endpoint is paginated.
+- [List User Licenses](https://lucid.readme.io/reference/listuserlicenses.md): Retrieves all licenses that have been granted to a specific user on the account.
+- [Grant User License](https://lucid.readme.io/reference/grantuserlicense.md): Grants a license to a user from a specified subscription. If the user already has a license on the given subscription, the existing license is returned.
+- [Collaboration](https://lucid.readme.io/reference/collaboration.md)
+- [Get Document User Collaborator](https://lucid.readme.io/reference/getdocumentusercollaborators.md): Retrieves information about a specific user's collaboration access level for a given document, including the sharing permissions and role that the user has been granted.
+- [Create/Update Document User Collaborator](https://lucid.readme.io/reference/putdocumentusercollaborators.md): Updates the collaborator role for a user on a document. If the user did not previously have access to the document, they will be granted access and a new collaborator record will be created.
+- [Delete Document User Collaborator](https://lucid.readme.io/reference/deletedocumentusercollaborators.md): Revokes all collaborator access to a document for the given user. The user may still have access to the document through other means such as shared folders. Cannot be used to remove the document owner's access.
+- [List Document User Collaborators](https://lucid.readme.io/reference/listdocumentusercollaborators.md): Retrieves information about all collaborators on the provided document. Supports pagination for managing large result sets.
+- [Get Document Team Collaborator](https://lucid.readme.io/reference/getdocumentteamcollaborator.md): Returns information about the given team's collaboration on the given document, including the team's access and collaboration permissions.
+- [Create/Update Document Team Collaborator](https://lucid.readme.io/reference/putdocumentteamcollaborator.md): Updates the details of the given team's collaboration on the given document, or adds the team as a collaborator on the document if it isn't already a collaborator.
+- [Delete Document Team Collaborator](https://lucid.readme.io/reference/deletedocumentteamcollaborator.md): Removes the given team as a collaborator on the given document.
+- [Get Folder User Collaborator](https://lucid.readme.io/reference/getfolderusercollaborators.md): Retrieves information about a specific user's direct collaborator access to a given folder. A user having access to a folder through one of the folder's ancestors will not be shown through this API.
+- [Create/Update Folder User Collaborator](https://lucid.readme.io/reference/putfolderusercollaborator.md): Updates or establishes a user's collaborator access to a given folder. If the user does not already have access, a new Folder User Collaborator Resource is created. Collaborators cannot be given the role "owner", and the role of the folder's owner cannot be modified.
+- [Delete Folder User Collaborator](https://lucid.readme.io/reference/deletefolderusercollaborator.md): Revokes a user's direct collaborator access to a given folder. The user may still have access to the folder through other means such as shared folders. This action cannot be used to revoke access from the folder owner.
+- [List Folder User Collaborators](https://lucid.readme.io/reference/listfolderusercollaborators.md): Retrieves all users who have direct collaborator access to a given folder. A user having access to a folder through one of the folder's ancestors will not be shown through this API. Results are paginated.
+- [Get Folder Group Collaborator](https://lucid.readme.io/reference/getfoldergroupcollaborator.md): Retrieves information about a group's direct collaborator access to a given folder. A group having access to a folder through one of the folder's ancestors will not be shown through this API.
+- [Create/Update Folder Group Collaborator](https://lucid.readme.io/reference/updatefoldergroupcollaborator.md): Grants a group direct collaborator access to a given folder, or updates the group's role on the folder if it is already a collaborator.
+- [Delete Folder Group Collaborator](https://lucid.readme.io/reference/deletefoldergroupcollaborator.md): Revokes any direct collaborator access a group has to the given folder.
+- [List Folder Group Collaborators](https://lucid.readme.io/reference/listfoldergroupcollaborators.md): Retrieves all groups that have been granted direct collaborator access to a given folder. A group having access to a folder through one of the folder's ancestors will not be shown through this API. Results are paginated.
+- [Get Folder Team Collaborator](https://lucid.readme.io/reference/getfolderteamcollaborator.md): Returns information about the given team's collaboration on the given folder.
+- [Create/Update Folder Team Collaborator](https://lucid.readme.io/reference/putfolderteamcollaborator.md): Updates the details of the given team's collaboration on the given folder, or adds the team as a collaborator on the folder if it is not already a collaborator.
+- [Delete Folder Team Collaborator](https://lucid.readme.io/reference/deletefolderteamcollaborator.md): Revokes a team's direct collaborator access to the given folder.
+- [Documents](https://lucid.readme.io/reference/documents.md)
+- [Document Access](https://lucid.readme.io/reference/document-access.md)
+- [Document Contents Resource](https://lucid.readme.io/reference/document-contents-resource.md)
+- [List Document Threads](https://lucid.readme.io/reference/listdocumentthreads.md): Retrieves all comment threads for the specified document. Each thread includes its ID, creation timestamp, and status (open or closed).  ## Valid Authentication Methods  **API Key Grants:** - `DocumentReadonly`  **OAuth 2.0 User Token Scopes:** - `lucidchart.document.content:readonly` - `lucidscale.document.content:readonly` - `lucidspark.document.content:readonly` - `lucid.document.content:readonly`
+- [List Thread Comments](https://lucid.readme.io/reference/listdocumentthreadcomments.md): Retrieves all comments within a specific thread of a document. Each comment includes the author, comment text, creation timestamp, and any assigned users.  ## Valid Authentication Methods  **API Key Grants:** - `DocumentReadonly`  **OAuth 2.0 User Token Scopes:** - `lucidchart.document.content:readonly` - `lucidscale.document.content:readonly` - `lucidspark.document.content:readonly` - `lucid.document.content:readonly`
+- [Post Thread Comment](https://lucid.readme.io/reference/postdocumentthreadcomment.md): Posts a new comment to an existing thread on a document. The comment text must be non-empty and cannot exceed 10,000 characters.  ## Valid Authentication Methods  **API Key Grants:** - `DocumentEdit`  **OAuth 2.0 User Token Scopes:** - `lucidchart.document.content` - `lucidscale.document.content` - `lucidspark.document.content` - `lucid.document.content`
+- [Create from JSON](https://lucid.readme.io/reference/createdocument.md): Creates a new document for the requesting user, with the specified title. Requires `title` and `product`. Optionally, a `parent` folder, `extensionBootstrapData`, or Lucid Standard Import `content` can be provided to customize the new document.  > 📘 > > This endpoint can only create a new Lucidchart or Lucidspark document. It cannot modify an existing document's contents.  > 📘 ##### Document Creation Location > > When there is no `parent` field on the request, the new document will be created in a default location depending on the authorizing token's scopes. > > - If the token authorizing the request uses one of the `document.app` scopes, then the document will be created in an `app-specific folder`. > - If one of the `document.content` scopes is used, the document will be created in the user's 'My Documents folder'. > - If both types of scopes are authorized on the token, the `document.content` behavior will take priority and the document will be created in the user's 'My Documents' folder.  > 📘 ##### Bootstrap Data for Create Document > > Bootstrap data can be attached to the created document to be consumed by a specific [Extension Package](https://lucid.readme.io/docs/lucid-extension-api). See [Bootstrap Data for documents created via API](https://lucid.readme.io/docs/editor-extension-data#bootstrap-data-for-documents-created-via-api) for usage.  > 📘 Standard Import > > When `content` is provided, it must conform to the Lucid Standard Import schema. For more information on how to use the Standard Import, refer to the extensive reference documentation [here](doc:overview-si). > > For examples of how to use the Standard Import, refer to the `/standard-import` folder in Lucid's repository of [Sample Lucid REST Applications](https://github.com/lucidsoftware/sample-lucid-rest-applications/tree/main/standard-import). This repo also contains some example `.zip` Standard Import files you can reference or use in your own projects.  ## Valid Authentication Methods  **API Key Grants:** - `DocumentEdit`  **OAuth 2.0 User Token Scopes:** - `lucidchart.document.content` - `lucidchart.document.app.folder` - `lucidspark.document.content` - `lucidspark.document.app.folder`
+- [Create from Standard Import File](https://lucid.readme.io/reference/createdocumentwithstandardimport.md): Creates a new document from a Lucid Standard Import file (`.zip` archive) uploaded as multipart/form-data. Requires `file`, `type`, and `product`. Optionally, a `title` and `parent` folder can be provided. If no `title` is provided, the new document's title will be the imported filename.  > 📘 > > This endpoint can only create a new Lucidchart or Lucidspark document. It cannot modify an existing document's contents.  > 📘 ##### Document Creation Location > > When there is no `parent` field on the request, the new document will be created in a default location depending on the authorizing token's scopes. > > - If the token authorizing the request uses one of the `document.app` scopes, then the document will be created in an `app-specific folder`. > - If one of the `document.content` scopes is used, the document will be created in the user's 'My Documents folder'. > - If both types of scopes are authorized on the token, the `document.content` behavior will take priority and the document will be created in the user's 'My Documents' folder.  > 📘 Standard Import > > For more information on how to use the Standard Import, refer to the extensive reference documentation [here](doc:overview-si). > > For examples of how to use the Standard Import, refer to the `/standard-import` folder in Lucid's repository of [Sample Lucid REST Applications](https://github.com/lucidsoftware/sample-lucid-rest-applications/tree/main/standard-import). This repo also contains some example `.zip` Standard Import files you can reference or use in your own projects.  ## Valid Authentication Methods  **API Key Grants:** - `DocumentEdit`  **OAuth 2.0 User Token Scopes:** - `lucidchart.document.content` - `lucidchart.document.app.folder` - `lucidspark.document.content` - `lucidspark.document.app.folder`
+- [Create from External File](https://lucid.readme.io/reference/importdocument.md): Imports an external non-Lucid file as a new document within Lucid. The file is uploaded as multipart/form-data. Requires `file`, `type`, and `product`. Optionally, a `title` and `parent` folder can be provided. If no `title` is provided, the new document's title will be the imported filename.  > 📘 > > This endpoint can only create a new Lucidchart or Lucidspark document. It cannot modify an existing document's contents.  > 📘 ##### Document Creation Location > > When there is no `parent` field on the request, the new document will be created in a default location depending on the authorizing token's scopes. > > - If the token authorizing the request uses one of the `document.app` scopes, then the document will be created in an `app-specific folder`. > - If one of the `document.content` scopes is used, the document will be created in the user's 'My Documents folder'. > - If both types of scopes are authorized on the token, the `document.content` behavior will take priority and the document will be created in the user's 'My Documents' folder.  > 📘 Board import > > - The `board` import type only accepts pdfs that are exports of digital whiteboards. > - The `board` import type can only be authorized by users with a Lucidspark Enterprise license. > - The `board` import type is experimental and importing the same board may produce varying results over time.  ## Valid Authentication Methods  **API Key Grants:** - `DocumentEdit`  **OAuth 2.0 User Token Scopes:** - `lucidchart.document.content` - `lucidchart.document.app.folder` - `lucidspark.document.content` - `lucidspark.document.app.folder`
+- [Create Asynchronously](https://lucid.readme.io/reference/importdocumentlongrunning.md): Starts an asynchronous import of a document file. This endpoint will immediately reserve a document ID, but the document is not necessarily created nor populated until the job has succeeded.   The uploaded file must not exceed 50 MB.
+- [Get Document Creation Job Status](https://lucid.readme.io/reference/importdocumentlongrunningstatus.md): Retrieves the status of an asynchronous document import. When the job succeeds, `response.document` contains the imported document resource.
+- [Copy Document](https://lucid.readme.io/reference/copydocument.md): Copies one of the requesting user's existing documents, with the specified title. Requires `title` and `template` (the ID of the document to copy). Optionally, a `parent` folder can be provided. Note that collaborator permissions are not transferred to the copied document.  > 📘 > > This endpoint can only create a new Lucidchart or Lucidspark document. It cannot modify an existing document's contents.  > 📘 ##### Document Creation Location > > When there is no `parent` field on the request, the new document will be created in a default location depending on the authorizing token's scopes. > > - If the token authorizing the request uses one of the `document.app` scopes, then the document will be created in an `app-specific folder`. > - If one of the `document.content` scopes is used, the document will be created in the user's 'My Documents folder'. > - If both types of scopes are authorized on the token, the `document.content` behavior will take priority and the document will be created in the user's 'My Documents' folder.  ## Valid Authentication Methods  **API Key Grants:** - `DocumentEdit`  **OAuth 2.0 User Token Scopes:** - `lucidchart.document.content` - `lucidchart.document.app.folder` - `lucidspark.document.content` - `lucidspark.document.app.folder`
+- [Search Account Documents](https://lucid.readme.io/reference/searchaccountdocuments.md): Returns a list of all documents belonging to the requesting user's account, sorted by created date. This API is exclusive to Enterprise Shield accounts. The endpoint supports pagination and has a per-account rate limit of 300 requests per 5 seconds.
+- [Get/Export Document](https://lucid.readme.io/reference/getorexportdocument.md): Retrieves information about the requested document or exports it as an image.  **Get Document:** Requires at least read-only access. Document owner information is only returned if the requesting user has view access and the document is unpublished. If published, the user must be at least a collaborator.  **Export Document:** Exports a given document in a specified image format. When exporting oversized images, the resolution may be automatically scaled down to enable performant API requests.  **Admin flow:** Account owners and document admins can access any document belonging to their account without needing a direct share by setting the `Lucid-Request-As: admin` header and authenticating with an admin scope or `DocumentAdmin` API key grant.
+- [Trash Document](https://lucid.readme.io/reference/trashdocument.md): Moves the specified document to the trash for the requesting user.  If the document is shared or part of a team folder, other users will still have access to the document. Requires the user to be the owner of the requested document or have the appropriate team folder permissions.
+- [Search Documents](https://lucid.readme.io/reference/searchdocuments.md)
+- [Document Contents](https://lucid.readme.io/reference/getdocumentcontent.md): Retrieves information about the contents of the requested Lucidchart or Lucidspark document.  Due to the evolving nature of Lucid documents, an unchanged document may produce varying results over time.
+- [Update Document](https://lucid.readme.io/reference/updatedocument.md): Updates properties of an existing document. Supports partial updates via JSON for title, parent, and classification.  Supports moving documents into (but not out of) repositories by providing a repo_-prefixed repository ID as the parent.  **Admin flow:** Account owners and document admins can update the custom tags or classification ID of any document belonging to their account without needing a direct share by setting the `Lucid-Request-As: admin` header and authenticating with a non-read-only admin scope or `DocumentAdmin` API key grant. Title, parent, and status ID updates are not supported in the admin flow.
+- [Export Document Asynchronously](https://lucid.readme.io/reference/exportdocumentlongrunning.md): Starts an asynchronous export of one or more document pages.   **Admin flow:** Account owners and document admins can export any document in their account by setting `Lucid-Request-As: admin` and authenticating with an admin scope or `DocumentAdmin` API key grant.
+- [Get Document Export Job Status](https://lucid.readme.io/reference/exportdocumentlongrunningstatus.md): Retrieves the status of an asynchronous document export. When the job succeeds, the response will contain a URL for downloading the export, which is valid for 1 hour from when the status request was made.
+- [Create Asynchronously](https://lucid.readme.io/reference/importdocumentlongrunning.md): Starts an asynchronous import of a document file. This endpoint will immediately reserve a document ID, but the document is not necessarily created nor populated until the job has succeeded.   The uploaded file must not exceed 50 MB.
+- [Get Document Creation Job Status](https://lucid.readme.io/reference/importdocumentlongrunningstatus.md): Retrieves the status of an asynchronous document import. When the job succeeds, `response.document` contains the imported document resource.
+- [Document Embedding](https://lucid.readme.io/reference/document-embedding.md)
+- [Embed Viewer](https://lucid.readme.io/reference/documentembeds.md): Display an embed within an iframe. If no embed id was included when creating the token, the iframe first displays a document picker where the user can create and configure a new embed. If an embed id was included, the iframe displays either an embedded document viewer, an embedded editor, or an embed configuration page depending on the token request body and embed settings.
+- [Generate Embed Session Token](https://lucid.readme.io/reference/documentembedstoken.md): Generates a short-lived, limited-scope temporary access token to allow your app to display embedded Lucid documents in an iframe. The token allows the embedding website to load the document picker and document viewer, but does not grant access to any additional resource within Lucid.
+- [Folders](https://lucid.readme.io/reference/folders.md)
+- [Get Folder](https://lucid.readme.io/reference/getfolder.md): Retrieves information about the requested folder.
+- [Update Folder](https://lucid.readme.io/reference/updatefolder.md): Allows the requester to modify certain fields on a folder.  When updating the parent field, the folder moves to the new parent location while its contents remain intact. The requesting user must have both edit and share access to both the old and new parent folders, or the entire update will fail.  It is not permitted to update the parent field on Team Folders. Moving folders into or out of Team Folders may encounter permission-related errors, but once a folder is within a Team Folder, reorganization among descendants within that Team Folder can proceed without permission issues.
+- [Create Folder](https://lucid.readme.io/reference/createfolder.md): Creates a new folder.
+- [Trash Folder](https://lucid.readme.io/reference/trashfolder.md): Moves the given folder and all of its contents into the trash.
+- [Restore Folder](https://lucid.readme.io/reference/restorefolder.md): Moves a trashed folder and all of its contents back to their original pre-trash locations.
+- [Search Folders](https://lucid.readme.io/reference/searchfolders.md): Retrieves information about folders the authenticated user has at least read-only access to. Admin requests using the `Lucid-Request-As: admin` header return all account folders; this capability is exclusive to Enterprise Shield accounts. Results are sorted by creation date and paginated. Rate limited to 300 requests per 5 seconds per account.
+- [List Folder Contents](https://lucid.readme.io/reference/listfoldercontents.md): Retrieves basic information about the contents of a given folder. Results are paginated.
+- [List Root Folder Contents](https://lucid.readme.io/reference/listrootfoldercontents.md): Retrieves basic information about the contents of the root folder. Results are paginated.
+- [List App Folder Contents](https://lucid.readme.io/reference/listappfoldercontents.md): Lists the contents of the OAuth2 client's app project folder for the authenticated user. The app project folder is automatically resolved from the OAuth2 client ID associated with the access token.
+- [Sharing](https://lucid.readme.io/reference/sharing.md)
+- [Share Link Security](https://lucid.readme.io/reference/share-link-security.md)
+- [Accept Share Links](https://lucid.readme.io/reference/acceptsharelink.md): Accepts a share link for a document or folder on behalf of the authenticated user, granting them access to the shared resource.
+- [Get Document Share Link](https://lucid.readme.io/reference/getdocumentsharelink.md): Retrieves information about a share link on the specified document. This endpoint will only retrieve information about share links created by the same OAuth2.0 client.
+- [Update Document Share Link](https://lucid.readme.io/reference/updatedocumentsharelink.md): Updates an existing share link's configuration settings on a document. Share links will only be updatable by the OAuth2.0 client that created them. All fields are optional; omitted settings retain their existing values.
+- [Delete Document Share Link](https://lucid.readme.io/reference/deletedocumentsharelink.md): Deletes a share link on a document. This endpoint will only delete share links that were created by the same OAuth2.0 client making the request.
+- [Create Document Share Link](https://lucid.readme.io/reference/createdocumentsharelink.md): Creates a new share link on the provided document with the provided settings. The linkSecurity parameter is configurable only for enterprise license accounts but remains required for team accounts.
+- [Get Folder Share Link](https://lucid.readme.io/reference/getfoldersharelink.md): Retrieves information about a share link on a given folder. This endpoint will only retrieve information about share links created by the same OAuth2.0 client.
+- [Update Folder Share Link](https://lucid.readme.io/reference/updatefoldersharelink.md): Updates an existing share link to the provided settings. If any settings are omitted, the existing settings are preserved. Share links are only updatable by the OAuth2.0 client that created them. If an expiration is provided outside the account-defined limits, it will be clamped to the maximum allowed time.
+- [Delete Folder Share Link](https://lucid.readme.io/reference/deletefoldersharelink.md): Deletes a share link from a folder. This endpoint will only delete share links created by the same OAuth2.0 client.
+- [Create Folder Share Link](https://lucid.readme.io/reference/createfoldersharelink.md): Creates a new share link on the provided folder with the provided settings. The `linkSecurity` parameter is only configurable for enterprise license users but is still required for team accounts. If an expiration is provided outside account-defined limits, it will be clamped to the maximum allowed time.
+- [Transfer User Content](https://lucid.readme.io/reference/transferusercontent.md): Transfers ownership of a user's Lucid documents, folders, custom shape libraries, and Lucidscale objects to another user on the same account. The recipient gains ownership and edit/share permissions for team folders the original owner could access. Notification emails are sent to both users upon completion.
+- [Users](https://lucid.readme.io/reference/users-1.md)
+- [Get User](https://lucid.readme.io/reference/getuser.md): Retrieves information about the requested user. The requested user must be on the authenticated account.
+- [List Users](https://lucid.readme.io/reference/listusers.md): Retrieves information about all users on the authenticated account.
+- [Create User](https://lucid.readme.io/reference/createuser.md): Creates a new user and adds them to the authenticated account. Licenses are automatically assigned to the new user based on the account's auto-licensing configuration. Only available to Enterprise accounts.
+- [Search Users By Email](https://lucid.readme.io/reference/useremailsearch.md): Retrieves information about all users on the authenticated account whose email is provided. Matching is case-insensitive and requires an exact match; emails that do not correspond to a user on the account are excluded from results.
+- [Get Profile](https://lucid.readme.io/reference/getuserprofile.md): Retrieves basic information about the authenticated user.
+- [Unfurling](https://lucid.readme.io/reference/unfurling.md)
+- [Describe Link](https://lucid.readme.io/reference/describelink.md): Retrieve metadata about a Lucid document from its URL, including the document title, product, and type. Use this to generate rich link previews (unfurling) in external applications.
+- [Direct Embed](https://lucid.readme.io/reference/directembed.md): Display an embed within an iframe. If the clientId is valid with the registered embed domain in the developer portal, the iframe will show either a login page or an embedded document viewer depending on the user's authorization status via browser cookies.
+- [Embedding Utils](https://lucid.readme.io/reference/embedding-utils.md)
+- [Get Document Embed](https://lucid.readme.io/reference/getembedinformation.md): Retrieves limited metadata about the embedded document. If the embed is a snapshot-version embed, the metadata will be drawn from the state of the document at the time that the snapshot was created.
+- [Delete Document Embed](https://lucid.readme.io/reference/deleteembed.md): Deletes an existing document embed. This will cause the document viewer to fail when attempting to load this document embed.
+- [Get Document Embed Document](https://lucid.readme.io/reference/getembeddocument.md): Retrieves limited metadata about an embedded document. If the embed is a snapshot-version embed, the metadata will be drawn from the state of the document at the time that the snapshot was created.
+- [Create Document Embed](https://lucid.readme.io/reference/createembed.md): Creates an embed resource associated with a particular document. The request must be authenticated with an OAuth 2.0 token that has access to the document being embedded.
+- [Change Document Embed Version](https://lucid.readme.io/reference/changeembedversion.md): Updates the version type of an existing document embed. When called with an embedVersion of "snapshot-version", the endpoint associates the existing embed with a snapshot of the document's current state. Updating an embed's version to snapshot-version cannot be reversed.
+- [Generate Document Picker Token](https://lucid.readme.io/reference/generatedocumentpickertoken.md): Generates a token that can be used to embed a document picker for the specified product. Only documents for the specified product are shown in the picker.
+- [Embedded Document Picker](https://lucid.readme.io/reference/embeddeddocumentpicker.md): Displays an embedded document picker within an iframe, allowing users to browse and select documents. Supports optional document creation and auto-selection of newly created documents.
+- [Audit Logs](https://lucid.readme.io/reference/audit-logs.md)
+- [Actors And Targets](https://lucid.readme.io/reference/actors-and-targets-1.md)
+- [Audit Log Events](https://lucid.readme.io/reference/audit-log-events.md)
+- [Administration](https://lucid.readme.io/reference/administration.md)
+- [API](https://lucid.readme.io/reference/api.md)
+- [Content](https://lucid.readme.io/reference/content.md)
+- [Logins](https://lucid.readme.io/reference/logins.md)
+- [Team](https://lucid.readme.io/reference/team.md)
+- [User](https://lucid.readme.io/reference/user.md)
+- [Get Audit Logs](https://lucid.readme.io/reference/getauditlogs.md): Retrieves audit log events for the account. This API is exclusive to Enterprise Shield accounts. This endpoint is paginated.
+- [Query Audit Logs](https://lucid.readme.io/reference/queryauditlogs.md): Queries audit log events for the account using filter criteria specified in the request body. This API is exclusive to Enterprise Shield accounts. This endpoint is paginated.
+- [Teams](https://lucid.readme.io/reference/teams.md)
+- [List Teams](https://lucid.readme.io/reference/listteams.md): Retrieves information about teams the authenticated user has at least read-only access to.  The list of teams returned depends on whether the request was made using user or admin permissions. User permissions return teams the requesting user has access to. Admin permissions return all teams belonging to the account.  This endpoint is paginated.
+- [Create Team](https://lucid.readme.io/reference/createteam.md): Creates a new team for the authenticated user, populated with the given team members. Hidden teams cannot be created via the REST API.  Whether the requesting user is automatically added to the team depends on the permission type. With user permissions, the user is automatically added to the team. With admin permissions, the user is not automatically added.
+- [Get Team](https://lucid.readme.io/reference/getteam.md): Retrieves information about a requested team. The response depends on the permission type used: user permissions require that the authenticated user has access to the team, while admin permissions allow access to any team belonging to the account.
+- [Update Team](https://lucid.readme.io/reference/updateteam.md): Updates the properties of an existing team, such as its name or type. With user permissions, the team must be one the requesting user has edit access to. With admin permissions, any team belonging to the account can be updated.
+- [List Users on Team](https://lucid.readme.io/reference/listusersonteam.md): Retrieves basic information about users on a specified team. With user permissions, the authenticated user must have access to the team. With admin permissions, users from any team belonging to the account can be retrieved.  This endpoint is paginated.
+- [Add Users to Team](https://lucid.readme.io/reference/adduserstoteam.md): Adds users to a specified team with assigned roles. With user permissions, the team must be one the requesting user has edit access to. With admin permissions, users can be added to any team belonging to the account.
+- [Remove Users from Team](https://lucid.readme.io/reference/removeusersfromteam.md): Removes users from a specified team. With user permissions, the team must be one the requesting user has edit access to. With admin permissions, users can be removed from any team belonging to the account.
+- [Archive Team](https://lucid.readme.io/reference/archiveteam.md): Archives a team, making it inactive. With user permissions, the team must be one the requesting user has edit access to. With admin permissions, any team belonging to the account can be archived.
+- [Restore Team](https://lucid.readme.io/reference/restoreteam.md): Restores a previously archived team. With user permissions, the team must be one the requesting user has edit access to. With admin permissions, any team belonging to the account can be restored.
+- [Cloud](https://lucid.readme.io/reference/cloud.md)
+- [Job-based (asynchronous) endpoints](https://lucid.readme.io/reference/job-based-asynchronous-endpoints.md)
+- [Credentials](https://lucid.readme.io/reference/credentials.md)
+- [Generic](https://lucid.readme.io/reference/-generic-.md)
+- [Get Credential](https://lucid.readme.io/reference/getcredential.md): Get details about a specific credential.
+- [List Credentials](https://lucid.readme.io/reference/listcredentials.md): List all credentials on your Lucid account.
+- [Delete Credential](https://lucid.readme.io/reference/deletecredential.md): Delete the specified credential.
+- [Get AWS External ID](https://lucid.readme.io/reference/getawsexternalid.md): Get the user AWS External ID. A user should use this external ID to create a trust relationship with AWS, which is required to create a credential.
+- [Create AWS Credential](https://lucid.readme.io/reference/createawscredential.md): Create a new credential for AWS. The external ID generated in the request to Get AWS External ID will be retrieved and included in the request to AWS automatically.
+- [Update AWS Credential](https://lucid.readme.io/reference/updateawscredential.md): Update an existing credential for AWS.
+- [Create Azure Credential](https://lucid.readme.io/reference/createazurecredential.md): Create a new credential for Azure.
+- [Update Azure Credential](https://lucid.readme.io/reference/updateazurecredential.md): Update an existing credential for Azure.
+- [Create Google Cloud Credential](https://lucid.readme.io/reference/creategooglecloudcredential.md): Create a new credential for Google Cloud.
+- [Update Google Cloud Credential](https://lucid.readme.io/reference/updategooglecloudcredential.md): Update an existing credential for Google Cloud.
+- [Data Sources](https://lucid.readme.io/reference/data-sources.md)
+- [Generic](https://lucid.readme.io/reference/-generic--1.md)
+- [Get Data Source](https://lucid.readme.io/reference/getdatasource-1.md): Gets a specific existing data source. If the creator of the data source is the user making the request, the link parameters will be returned with the data source.
+- [List Data Sources](https://lucid.readme.io/reference/listdatasources.md): List all data sources on your Lucid account.
+- [Delete Data Source](https://lucid.readme.io/reference/deletedatasource-1.md): Delete the specified data source and all related data (collections, schema, items, link parameters). Once deleted, none of the information can be recovered.
+- [Create AWS Data Source](https://lucid.readme.io/reference/createawsdatasource.md): Create a new data source from AWS data. Returns a jobId that can be used to retrieve the status from the Get "Create AWS Data Source" Job Status endpoint.
+- [Get "Create AWS Data Source" Job Status](https://lucid.readme.io/reference/getcreateawsdatasourcejobstatus.md): Get the status of a data source creation request started by Create AWS Data Source.
+- [Update AWS Data Source](https://lucid.readme.io/reference/updateawsdatasource.md): Update an existing AWS data source to reflect the latest state of data in AWS. Optionally updates the resources and regions included in the data source as well. Returns a jobId that can be used to check the status via the Get "Update AWS Data Source" Job Status endpoint.
+- [Update AWS Data Source from File](https://lucid.readme.io/reference/updateawsdatasourcefromfile.md): Update an existing AWS data source to reflect the state represented in a JSON file exported from AWS directly via the AWS CLI. Returns a jobId that can be used to monitor progress through the Get "Update AWS Data Source" Job Status endpoint.
+- [Get "Update AWS Data Source" Job Status](https://lucid.readme.io/reference/getupdateawsdatasourcejobstatus.md): Get the status of a data source update request started by Update AWS Data Source or Update AWS Data Source from File.
+- [Edit AWS Data Source](https://lucid.readme.io/reference/editawsdatasource.md): Edit the metadata of an AWS data source. Metadata refers to any property of the data source that is not related to the data source's cloud data itself.
+- [Create Azure Data Source](https://lucid.readme.io/reference/createazuredatasource.md): Create a new data source from Azure data. Returns a jobId that can be used to check the status of the operation through the Get "Create Azure Data Source" Job Status endpoint.
+- [Get "Create Azure Data Source" Job Status](https://lucid.readme.io/reference/getcreateazuredatasourcejobstatus.md): Get the status of a data source creation request started by Create Azure Data Source.
+- [Update Azure Data Source](https://lucid.readme.io/reference/updateazuredatasource.md): Update an existing Azure data source to reflect the latest state of data in Azure. Optionally updates the resources included in the data source as well. Returns a jobId that can be used to monitor progress through the Get "Update Azure Data Source" Job Status endpoint.
+- [Update Azure Data Source from File](https://lucid.readme.io/reference/updateazuredatasourcefromfile.md): Update an existing Azure data source to reflect the state represented in a JSON file exported from Azure directly via the Azure CLI. Returns a jobId that can be used to monitor progress through the Get "Update Azure Data Source" Job Status endpoint.
+- [Get "Update Azure Data Source" Job Status](https://lucid.readme.io/reference/getupdateazuredatasourcejobstatus.md): Get the status of a data source update request started by Update Azure Data Source or Update Azure Data Source from File.
+- [Edit Azure Data Source](https://lucid.readme.io/reference/editazuredatasource.md): Edit the metadata of an Azure data source. Metadata refers to any property of the data source that is not related to the data source's cloud data itself.
+- [Create Google Cloud Data Source](https://lucid.readme.io/reference/creategoogleclouddatasource.md): Create a new data source from Google Cloud data. Returns a jobId that can be used to check the status of the operation through the Get "Create Google Cloud Data Source" Job Status endpoint.
+- [Get "Create Google Cloud Data Source" Job Status](https://lucid.readme.io/reference/getcreategoogleclouddatasourcejobstatus.md): Get the status of a data source creation request started by Create Google Cloud Data Source.
+- [Update Google Cloud Data Source](https://lucid.readme.io/reference/updategoogleclouddatasource.md): Update an existing Google Cloud data source to reflect the latest state of data in Google Cloud. Optionally updates the resources included in the data source as well. Returns a jobId that can be used to monitor progress through the Get "Update Google Cloud Data Source" Job Status endpoint.
+- [Update Google Cloud Data Source from File](https://lucid.readme.io/reference/updategoogleclouddatasourcefromfile.md): Update an existing Google Cloud data source to reflect the state represented in a JSON file exported from Google Cloud directly via the Google Cloud CLI. Returns a jobId that can be used to monitor progress through the Get "Update Google Cloud Data Source" Job Status endpoint.
+- [Get "Update Google Cloud Data Source" Job Status](https://lucid.readme.io/reference/getupdategoogleclouddatasourcejobstatus.md): Get the status of a data source update request started by Update Google Cloud Data Source or Update Google Cloud Data Source from File.
+- [Edit Google Cloud Data Source](https://lucid.readme.io/reference/editgoogleclouddatasource.md): Edit the metadata of a Google Cloud data source. Metadata refers to any property of the data source that is not related to the data source's cloud data itself.
+- [Get Fully Supported AWS Resources](https://lucid.readme.io/reference/getfullysupportedawsresources.md): Get a list of all AWS resources fully supported by Lucid Cloud.
+- [Get Supported AWS Regions](https://lucid.readme.io/reference/getsupportedawsregions.md): Get a list of all AWS regions supported by Lucid Cloud.
+- [Get Fully Supported Azure Resources](https://lucid.readme.io/reference/getfullysupportedazureresources.md): Get a list of all Azure resources fully supported by Lucid Cloud.
+- [Get Fully Supported Google Cloud Resources](https://lucid.readme.io/reference/getfullysupportedgooglecloudresources.md): Get a list of all Google Cloud resources fully supported by Lucid Cloud.
+- [Models](https://lucid.readme.io/reference/models.md)
+- [Create Model from AWS Data Source](https://lucid.readme.io/reference/createmodelfromawsdatasource.md): Create a new model containing the visualization of data from an AWS data source. Returns a jobId that can be used to retrieve the status from the Get "Create Model from AWS Data Source" Job Status endpoint.
+- [Get "Create Model from AWS Data Source" Job Status](https://lucid.readme.io/reference/getawsmodelcreationjobstatus.md): Get the status of a model creation request started by Create Model from AWS Data Source.
+- [Sync Model with AWS Data Source](https://lucid.readme.io/reference/syncmodelfromawsdatasource.md): Sync an existing model containing the visualization of data from an AWS data source, so that it is up-to-date with the data in that data source. Returns a jobId that can be used to get the status from Get "Sync Model with AWS Data Source" Job Status.
+- [Get "Sync Model with AWS Data Source" Job Status](https://lucid.readme.io/reference/getawsmodelsyncjobstatus.md): Get the status of a model sync request started by Sync Model with AWS Data Source.
+- [Create Model from Azure Data Source](https://lucid.readme.io/reference/createmodelfromazuredatasource.md): Create a new model containing the visualization of data from an Azure data source. Returns a jobId that can be used to retrieve the status from the Get "Create Model from Azure Data Source" Job Status endpoint.
+- [Get "Create Model from Azure Data Source" Job Status](https://lucid.readme.io/reference/getazuremodelcreationjobstatus.md): Get the status of a model creation request started by Create Model from Azure Data Source.
+- [Sync Model with Azure Data Source](https://lucid.readme.io/reference/syncmodelfromazuredatasource.md): Sync an existing model containing the visualization of data from an Azure data source, so that it is up-to-date with the data in that data source. Returns a jobId that can be used to get the status from Get "Sync Model with Azure Data Source" Job Status.
+- [Get "Sync Model with Azure Data Source" Job Status](https://lucid.readme.io/reference/getazuremodelsyncjobstatus.md): Get the status of a model sync request started by Sync Model with Azure Data Source.
+- [Create Model from Google Cloud Data Source](https://lucid.readme.io/reference/createmodelfromgoogleclouddatasource.md): Create a new model containing the visualization of data from a Google Cloud data source. Returns a jobId that can be used to retrieve the status from the Get "Create Model from Google Cloud Data Source" Job Status endpoint.
+- [Get "Create Model from Google Cloud Data Source" Job Status](https://lucid.readme.io/reference/getgooglecloudmodelcreationjobstatus.md): Get the status of a model creation request started by Create Model from Google Cloud Data Source.
+- [Sync Model with Google Cloud Data Source](https://lucid.readme.io/reference/syncmodelfromgoogleclouddatasource.md): Sync an existing model containing the visualization of data from a Google Cloud data source, so that it is up-to-date with the data in that data source. Returns a jobId that can be used to get the status from Get "Sync Model with Google Cloud Data Source" Job Status.
+- [Get "Sync Model with Google Cloud Data Source" Job Status](https://lucid.readme.io/reference/getgooglecloudmodelsyncjobstatus.md): Get the status of a model sync request started by Sync Model with Google Cloud Data Source.
+- [Get Supported AWS View Templates](https://lucid.readme.io/reference/getsupportedawsviewtemplates.md): Get a list of all AWS view templates fully supported by Lucid Cloud.
+- [Get Supported Azure View Templates](https://lucid.readme.io/reference/getsupportedazureviewtemplates.md): Get a list of all Azure view templates fully supported by Lucid Cloud.
+- [Get Supported Google Cloud View Templates](https://lucid.readme.io/reference/getsupportedgooglecloudviewtemplates.md): Get a list of all Google Cloud view templates fully supported by Lucid Cloud.
+- [Repositories](https://lucid.readme.io/reference/repositories.md)
+- [List Repositories](https://lucid.readme.io/reference/listrepositories.md): Retrieves basic information for all repositories the authenticated user has permission to view.
+- [Create Repository](https://lucid.readme.io/reference/createrepository.md): Creates a new repository on the account.
+- [Get Repository](https://lucid.readme.io/reference/getrepository.md): Retrieves basic information for the requested repository, provided the user has at least read-only access.
+- [List Repository User Collaborators](https://lucid.readme.io/reference/listrepositoryusers.md): List users with roles on a repository.
+- [Create or Update Repository User Roles](https://lucid.readme.io/reference/addrepositoryusers.md): Manages user roles on a repository, allowing for updating of existing repository users or adding roles for new users on the repository.
+- [Remove Users from Repository](https://lucid.readme.io/reference/removerepositoryusers.md): Removes one or more users from a repository.
+- [List Repository Groups](https://lucid.readme.io/reference/listrepositorygroups.md): List groups with repository member access.
+- [Add Groups as Members on Repository](https://lucid.readme.io/reference/addrepositorygroups.md): Add Groups to a repository. Users in the Group will have repository member access to the specified repository.
+- [Remove Groups from Repository](https://lucid.readme.io/reference/removerepositorygroups.md): Removes one or more groups from a restricted repository.
+- [List Subscriptions](https://lucid.readme.io/reference/listsubscriptions.md): Lists all subscriptions on the authenticated user's Lucid account. This endpoint is paginated.
+- [Get Subscription](https://lucid.readme.io/reference/getsubscription.md): Retrieves details about a specific subscription on the account.
+- [Shape Libraries](https://lucid.readme.io/reference/shape-libraries.md): Retrieve the standard, custom or installed shape libraries available to the authenticated user.
+- [List Custom Shape Libraries](https://lucid.readme.io/reference/listcustomshapelibraries.md): Retrieves a paginated list of the custom shape libraries available to the authenticated user. Each entry contains only the library's ID.
+- [List Shapes in a Custom Shape Library](https://lucid.readme.io/reference/listcustomshapes.md): Retrieves a paginated list of the shapes available within a specific custom shape library. The libraryId and shapeId values together uniquely identify a shape.
+- [Get Custom Shape](https://lucid.readme.io/reference/getcustomshape.md): Retrieves the details of a single custom shape identified by its library and ID, including its default size and colors.
+- [List Installed Shape Libraries](https://lucid.readme.io/reference/listinstalledshapelibraries.md): Retrieves a paginated list of the shape libraries installed for the authenticated user. Each entry contains only the library's ID.
+- [List Shapes in an Installed Shape Library](https://lucid.readme.io/reference/listinstalledshapes.md): Retrieves a paginated list of the shapes available within a specific installed shape library. The libraryId and shapeId values together uniquely identify a shape.
+- [Get Installed Shape](https://lucid.readme.io/reference/getinstalledshape.md): Retrieves the details of a single installed shape identified by its library and ID, including its default size and colors.
+- [List Standard Shape Libraries](https://lucid.readme.io/reference/liststandardshapelibraries.md): Retrieves a paginated list of the built-in Lucid shape libraries that are available to use on documents (for example, flowchart, UML, and network). Each entry contains only the library's ID.
+- [List Shapes in a Standard Shape Library](https://lucid.readme.io/reference/liststandardshapes.md): Retrieves a paginated list of the shapes available within a specific standard shape library. The libraryId and shapeId values together uniquely identify a shape.
+- [Get Standard Shape](https://lucid.readme.io/reference/getstandardshape.md): Retrieves the details of a single standard shape identified by its library and ID, including its default size and colors.
+- [Lucid SCIM API](https://lucid.readme.io/reference/overview-scim.md): Introduction to Lucid's SCIM API
+- [Get User](https://lucid.readme.io/reference/getuser-1.md): Get a specific user on the account.
+- [Create User](https://lucid.readme.io/reference/createuser-1.md): Create a new user.
+- [Modify User](https://lucid.readme.io/reference/modifyuserput.md): Modify an existing user. To deactivate a user, set the `active` field to `false`.
+- [Modify User](https://lucid.readme.io/reference/modifyuserpatch.md): Modify an existing user. To deactivate a user, set the `active` field to `false`.
+- [Delete User](https://lucid.readme.io/reference/deleteuser.md): > ❗️ This is a hard delete. We recommend deactivating users instead of deleting them. To deactivate a user, use PUT or PATCH and set the active field to false.  Delete a user from the account. Note that certain users cannot be deleted, such as account owners and default document owners.
+- [Get All Users](https://lucid.readme.io/reference/getallusers.md): Gets all users on an account.
+- [Get Group or Team](https://lucid.readme.io/reference/getgroup.md): Get a specific org group or team on the account.
+- [Get All Groups or Teams](https://lucid.readme.io/reference/getallgroups.md): Gets all org groups or teams on an account. Supports pagination and filtering.
+- [Create Group or Team](https://lucid.readme.io/reference/creategroup.md): Create a new org group or team, or restore a matching archived, closed team.
+- [Modify Group or Team](https://lucid.readme.io/reference/modifygroupput.md): Modify an existing org group or team.
+- [Modify Group or Team](https://lucid.readme.io/reference/modifygrouppatch.md): Modify an existing org group or team.
+- [Delete Group or Team](https://lucid.readme.io/reference/deletegroup.md): Delete an existing org group or archive an existing team.
+- [Get Schema](https://lucid.readme.io/reference/getschema.md): Get a specific Lucid resource schema.
+- [Get All Schemas](https://lucid.readme.io/reference/getallschemas.md): Gets all Lucid resource schemas.
+- [Get Service Provider Config](https://lucid.readme.io/reference/getserviceproviderconfig.md): Get the service provider configuration.
+- [Overview](https://lucid.readme.io/reference/overview-sdk.md)
+- [globals](https://lucid.readme.io/reference/globals-sdk.md)
+- [BaseFieldTypeArray](https://lucid.readme.io/reference/basefieldtypearray-sdk.md)
+- [BlockProxy](https://lucid.readme.io/reference/blockproxy-sdk.md)
+- [CardBlockProxy](https://lucid.readme.io/reference/cardblockproxy-sdk.md)
+- [ColorLegendEntryProxy](https://lucid.readme.io/reference/colorlegendentryproxy-sdk.md)
+- [CollectionEnumFieldType](https://lucid.readme.io/reference/collectionenumfieldtype-sdk.md)
+- [CollectionProxy](https://lucid.readme.io/reference/collectionproxy-sdk.md)
+- [CustomBlockProxy](https://lucid.readme.io/reference/customblockproxy-sdk.md)
+- [DataConnector](https://lucid.readme.io/reference/dataconnector-sdk.md)
+- [DataConnectorAction](https://lucid.readme.io/reference/dataconnectoraction-sdk.md)
+- [DataConnectorActionContext](https://lucid.readme.io/reference/dataconnectoractioncontext-sdk.md)
+- [DataConnectorManageWebhookAction](https://lucid.readme.io/reference/dataconnectormanagewebhookaction-sdk.md)
+- [DataConnectorPatchAction](https://lucid.readme.io/reference/dataconnectorpatchaction-sdk.md)
+- [DataConnectorAsynchronousAction](https://lucid.readme.io/reference/dataconnectorasynchronousaction-sdk.md)
+- [DataConnectorRequestState](https://lucid.readme.io/reference/dataconnectorrequeststate-sdk.md)
+- [DataConnectorRequestError](https://lucid.readme.io/reference/dataconnectorrequesterror-sdk.md)
+- [DataConnectorClient](https://lucid.readme.io/reference/dataconnectorclient-sdk.md)
+- [DataConnectorResponseError](https://lucid.readme.io/reference/dataconnectorresponseerror-sdk.md)
+- [DataConnectorSynchronousAction](https://lucid.readme.io/reference/dataconnectorsynchronousaction-sdk.md)
+- [DataConnectorRunError](https://lucid.readme.io/reference/dataconnectorrunerror-sdk.md)
+- [DataError](https://lucid.readme.io/reference/dataerror-sdk.md)
+- [DataItemProxy](https://lucid.readme.io/reference/dataitemproxy-sdk.md)
+- [DataProxy](https://lucid.readme.io/reference/dataproxy-sdk.md)
+- [DataSourceProxy](https://lucid.readme.io/reference/datasourceproxy-sdk.md)
+- [DocumentProxy](https://lucid.readme.io/reference/documentproxy-sdk.md)
+- [DataSourceClient](https://lucid.readme.io/reference/datasourceclient-sdk.md)
+- [ERDBlockProxy](https://lucid.readme.io/reference/erdblockproxy-sdk.md)
+- [ERDFieldProxy](https://lucid.readme.io/reference/erdfieldproxy-sdk.md)
+- [EditorClient](https://lucid.readme.io/reference/editorclient-sdk.md)
+- [FieldTypeArray](https://lucid.readme.io/reference/fieldtypearray-sdk.md)
+- [FormattedPrimaryKey](https://lucid.readme.io/reference/formattedprimarykey-sdk.md)
+- [HumanReadableError](https://lucid.readme.io/reference/humanreadableerror-sdk.md)
+- [ElementProxy](https://lucid.readme.io/reference/elementproxy-sdk.md)
+- [GroupProxy](https://lucid.readme.io/reference/groupproxy-sdk.md)
+- [IframeUI](https://lucid.readme.io/reference/iframeui-sdk.md)
+- [ItemsPatchExhaustive](https://lucid.readme.io/reference/itemspatchexhaustive-sdk.md)
+- [ItemsPatchInexhaustive](https://lucid.readme.io/reference/itemspatchinexhaustive-sdk.md)
+- [ItemProxy](https://lucid.readme.io/reference/itemproxy-sdk.md)
+- [LegendBlockProxy](https://lucid.readme.io/reference/legendblockproxy-sdk.md)
+- [LegendEntryProxy](https://lucid.readme.io/reference/legendentryproxy-sdk.md)
+- [LineProxy](https://lucid.readme.io/reference/lineproxy-sdk.md)
+- [LiteralFieldType](https://lucid.readme.io/reference/literalfieldtype-sdk.md)
+- [LinkUnfurlBlockProxy](https://lucid.readme.io/reference/linkunfurlblockproxy-sdk.md)
+- [LucidCardIntegration](https://lucid.readme.io/reference/lucidcardintegration-sdk.md)
+- [LucidCardIntegrationRegistry](https://lucid.readme.io/reference/lucidcardintegrationregistry-sdk.md)
+- [MapProxy](https://lucid.readme.io/reference/mapproxy-sdk.md)
+- [Menu](https://lucid.readme.io/reference/menu-sdk.md)
+- [MockDataConnectorClient](https://lucid.readme.io/reference/mockdataconnectorclient-sdk.md)
+- [MockDataSourceClient](https://lucid.readme.io/reference/mockdatasourceclient-sdk.md)
+- [MockSignatureValidator](https://lucid.readme.io/reference/mocksignaturevalidator-sdk.md)
+- [Modal](https://lucid.readme.io/reference/modal-sdk.md)
+- [PageProxy](https://lucid.readme.io/reference/pageproxy-sdk.md)
+- [NDimensionalFieldTypeArray](https://lucid.readme.io/reference/ndimensionalfieldtypearray-sdk.md)
+- [PatchChange](https://lucid.readme.io/reference/patchchange-sdk.md)
+- [PropertyStoreProxy](https://lucid.readme.io/reference/propertystoreproxy-sdk.md)
+- [Panel](https://lucid.readme.io/reference/panel-sdk.md)
+- [ShapeDataProxy](https://lucid.readme.io/reference/shapedataproxy-sdk.md)
+- [SignatureValidator](https://lucid.readme.io/reference/signaturevalidator-sdk.md)
+- [ShapeLegendEntryProxy](https://lucid.readme.io/reference/shapelegendentryproxy-sdk.md)
+- [ReferenceKeyProxy](https://lucid.readme.io/reference/referencekeyproxy-sdk.md)
+- [SwimLaneBlockProxy](https://lucid.readme.io/reference/swimlaneblockproxy-sdk.md)
+- [SwimLanePrimaryLaneProxy](https://lucid.readme.io/reference/swimlaneprimarylaneproxy-sdk.md)
+- [TableColumnProxy](https://lucid.readme.io/reference/tablecolumnproxy-sdk.md)
+- [TableBlockProxy](https://lucid.readme.io/reference/tableblockproxy-sdk.md)
+- [TableCellProxy](https://lucid.readme.io/reference/tablecellproxy-sdk.md)
+- [UserProxy](https://lucid.readme.io/reference/userproxy-sdk.md)
+- [TableRowProxy](https://lucid.readme.io/reference/tablerowproxy-sdk.md)
+- [Viewport](https://lucid.readme.io/reference/viewport-sdk.md)
+- [WriteableMapProxy](https://lucid.readme.io/reference/writeablemapproxy-sdk.md)
+- [Webhook](https://lucid.readme.io/reference/webhook-sdk.md)
+- [SimplePoint](https://lucid.readme.io/reference/simplepoint-sdk.md)
+- [actionsHeaderValidator](https://lucid.readme.io/reference/actionsheadervalidator-sdk.md)
+- [areDataGraphicIconIndexesEqual](https://lucid.readme.io/reference/aredatagraphiciconindexesequal-sdk.md)
+- [areDataGraphicImagesEqual](https://lucid.readme.io/reference/aredatagraphicimagesequal-sdk.md)
+- [arrayValidator](https://lucid.readme.io/reference/arrayvalidator-sdk.md)
+- [asAssertion](https://lucid.readme.io/reference/asassertion-sdk.md)
+- [badgePositionsEqual](https://lucid.readme.io/reference/badgepositionsequal-sdk.md)
+- [both](https://lucid.readme.io/reference/both-sdk.md)
+- [clip](https://lucid.readme.io/reference/clip-sdk.md)
+- [boxesOverlap](https://lucid.readme.io/reference/boxesoverlap-sdk.md)
+- [boxFrom4Points](https://lucid.readme.io/reference/boxfrom4points-sdk.md)
+- [boxCenter](https://lucid.readme.io/reference/boxcenter-sdk.md)
+- [convertStrokeStyleToBorder](https://lucid.readme.io/reference/convertstrokestyletoborder-sdk.md)
+- [combinedBoundingBox](https://lucid.readme.io/reference/combinedboundingbox-sdk.md)
+- [declareSchema](https://lucid.readme.io/reference/declareschema-sdk.md)
+- [decodeBase64](https://lucid.readme.io/reference/decodebase64-sdk.md)
+- [deserializeActions](https://lucid.readme.io/reference/deserializeactions-sdk.md)
+- [deserializeBaseFieldTypeDefinition](https://lucid.readme.io/reference/deserializebasefieldtypedefinition-sdk.md)
+- [deserializeBadgeEnumPosition](https://lucid.readme.io/reference/deserializebadgeenumposition-sdk.md)
+- [deserializeCollectionEnumFieldType](https://lucid.readme.io/reference/deserializecollectionenumfieldtype-sdk.md)
+- [deserializeFieldTypeArray](https://lucid.readme.io/reference/deserializefieldtypearray-sdk.md)
+- [deserializeFieldTypeDefinition](https://lucid.readme.io/reference/deserializefieldtypedefinition-sdk.md)
+- [deserializeNDimensionalFieldTypeArray](https://lucid.readme.io/reference/deserializendimensionalfieldtypearray-sdk.md)
+- [deserializeLiteralFieldType](https://lucid.readme.io/reference/deserializeliteralfieldtype-sdk.md)
+- [deserializeShadow](https://lucid.readme.io/reference/deserializeshadow-sdk.md)
+- [deserializeSimpleStaticDataGraphicSettings](https://lucid.readme.io/reference/deserializesimplestaticdatagraphicsettings-sdk.md)
+- [deserializeUpstreamConfig](https://lucid.readme.io/reference/deserializeupstreamconfig-sdk.md)
+- [either](https://lucid.readme.io/reference/either-sdk.md)
+- [encodeBase64](https://lucid.readme.io/reference/encodebase64-sdk.md)
+- [exclude](https://lucid.readme.io/reference/exclude-sdk.md)
+- [fieldTypesEqual](https://lucid.readme.io/reference/fieldtypesequal-sdk.md)
+- [enumValidator](https://lucid.readme.io/reference/enumvalidator-sdk.md)
+- [findProxyClass](https://lucid.readme.io/reference/findproxyclass-sdk.md)
+- [flatten](https://lucid.readme.io/reference/flatten-sdk.md)
+- [fromEntries](https://lucid.readme.io/reference/fromentries-sdk.md)
+- [generateIframeAttributes](https://lucid.readme.io/reference/generateiframeattributes-sdk.md)
+- [isArray](https://lucid.readme.io/reference/isarray-sdk.md)
+- [isAny](https://lucid.readme.io/reference/isany-sdk.md)
+- [isAtLeastLength](https://lucid.readme.io/reference/isatleastlength-sdk.md)
+- [isBinaryXHRResponse](https://lucid.readme.io/reference/isbinaryxhrresponse-sdk.md)
+- [isBaseFieldTypeDefinition](https://lucid.readme.io/reference/isbasefieldtypedefinition-sdk.md)
+- [isBoolean](https://lucid.readme.io/reference/isboolean-sdk.md)
+- [isBooleanOrEmptyString](https://lucid.readme.io/reference/isbooleanoremptystring-sdk.md)
+- [isBlockEndpointDefinition](https://lucid.readme.io/reference/isblockendpointdefinition-sdk.md)
+- [isBoxWithin](https://lucid.readme.io/reference/isboxwithin-sdk.md)
+- [isCollectionEnumFieldNames](https://lucid.readme.io/reference/iscollectionenumfieldnames-sdk.md)
+- [isCollectionEnumFieldType](https://lucid.readme.io/reference/iscollectionenumfieldtype-sdk.md)
+- [isBoundingBox](https://lucid.readme.io/reference/isboundingbox-sdk.md)
+- [isDate](https://lucid.readme.io/reference/isdate-sdk.md)
+- [isDef](https://lucid.readme.io/reference/isdef-sdk.md)
+- [isDefAndNotNull](https://lucid.readme.io/reference/isdefandnotnull-sdk.md)
+- [isEmptyOrNullishObject](https://lucid.readme.io/reference/isemptyornullishobject-sdk.md)
+- [isFalse](https://lucid.readme.io/reference/isfalse-sdk.md)
+- [isFieldConstraintType](https://lucid.readme.io/reference/isfieldconstrainttype-sdk.md)
+- [isFieldConstraintDefinition](https://lucid.readme.io/reference/isfieldconstraintdefinition-sdk.md)
+- [isFlag](https://lucid.readme.io/reference/isflag-sdk.md)
+- [isExactLength](https://lucid.readme.io/reference/isexactlength-sdk.md)
+- [isFieldDisplayType](https://lucid.readme.io/reference/isfielddisplaytype-sdk.md)
+- [isHorizontalPos](https://lucid.readme.io/reference/ishorizontalpos-sdk.md)
+- [isFunction](https://lucid.readme.io/reference/isfunction-sdk.md)
+- [isImportedResults](https://lucid.readme.io/reference/isimportedresults-sdk.md)
+- [isInfinite](https://lucid.readme.io/reference/isinfinite-sdk.md)
+- [isInstanceOf](https://lucid.readme.io/reference/isinstanceof-sdk.md)
+- [isJsonSerializable](https://lucid.readme.io/reference/isjsonserializable-sdk.md)
+- [isLayerPos](https://lucid.readme.io/reference/islayerpos-sdk.md)
+- [isLiteral](https://lucid.readme.io/reference/isliteral-sdk.md)
+- [isInt](https://lucid.readme.io/reference/isint-sdk.md)
+- [isNDimensionalFieldTypeArray](https://lucid.readme.io/reference/isndimensionalfieldtypearray-sdk.md)
+- [isNull](https://lucid.readme.io/reference/isnull-sdk.md)
+- [isLineEndpointDefinition](https://lucid.readme.io/reference/islineendpointdefinition-sdk.md)
+- [isJsonObject](https://lucid.readme.io/reference/isjsonobject-sdk.md)
+- [isLinearOffsetType](https://lucid.readme.io/reference/islinearoffsettype-sdk.md)
+- [isJsonSerializedLucidDictionary](https://lucid.readme.io/reference/isjsonserializedluciddictionary-sdk.md)
+- [isLiteralFieldType](https://lucid.readme.io/reference/isliteralfieldtype-sdk.md)
+- [isNullOption](https://lucid.readme.io/reference/isnulloption-sdk.md)
+- [isNullish](https://lucid.readme.io/reference/isnullish-sdk.md)
+- [isNestedSerializedLucidDictionary](https://lucid.readme.io/reference/isnestedserializedluciddictionary-sdk.md)
+- [isNumberOrEmptyString](https://lucid.readme.io/reference/isnumberoremptystring-sdk.md)
+- [isObject](https://lucid.readme.io/reference/isobject-sdk.md)
+- [isNumber](https://lucid.readme.io/reference/isnumber-sdk.md)
+- [isObjectUnsafe](https://lucid.readme.io/reference/isobjectunsafe-sdk.md)
+- [isObjectUnsafer](https://lucid.readme.io/reference/isobjectunsafer-sdk.md)
+- [isOnClickHandlerKey](https://lucid.readme.io/reference/isonclickhandlerkey-sdk.md)
+- [isPair](https://lucid.readme.io/reference/ispair-sdk.md)
+- [isPanelSize](https://lucid.readme.io/reference/ispanelsize-sdk.md)
+- [isOpacity](https://lucid.readme.io/reference/isopacity-sdk.md)
+- [isPartialTextStyle](https://lucid.readme.io/reference/ispartialtextstyle-sdk.md)
+- [isPointLike](https://lucid.readme.io/reference/ispointlike-sdk.md)
+- [isPositionEndpointDefinition](https://lucid.readme.io/reference/ispositionendpointdefinition-sdk.md)
+- [isPositiveNumber](https://lucid.readme.io/reference/ispositivenumber-sdk.md)
+- [isRawSendXHRResponse](https://lucid.readme.io/reference/israwsendxhrresponse-sdk.md)
+- [isPromise](https://lucid.readme.io/reference/ispromise-sdk.md)
+- [isScalarFieldTypeEnum](https://lucid.readme.io/reference/isscalarfieldtypeenum-sdk.md)
+- [isSemanticKind](https://lucid.readme.io/reference/issemantickind-sdk.md)
+- [isRecord](https://lucid.readme.io/reference/isrecord-sdk.md)
+- [isRestrictions](https://lucid.readme.io/reference/isrestrictions-sdk.md)
+- [isSerializedBaseFieldTypeDefinition](https://lucid.readme.io/reference/isserializedbasefieldtypedefinition-sdk.md)
+- [isSerializedCollectionEnumFieldType](https://lucid.readme.io/reference/isserializedcollectionenumfieldtype-sdk.md)
+- [isSerializedDataError](https://lucid.readme.io/reference/isserializeddataerror-sdk.md)
+- [isSerializedColorObjectFieldType](https://lucid.readme.io/reference/isserializedcolorobjectfieldtype-sdk.md)
+- [isSerializedFieldConstraint](https://lucid.readme.io/reference/isserializedfieldconstraint-sdk.md)
+- [isSerializedDataItems](https://lucid.readme.io/reference/isserializeddataitems-sdk.md)
+- [isSerializedFieldDefinition](https://lucid.readme.io/reference/isserializedfielddefinition-sdk.md)
+- [isSerializedFieldOption](https://lucid.readme.io/reference/isserializedfieldoption-sdk.md)
+- [isSerializedFieldOptions](https://lucid.readme.io/reference/isserializedfieldoptions-sdk.md)
+- [isSerializedFields](https://lucid.readme.io/reference/isserializedfields-sdk.md)
+- [isSerializedFieldTypeDefinition](https://lucid.readme.io/reference/isserializedfieldtypedefinition-sdk.md)
+- [isSerializedFieldTypeArray](https://lucid.readme.io/reference/isserializedfieldtypearray-sdk.md)
+- [isSerializedLiteralFieldType](https://lucid.readme.io/reference/isserializedliteralfieldtype-sdk.md)
+- [isSerializedFieldType](https://lucid.readme.io/reference/isserializedfieldtype-sdk.md)
+- [isSerializedLucidCurrency](https://lucid.readme.io/reference/isserializedlucidcurrency-sdk.md)
+- [isSerializedLucidDateObject](https://lucid.readme.io/reference/isserializedluciddateobject-sdk.md)
+- [isSerializedMetadataRecord](https://lucid.readme.io/reference/isserializedmetadatarecord-sdk.md)
+- [isSerializedMillisecondsDateObject](https://lucid.readme.io/reference/isserializedmillisecondsdateobject-sdk.md)
+- [isSerializedNDimensionalFieldTypeArray](https://lucid.readme.io/reference/isserializedndimensionalfieldtypearray-sdk.md)
+- [isSerializedJsonFieldType](https://lucid.readme.io/reference/isserializedjsonfieldtype-sdk.md)
+- [isSerializedLucidDictionary](https://lucid.readme.io/reference/isserializedluciddictionary-sdk.md)
+- [isSerializedSimpleStaticDataGraphicSettings](https://lucid.readme.io/reference/isserializedsimplestaticdatagraphicsettings-sdk.md)
+- [isSerializedSchema](https://lucid.readme.io/reference/isserializedschema-sdk.md)
+- [isSerializedPreviewData](https://lucid.readme.io/reference/isserializedpreviewdata-sdk.md)
+- [isSerializedSourceForeignKey](https://lucid.readme.io/reference/isserializedsourceforeignkey-sdk.md)
+- [isSerializedSourceConfig](https://lucid.readme.io/reference/isserializedsourceconfig-sdk.md)
+- [isString](https://lucid.readme.io/reference/isstring-sdk.md)
+- [isSize](https://lucid.readme.io/reference/issize-sdk.md)
+- [isSet](https://lucid.readme.io/reference/isset-sdk.md)
+- [isStrokeStyle](https://lucid.readme.io/reference/isstrokestyle-sdk.md)
+- [isSerializedTimeObject](https://lucid.readme.io/reference/isserializedtimeobject-sdk.md)
+- [isTextXHRResponse](https://lucid.readme.io/reference/istextxhrresponse-sdk.md)
+- [isTrue](https://lucid.readme.io/reference/istrue-sdk.md)
+- [isStringOrNegativeOne](https://lucid.readme.io/reference/isstringornegativeone-sdk.md)
+- [isValidSerializedBadgeEnumPosition](https://lucid.readme.io/reference/isvalidserializedbadgeenumposition-sdk.md)
+- [isUndefined](https://lucid.readme.io/reference/isundefined-sdk.md)
+- [isTypedArray](https://lucid.readme.io/reference/istypedarray-sdk.md)
+- [isUnknown](https://lucid.readme.io/reference/isunknown-sdk.md)
+- [isValidTypeForNDimensionalFieldTypeArray](https://lucid.readme.io/reference/isvalidtypeforndimensionalfieldtypearray-sdk.md)
+- [isVerticalPos](https://lucid.readme.io/reference/isverticalpos-sdk.md)
+- [isVoid](https://lucid.readme.io/reference/isvoid-sdk.md)
+- [isXHRResponse](https://lucid.readme.io/reference/isxhrresponse-sdk.md)
+- [nullable](https://lucid.readme.io/reference/nullable-sdk.md)
+- [mapValidator](https://lucid.readme.io/reference/mapvalidator-sdk.md)
+- [minLengthValidator](https://lucid.readme.io/reference/minlengthvalidator-sdk.md)
+- [minMaxFieldConstraintValidator](https://lucid.readme.io/reference/minmaxfieldconstraintvalidator-sdk.md)
+- [maxLengthValidator](https://lucid.readme.io/reference/maxlengthvalidator-sdk.md)
+- [nullableOption](https://lucid.readme.io/reference/nullableoption-sdk.md)
+- [objectEvery](https://lucid.readme.io/reference/objectevery-sdk.md)
+- [objectOfValidator](https://lucid.readme.io/reference/objectofvalidator-sdk.md)
+- [padBox](https://lucid.readme.io/reference/padbox-sdk.md)
+- [objectValidator](https://lucid.readme.io/reference/objectvalidator-sdk.md)
+- [option](https://lucid.readme.io/reference/option-sdk.md)
+- [percentBoxesOverlap](https://lucid.readme.io/reference/percentboxesoverlap-sdk.md)
+- [rangeValidator](https://lucid.readme.io/reference/rangevalidator-sdk.md)
+- [recordValidator](https://lucid.readme.io/reference/recordvalidator-sdk.md)
+- [propertyValidator](https://lucid.readme.io/reference/propertyvalidator-sdk.md)
+- [partialObjectValidator](https://lucid.readme.io/reference/partialobjectvalidator-sdk.md)
+- [rotateAroundFn](https://lucid.readme.io/reference/rotatearoundfn-sdk.md)
+- [rotateBox](https://lucid.readme.io/reference/rotatebox-sdk.md)
+- [schemaOKStatus](https://lucid.readme.io/reference/schemaokstatus-sdk.md)
+- [schemaOutOfSyncStatus](https://lucid.readme.io/reference/schemaoutofsyncstatus-sdk.md)
+- [semanticKindToSemanticFields](https://lucid.readme.io/reference/semantickindtosemanticfields-sdk.md)
+- [rotatedBoundingBox](https://lucid.readme.io/reference/rotatedboundingbox-sdk.md)
+- [serializeCollectionPatch](https://lucid.readme.io/reference/serializecollectionpatch-sdk.md)
+- [serializeBadgeEnumPositionAsKey](https://lucid.readme.io/reference/serializebadgeenumpositionaskey-sdk.md)
+- [serializeFieldTypeDefinition](https://lucid.readme.io/reference/serializefieldtypedefinition-sdk.md)
+- [serializeBadgeEnumPosition](https://lucid.readme.io/reference/serializebadgeenumposition-sdk.md)
+- [serializeManageWebhookResponse](https://lucid.readme.io/reference/serializemanagewebhookresponse-sdk.md)
+- [serializeBaseFieldTypeDefinition](https://lucid.readme.io/reference/serializebasefieldtypedefinition-sdk.md)
+- [serializePatchChanges](https://lucid.readme.io/reference/serializepatchchanges-sdk.md)
+- [serializePatchResponse](https://lucid.readme.io/reference/serializepatchresponse-sdk.md)
+- [serializeItemsPatch](https://lucid.readme.io/reference/serializeitemspatch-sdk.md)
+- [serializeSimpleStaticDataGraphicSettings](https://lucid.readme.io/reference/serializesimplestaticdatagraphicsettings-sdk.md)
+- [serializeUpstreamConfig](https://lucid.readme.io/reference/serializeupstreamconfig-sdk.md)
+- [someValidator](https://lucid.readme.io/reference/somevalidator-sdk.md)
+- [serializeShadow](https://lucid.readme.io/reference/serializeshadow-sdk.md)
+- [strictObjectValidator](https://lucid.readme.io/reference/strictobjectvalidator-sdk.md)
+- [someValue](https://lucid.readme.io/reference/somevalue-sdk.md)
+- [toCornersAsArray](https://lucid.readme.io/reference/tocornersasarray-sdk.md)
+- [stringEnumValidator](https://lucid.readme.io/reference/stringenumvalidator-sdk.md)
+- [tupleValidator](https://lucid.readme.io/reference/tuplevalidator-sdk.md)
+- [typedRecordValidator](https://lucid.readme.io/reference/typedrecordvalidator-sdk.md)
+- [unfurlRefreshErrorTypeValidator](https://lucid.readme.io/reference/unfurlrefresherrortypevalidator-sdk.md)
+- [isSerializedCardUserDataArray](https://lucid.readme.io/reference/isserializedcarduserdataarray-sdk.md)
+- [isSerializedIsoDateObject](https://lucid.readme.io/reference/isserializedisodateobject-sdk.md)
+- [objectValidatorWithList](https://lucid.readme.io/reference/objectvalidatorwithlist-sdk.md)
+- [semanticKindToLucidFields](https://lucid.readme.io/reference/semantickindtolucidfields-sdk.md)
+- [serializeSchemaForApi](https://lucid.readme.io/reference/serializeschemaforapi-sdk.md)
+- [isSerializedCardUserData](https://lucid.readme.io/reference/isserializedcarduserdata-sdk.md)
+- [objectOfValidatorWithInvalidFieldTracking](https://lucid.readme.io/reference/objectofvalidatorwithinvalidfieldtracking-sdk.md)
+- [isJsonSerializableOrUndefined](https://lucid.readme.io/reference/isjsonserializableorundefined-sdk.md)
+- [isSearchResult](https://lucid.readme.io/reference/issearchresult-sdk.md)
+- [arrayValidatorWithInvalidElementTracking](https://lucid.readme.io/reference/arrayvalidatorwithinvalidelementtracking-sdk.md)
+- [objectValidatorWithInvalidFieldTracking](https://lucid.readme.io/reference/objectvalidatorwithinvalidfieldtracking-sdk.md)
+- [isMap](https://lucid.readme.io/reference/ismap-sdk.md)
+- [isPartialSize](https://lucid.readme.io/reference/ispartialsize-sdk.md)
+- [isSerializedLucidDateRangeObject](https://lucid.readme.io/reference/isserializedluciddaterangeobject-sdk.md)
+- [isSerializedCardIntegrationConfig](https://lucid.readme.io/reference/isserializedcardintegrationconfig-sdk.md)
+- [isSerializedLucidIconData](https://lucid.readme.io/reference/isserializedlucidicondata-sdk.md)
+- [unwrapPartialTextStyleFromNullishTextStyle](https://lucid.readme.io/reference/unwrappartialtextstylefromnullishtextstyle-sdk.md)
+- [isFieldDescriptor](https://lucid.readme.io/reference/isfielddescriptor-sdk.md)
+- [isDefinedArray](https://lucid.readme.io/reference/isdefinedarray-sdk.md)
+- [getResponseBody](https://lucid.readme.io/reference/getresponsebody-sdk.md)
+- [isExtensionCardUserData](https://lucid.readme.io/reference/isextensioncarduserdata-sdk.md)
+- [isEmptyObject](https://lucid.readme.io/reference/isemptyobject-sdk.md)
+- [getCollectionEnumFieldItems](https://lucid.readme.io/reference/getcollectionenumfielditems-sdk.md)
+- [isSerializedCollectionDefinition](https://lucid.readme.io/reference/isserializedcollectiondefinition-sdk.md)
+- [flattenNullableFieldDefinition](https://lucid.readme.io/reference/flattennullablefielddefinition-sdk.md)
+- [nullableValidatorWithInvalidElementTracking](https://lucid.readme.io/reference/nullablevalidatorwithinvalidelementtracking-sdk.md)
+- [bothWithInvalidFieldTracking](https://lucid.readme.io/reference/bothwithinvalidfieldtracking-sdk.md)
+- [isSerializedLucidAvatarDataDictionary](https://lucid.readme.io/reference/isserializedlucidavatardatadictionary-sdk.md)
+- [copyLucidCardFieldDisplaySettings](https://lucid.readme.io/reference/copylucidcardfielddisplaysettings-sdk.md)
+- [deserializeInstance](https://lucid.readme.io/reference/deserializeinstance-sdk.md)
+- [isActionButton](https://lucid.readme.io/reference/isactionbutton-sdk.md)
+- [isImportErrorBanner](https://lucid.readme.io/reference/isimporterrorbanner-sdk.md)
+- [isInstance](https://lucid.readme.io/reference/isinstance-sdk.md)
+- [isInstances](https://lucid.readme.io/reference/isinstances-sdk.md)
+- [isScalarFieldType](https://lucid.readme.io/reference/isscalarfieldtype-sdk.md)
+- [isSerializedHierarchicalRelationshipFilterConfig](https://lucid.readme.io/reference/isserializedhierarchicalrelationshipfilterconfig-sdk.md)
+- [isSerializedInstance](https://lucid.readme.io/reference/isserializedinstance-sdk.md)
+- [isSerializedInstances](https://lucid.readme.io/reference/isserializedinstances-sdk.md)
+- [isShapeDataCondition](https://lucid.readme.io/reference/isshapedatacondition-sdk.md)
+- [isTextCondition](https://lucid.readme.io/reference/istextcondition-sdk.md)
+- [isTypedTuple](https://lucid.readme.io/reference/istypedtuple-sdk.md)
+- [isUrl](https://lucid.readme.io/reference/isurl-sdk.md)
+- [serializeInstance](https://lucid.readme.io/reference/serializeinstance-sdk.md)
+- [isTypedMap](https://lucid.readme.io/reference/istypedmap-sdk.md)
+- [BadgeEnumPosition](https://lucid.readme.io/reference/badgeenumposition-sdk.md)
+- [BaseXHRResponse](https://lucid.readme.io/reference/basexhrresponse-sdk.md)
+- [BinaryXHRResponse](https://lucid.readme.io/reference/binaryxhrresponse-sdk.md)
+- [BlockEndpointDefinition](https://lucid.readme.io/reference/blockendpointdefinition-sdk.md)
+- [BlockDefinition](https://lucid.readme.io/reference/blockdefinition-sdk.md)
+- [CollectionDefinition](https://lucid.readme.io/reference/collectiondefinition-sdk.md)
+- [CollectionPatch](https://lucid.readme.io/reference/collectionpatch-sdk.md)
+- [Badgeable](https://lucid.readme.io/reference/badgeable-sdk.md)
+- [CustomContentDockMenu](https://lucid.readme.io/reference/customcontentdockmenu-sdk.md)
+- [CustomDropdownMenu](https://lucid.readme.io/reference/customdropdownmenu-sdk.md)
+- [CollectionReferenceKeyDefinition](https://lucid.readme.io/reference/collectionreferencekeydefinition-sdk.md)
+- [CustomMenuItem](https://lucid.readme.io/reference/custommenuitem-sdk.md)
+- [EndpointStyle](https://lucid.readme.io/reference/endpointstyle-sdk.md)
+- [CustomMenuConfig](https://lucid.readme.io/reference/custommenuconfig-sdk.md)
+- [FieldDefinition](https://lucid.readme.io/reference/fielddefinition-sdk.md)
+- [ExtensionCardFieldOption](https://lucid.readme.io/reference/extensioncardfieldoption-sdk.md)
+- [ExtensionCardFieldDefinition](https://lucid.readme.io/reference/extensioncardfielddefinition-sdk.md)
+- [FlattenedReferenceDefinition](https://lucid.readme.io/reference/flattenedreferencedefinition-sdk.md)
+- [FileUploadData](https://lucid.readme.io/reference/fileuploaddata-sdk.md)
+- [ImportResult](https://lucid.readme.io/reference/importresult-sdk.md)
+- [JsonObject](https://lucid.readme.io/reference/jsonobject-sdk.md)
+- [LineDefinition](https://lucid.readme.io/reference/linedefinition-sdk.md)
+- [LineEndpointDefinition](https://lucid.readme.io/reference/lineendpointdefinition-sdk.md)
+- [LineTextAreaPositioning](https://lucid.readme.io/reference/linetextareapositioning-sdk.md)
+- [LockedFieldConstraintDefinition](https://lucid.readme.io/reference/lockedfieldconstraintdefinition-sdk.md)
+- [MaxValueFieldConstraintDefinition](https://lucid.readme.io/reference/maxvaluefieldconstraintdefinition-sdk.md)
+- [MaxLengthConstraintDefinition](https://lucid.readme.io/reference/maxlengthconstraintdefinition-sdk.md)
+- [MetadataRecord](https://lucid.readme.io/reference/metadatarecord-sdk.md)
+- [MetadataPatch](https://lucid.readme.io/reference/metadatapatch-sdk.md)
+- [MinValueFieldConstraintDefinition](https://lucid.readme.io/reference/minvaluefieldconstraintdefinition-sdk.md)
+- [NoWhitespaceFieldConstraintDefinition](https://lucid.readme.io/reference/nowhitespacefieldconstraintdefinition-sdk.md)
+- [OAuthXHRRequest](https://lucid.readme.io/reference/oauthxhrrequest-sdk.md)
+- [PageDefinition](https://lucid.readme.io/reference/pagedefinition-sdk.md)
+- [PositionEndpointDefinition](https://lucid.readme.io/reference/positionendpointdefinition-sdk.md)
+- [RequiredFieldConstraintDefinition](https://lucid.readme.io/reference/requiredfieldconstraintdefinition-sdk.md)
+- [SchemaDefinition](https://lucid.readme.io/reference/schemadefinition-sdk.md)
+- [SerializedCollectionPatch](https://lucid.readme.io/reference/serializedcollectionpatch-sdk.md)
+- [SearchResult](https://lucid.readme.io/reference/searchresult-sdk.md)
+- [SerializedDataItems](https://lucid.readme.io/reference/serializeddataitems-sdk.md)
+- [SerializedReferenceKey](https://lucid.readme.io/reference/serializedreferencekey-sdk.md)
+- [SerializedPreviewData](https://lucid.readme.io/reference/serializedpreviewdata-sdk.md)
+- [SerializedSourceConfig](https://lucid.readme.io/reference/serializedsourceconfig-sdk.md)
+- [SingleLineFieldConstraintDefinition](https://lucid.readme.io/reference/singlelinefieldconstraintdefinition-sdk.md)
+- [SetterOptions](https://lucid.readme.io/reference/setteroptions-sdk.md)
+- [TextStyle](https://lucid.readme.io/reference/textstyle-sdk.md)
+- [UnfurlCallbacks](https://lucid.readme.io/reference/unfurlcallbacks-sdk.md)
+- [Shadow](https://lucid.readme.io/reference/shadow-sdk.md)
+- [UnfurlThumbnail](https://lucid.readme.io/reference/unfurlthumbnail-sdk.md)
+- [UniqueEditFieldConstraintDefinition](https://lucid.readme.io/reference/uniqueeditfieldconstraintdefinition-sdk.md)
+- [UnfurlDetails](https://lucid.readme.io/reference/unfurldetails-sdk.md)
+- [UnfurlIframe](https://lucid.readme.io/reference/unfurliframe-sdk.md)
+- [TextXHRResponse](https://lucid.readme.io/reference/textxhrresponse-sdk.md)
+- [UpstreamConfig](https://lucid.readme.io/reference/upstreamconfig-sdk.md)
+- [XHRRequest](https://lucid.readme.io/reference/xhrrequest-sdk.md)
+- [Point](https://lucid.readme.io/reference/point-sdk.md)
+- [AffectedDocumentCollectionsBody](https://lucid.readme.io/reference/affecteddocumentcollectionsbody-sdk.md)
+- [LucidCardPanelListTab](https://lucid.readme.io/reference/lucidcardpanellisttab-sdk.md)
+- [PlaceholderImportMetadata](https://lucid.readme.io/reference/placeholderimportmetadata-sdk.md)
+- [DeprecatedSearchResult](https://lucid.readme.io/reference/deprecatedsearchresult-sdk.md)
+- [ExtensionDataPanelListItem](https://lucid.readme.io/reference/extensiondatapanellistitem-sdk.md)
+- [FieldDescriptor](https://lucid.readme.io/reference/fielddescriptor-sdk.md)
+- [CustomFieldDisplaySettings](https://lucid.readme.io/reference/customfielddisplaysettings-sdk.md)
+- [SearchResultPerCollection](https://lucid.readme.io/reference/searchresultpercollection-sdk.md)
+- [ImportErrorBanner](https://lucid.readme.io/reference/importerrorbanner-sdk.md)
+- [Instance](https://lucid.readme.io/reference/instance-sdk.md)
+- [SerializedInstance](https://lucid.readme.io/reference/serializedinstance-sdk.md)
+- [AddCardIntegrationQuery](https://lucid.readme.io/reference/addcardintegrationquery-sdk.md)
+- [AddDiagramFromMermaidQuery](https://lucid.readme.io/reference/adddiagramfrommermaidquery-sdk.md)
+- [AddCardIntegrationResult](https://lucid.readme.io/reference/addcardintegrationresult-sdk.md)
+- [AddDiagramFromMermaidResult](https://lucid.readme.io/reference/adddiagramfrommermaidresult-sdk.md)
+- [AddLineTextAreaQuery](https://lucid.readme.io/reference/addlinetextareaquery-sdk.md)
+- [AddLineTextAreaResult](https://lucid.readme.io/reference/addlinetextarearesult-sdk.md)
+- [AddMenuItemQuery](https://lucid.readme.io/reference/addmenuitemquery-sdk.md)
+- [AddMenuItemResult](https://lucid.readme.io/reference/addmenuitemresult-sdk.md)
+- [AddShapeDataResult](https://lucid.readme.io/reference/addshapedataresult-sdk.md)
+- [AddShapeDataQuery](https://lucid.readme.io/reference/addshapedataquery-sdk.md)
+- [AddTableColumnQuery](https://lucid.readme.io/reference/addtablecolumnquery-sdk.md)
+- [CardIntegrationConfig](https://lucid.readme.io/reference/cardintegrationconfig-sdk.md)
+- [AddTableColumnResult](https://lucid.readme.io/reference/addtablecolumnresult-sdk.md)
+- [AddTableRowQuery](https://lucid.readme.io/reference/addtablerowquery-sdk.md)
+- [AlertQuery](https://lucid.readme.io/reference/alertquery-sdk.md)
+- [AddTableRowResult](https://lucid.readme.io/reference/addtablerowresult-sdk.md)
+- [AnimateViewportQuery](https://lucid.readme.io/reference/animateviewportquery-sdk.md)
+- [AnyFieldTypeArrayDefinition](https://lucid.readme.io/reference/anyfieldtypearraydefinition-sdk.md)
+- [AwaitDataSourceImportQuery](https://lucid.readme.io/reference/awaitdatasourceimportquery-sdk.md)
+- [AlertResult](https://lucid.readme.io/reference/alertresult-sdk.md)
+- [AnimateViewportResult](https://lucid.readme.io/reference/animateviewportresult-sdk.md)
+- [AwaitImportQuery](https://lucid.readme.io/reference/awaitimportquery-sdk.md)
+- [AwaitDataSourceImportResult](https://lucid.readme.io/reference/awaitdatasourceimportresult-sdk.md)
+- [BaseFieldTypeDefinition](https://lucid.readme.io/reference/basefieldtypedefinition-sdk.md)
+- [AwaitImportResult](https://lucid.readme.io/reference/awaitimportresult-sdk.md)
+- [BootstrapQuery](https://lucid.readme.io/reference/bootstrapquery-sdk.md)
+- [BootstrapResult](https://lucid.readme.io/reference/bootstrapresult-sdk.md)
+- [Box](https://lucid.readme.io/reference/box-sdk.md)
+- [BlockProxyConstructor](https://lucid.readme.io/reference/blockproxyconstructor-sdk.md)
+- [LucidCardFieldDisplaySettings](https://lucid.readme.io/reference/lucidcardfielddisplaysettings-sdk.md)
+- [CalculateHashQuery](https://lucid.readme.io/reference/calculatehashquery-sdk.md)
+- [CalculateHashResult](https://lucid.readme.io/reference/calculatehashresult-sdk.md)
+- [CancelDragBlockToCanvasQuery](https://lucid.readme.io/reference/canceldragblocktocanvasquery-sdk.md)
+- [CanEditPackageSettingsQuery](https://lucid.readme.io/reference/caneditpackagesettingsquery-sdk.md)
+- [CancelDragBlockToCanvasResult](https://lucid.readme.io/reference/canceldragblocktocanvasresult-sdk.md)
+- [CanEditPackageSettingsResult](https://lucid.readme.io/reference/caneditpackagesettingsresult-sdk.md)
+- [CollectionId](https://lucid.readme.io/reference/collectionid-sdk.md)
+- [Conditions](https://lucid.readme.io/reference/conditions-sdk.md)
+- [CommandArgs](https://lucid.readme.io/reference/commandargs-sdk.md)
+- [ConfirmQuery](https://lucid.readme.io/reference/confirmquery-sdk.md)
+- [ConfirmResult](https://lucid.readme.io/reference/confirmresult-sdk.md)
+- [CreateBlockResult](https://lucid.readme.io/reference/createblockresult-sdk.md)
+- [CreateBlockQuery](https://lucid.readme.io/reference/createblockquery-sdk.md)
+- [CreateCardsQuery](https://lucid.readme.io/reference/createcardsquery-sdk.md)
+- [CreateCardsResult](https://lucid.readme.io/reference/createcardsresult-sdk.md)
+- [CreateCollectionFieldDefinition](https://lucid.readme.io/reference/createcollectionfielddefinition-sdk.md)
+- [CreateCollectionResult](https://lucid.readme.io/reference/createcollectionresult-sdk.md)
+- [CreateDataSourceQuery](https://lucid.readme.io/reference/createdatasourcequery-sdk.md)
+- [StencilConfig](https://lucid.readme.io/reference/stencilconfig-sdk.md)
+- [CreateDocumentElementQuery](https://lucid.readme.io/reference/createdocumentelementquery-sdk.md)
+- [CreateDataSourceResult](https://lucid.readme.io/reference/createdatasourceresult-sdk.md)
+- [CreateCollectionQuery](https://lucid.readme.io/reference/createcollectionquery-sdk.md)
+- [CreateGroupQuery](https://lucid.readme.io/reference/creategroupquery-sdk.md)
+- [CreateGroupResult](https://lucid.readme.io/reference/creategroupresult-sdk.md)
+- [CreateLineQuery](https://lucid.readme.io/reference/createlinequery-sdk.md)
+- [CreateDocumentElementResult](https://lucid.readme.io/reference/createdocumentelementresult-sdk.md)
+- [CreateLineResult](https://lucid.readme.io/reference/createlineresult-sdk.md)
+- [CreatePageResult](https://lucid.readme.io/reference/createpageresult-sdk.md)
+- [CreatePageQuery](https://lucid.readme.io/reference/createpagequery-sdk.md)
+- [CreateUserImageQuery](https://lucid.readme.io/reference/createuserimagequery-sdk.md)
+- [CreateUserImageResult](https://lucid.readme.io/reference/createuserimageresult-sdk.md)
+- [CustomBlockProxyConstructor](https://lucid.readme.io/reference/customblockproxyconstructor-sdk.md)
+- [DataActionOptions](https://lucid.readme.io/reference/dataactionoptions-sdk.md)
+- [DataActionResponse](https://lucid.readme.io/reference/dataactionresponse-sdk.md)
+- [DataActionQuery](https://lucid.readme.io/reference/dataactionquery-sdk.md)
+- [DataConnectorRoute](https://lucid.readme.io/reference/dataconnectorroute-sdk.md)
+- [DataGraphicIconIndexes](https://lucid.readme.io/reference/datagraphiciconindexes-sdk.md)
+- [DataGraphicIconLibrarySets](https://lucid.readme.io/reference/datagraphiciconlibrarysets-sdk.md)
+- [DeleteDocumentElementQuery](https://lucid.readme.io/reference/deletedocumentelementquery-sdk.md)
+- [DeleteDocumentElementResult](https://lucid.readme.io/reference/deletedocumentelementresult-sdk.md)
+- [DataItemExistsQuery](https://lucid.readme.io/reference/dataitemexistsquery-sdk.md)
+- [DataActionResult](https://lucid.readme.io/reference/dataactionresult-sdk.md)
+- [DataItemExistsResult](https://lucid.readme.io/reference/dataitemexistsresult-sdk.md)
+- [DeleteItemResult](https://lucid.readme.io/reference/deleteitemresult-sdk.md)
+- [DataGraphicImage](https://lucid.readme.io/reference/datagraphicimage-sdk.md)
+- [DeletePageQuery](https://lucid.readme.io/reference/deletepagequery-sdk.md)
+- [DataSourceRequest](https://lucid.readme.io/reference/datasourcerequest-sdk.md)
+- [DeleteShapeDataResult](https://lucid.readme.io/reference/deleteshapedataresult-sdk.md)
+- [DeleteTableColumnResult](https://lucid.readme.io/reference/deletetablecolumnresult-sdk.md)
+- [DeletePageResult](https://lucid.readme.io/reference/deletepageresult-sdk.md)
+- [DeleteTableRowResult](https://lucid.readme.io/reference/deletetablerowresult-sdk.md)
+- [DownloadQuery](https://lucid.readme.io/reference/downloadquery-sdk.md)
+- [DeleteTableColumnQuery](https://lucid.readme.io/reference/deletetablecolumnquery-sdk.md)
+- [DeleteTableRowQuery](https://lucid.readme.io/reference/deletetablerowquery-sdk.md)
+- [DeleteItemQuery](https://lucid.readme.io/reference/deleteitemquery-sdk.md)
+- [DestructureGuardedTypeObj](https://lucid.readme.io/reference/destructureguardedtypeobj-sdk.md)
+- [DownloadResult](https://lucid.readme.io/reference/downloadresult-sdk.md)
+- [DragPointerMoveResult](https://lucid.readme.io/reference/dragpointermoveresult-sdk.md)
+- [DragPointerUpQuery](https://lucid.readme.io/reference/dragpointerupquery-sdk.md)
+- [DeleteShapeDataQuery](https://lucid.readme.io/reference/deleteshapedataquery-sdk.md)
+- [DragPointerMoveQuery](https://lucid.readme.io/reference/dragpointermovequery-sdk.md)
+- [DuplicateItemsResult](https://lucid.readme.io/reference/duplicateitemsresult-sdk.md)
+- [DuplicateItemsQuery](https://lucid.readme.io/reference/duplicateitemsquery-sdk.md)
+- [DragPointerUpResult](https://lucid.readme.io/reference/dragpointerupresult-sdk.md)
+- [ElementExistsResult](https://lucid.readme.io/reference/elementexistsresult-sdk.md)
+- [ExecuteFormulaQuery](https://lucid.readme.io/reference/executeformulaquery-sdk.md)
+- [ElementExistsQuery](https://lucid.readme.io/reference/elementexistsquery-sdk.md)
+- [EndpointDefinition](https://lucid.readme.io/reference/endpointdefinition-sdk.md)
+- [FieldTypeArraySubTypes](https://lucid.readme.io/reference/fieldtypearraysubtypes-sdk.md)
+- [ExecuteFormulaResult](https://lucid.readme.io/reference/executeformularesult-sdk.md)
+- [FieldTypeDefinition](https://lucid.readme.io/reference/fieldtypedefinition-sdk.md)
+- [FireBeaconEventQuery](https://lucid.readme.io/reference/firebeaconeventquery-sdk.md)
+- [FindAvailableSpaceQuery](https://lucid.readme.io/reference/findavailablespacequery-sdk.md)
+- [FormattingInterface](https://lucid.readme.io/reference/formattinginterface-sdk.md)
+- [GetConnectedLinesResult](https://lucid.readme.io/reference/getconnectedlinesresult-sdk.md)
+- [FindAvailableSpaceResult](https://lucid.readme.io/reference/findavailablespaceresult-sdk.md)
+- [GetConnectedLinesQuery](https://lucid.readme.io/reference/getconnectedlinesquery-sdk.md)
+- [GetCurrentPageQuery](https://lucid.readme.io/reference/getcurrentpagequery-sdk.md)
+- [FireBeaconEventResult](https://lucid.readme.io/reference/firebeaconeventresult-sdk.md)
+- [GetCustomShapeQuery](https://lucid.readme.io/reference/getcustomshapequery-sdk.md)
+- [GetCustomShapeResult](https://lucid.readme.io/reference/getcustomshaperesult-sdk.md)
+- [GetDataItemFieldQuery](https://lucid.readme.io/reference/getdataitemfieldquery-sdk.md)
+- [FieldConstraintDefinition](https://lucid.readme.io/reference/fieldconstraintdefinition-sdk.md)
+- [GetDataItemFieldResult](https://lucid.readme.io/reference/getdataitemfieldresult-sdk.md)
+- [GetDocumentAccessPermissionQuery](https://lucid.readme.io/reference/getdocumentaccesspermissionquery-sdk.md)
+- [GetDocumentAccessPermissionResult](https://lucid.readme.io/reference/getdocumentaccesspermissionresult-sdk.md)
+- [GetDocumentChunksResult](https://lucid.readme.io/reference/getdocumentchunksresult-sdk.md)
+- [GetCurrentPageResult](https://lucid.readme.io/reference/getcurrentpageresult-sdk.md)
+- [GetDocumentChunksQuery](https://lucid.readme.io/reference/getdocumentchunksquery-sdk.md)
+- [GetDocumentIdResult](https://lucid.readme.io/reference/getdocumentidresult-sdk.md)
+- [GetElementTypeQuery](https://lucid.readme.io/reference/getelementtypequery-sdk.md)
+- [GetEnvironmentConfigQuery](https://lucid.readme.io/reference/getenvironmentconfigquery-sdk.md)
+- [GetItemPageIdQuery](https://lucid.readme.io/reference/getitempageidquery-sdk.md)
+- [GetDocumentIdQuery](https://lucid.readme.io/reference/getdocumentidquery-sdk.md)
+- [GetEnvironmentConfigResult](https://lucid.readme.io/reference/getenvironmentconfigresult-sdk.md)
+- [GetElementTypeResult](https://lucid.readme.io/reference/getelementtyperesult-sdk.md)
+- [GetItemsAtQuery](https://lucid.readme.io/reference/getitemsatquery-sdk.md)
+- [GetItemsAtResult](https://lucid.readme.io/reference/getitemsatresult-sdk.md)
+- [GetItemPageIdResult](https://lucid.readme.io/reference/getitempageidresult-sdk.md)
+- [GetLLMContextFromItemsQuery](https://lucid.readme.io/reference/getllmcontextfromitemsquery-sdk.md)
+- [GetOAuthClientIdQuery](https://lucid.readme.io/reference/getoauthclientidquery-sdk.md)
+- [GetLLMContextFromItemsResult](https://lucid.readme.io/reference/getllmcontextfromitemsresult-sdk.md)
+- [GetOAuthClientIdResult](https://lucid.readme.io/reference/getoauthclientidresult-sdk.md)
+- [GetOAuthTokenResult](https://lucid.readme.io/reference/getoauthtokenresult-sdk.md)
+- [GetPackageSettingsResult](https://lucid.readme.io/reference/getpackagesettingsresult-sdk.md)
+- [GetPackageSettingsQuery](https://lucid.readme.io/reference/getpackagesettingsquery-sdk.md)
+- [GetOAuthTokenQuery](https://lucid.readme.io/reference/getoauthtokenquery-sdk.md)
+- [GetProductResult](https://lucid.readme.io/reference/getproductresult-sdk.md)
+- [GetPropertyQuery](https://lucid.readme.io/reference/getpropertyquery-sdk.md)
+- [GetPropertyResult](https://lucid.readme.io/reference/getpropertyresult-sdk.md)
+- [GetReferenceKeyQuery](https://lucid.readme.io/reference/getreferencekeyquery-sdk.md)
+- [GetReferenceKeyResult](https://lucid.readme.io/reference/getreferencekeyresult-sdk.md)
+- [GetProductQuery](https://lucid.readme.io/reference/getproductquery-sdk.md)
+- [GetRelativeLinePositionQuery](https://lucid.readme.io/reference/getrelativelinepositionquery-sdk.md)
+- [GetRelativeLinePositionResult](https://lucid.readme.io/reference/getrelativelinepositionresult-sdk.md)
+- [GetShapeDataQuery](https://lucid.readme.io/reference/getshapedataquery-sdk.md)
+- [GetSelectionResult](https://lucid.readme.io/reference/getselectionresult-sdk.md)
+- [GetSelectionQuery](https://lucid.readme.io/reference/getselectionquery-sdk.md)
+- [GetSvgQuery](https://lucid.readme.io/reference/getsvgquery-sdk.md)
+- [GetShapeDataResult](https://lucid.readme.io/reference/getshapedataresult-sdk.md)
+- [GetSvgResult](https://lucid.readme.io/reference/getsvgresult-sdk.md)
+- [GetTextStyleQuery](https://lucid.readme.io/reference/gettextstylequery-sdk.md)
+- [GetTextStyleResult](https://lucid.readme.io/reference/gettextstyleresult-sdk.md)
+- [GetVisibleRectQuery](https://lucid.readme.io/reference/getvisiblerectquery-sdk.md)
+- [GetUserIdResult](https://lucid.readme.io/reference/getuseridresult-sdk.md)
+- [GetVisibleRectResult](https://lucid.readme.io/reference/getvisiblerectresult-sdk.md)
+- [GuardToType](https://lucid.readme.io/reference/guardtotype-sdk.md)
+- [GetUserIdQuery](https://lucid.readme.io/reference/getuseridquery-sdk.md)
+- [HidePanelQuery](https://lucid.readme.io/reference/hidepanelquery-sdk.md)
+- [HideModalQuery](https://lucid.readme.io/reference/hidemodalquery-sdk.md)
+- [HidePanelResult](https://lucid.readme.io/reference/hidepanelresult-sdk.md)
+- [HideModalResult](https://lucid.readme.io/reference/hidemodalresult-sdk.md)
+- [HookAllChangesQuery](https://lucid.readme.io/reference/hookallchangesquery-sdk.md)
+- [HookAllChangesResult](https://lucid.readme.io/reference/hookallchangesresult-sdk.md)
+- [HookCreateItemsResult](https://lucid.readme.io/reference/hookcreateitemsresult-sdk.md)
+- [HookCreateItemsQuery](https://lucid.readme.io/reference/hookcreateitemsquery-sdk.md)
+- [HookDeleteItemsQuery](https://lucid.readme.io/reference/hookdeleteitemsquery-sdk.md)
+- [HookSelectionQuery](https://lucid.readme.io/reference/hookselectionquery-sdk.md)
+- [HookTextEditQuery](https://lucid.readme.io/reference/hooktexteditquery-sdk.md)
+- [HookSelectionResult](https://lucid.readme.io/reference/hookselectionresult-sdk.md)
+- [HookDeleteItemsResult](https://lucid.readme.io/reference/hookdeleteitemsresult-sdk.md)
+- [ImportCardsQuery](https://lucid.readme.io/reference/importcardsquery-sdk.md)
+- [ImportCardsResult](https://lucid.readme.io/reference/importcardsresult-sdk.md)
+- [HookTextEditResult](https://lucid.readme.io/reference/hooktexteditresult-sdk.md)
+- [ImageBadgeSettings](https://lucid.readme.io/reference/imagebadgesettings-sdk.md)
+- [ImportPageQuery](https://lucid.readme.io/reference/importpagequery-sdk.md)
+- [ImportLinksQuery](https://lucid.readme.io/reference/importlinksquery-sdk.md)
+- [ImportPageResult](https://lucid.readme.io/reference/importpageresult-sdk.md)
+- [ItemPrimaryKey](https://lucid.readme.io/reference/itemprimarykey-sdk.md)
+- [ItemType](https://lucid.readme.io/reference/itemtype-sdk.md)
+- [ImportLinksResult](https://lucid.readme.io/reference/importlinksresult-sdk.md)
+- [JsonArray](https://lucid.readme.io/reference/jsonarray-sdk.md)
+- [ItemsPatch](https://lucid.readme.io/reference/itemspatch-sdk.md)
+- [JsonSerializable](https://lucid.readme.io/reference/jsonserializable-sdk.md)
+- [KillExtensionQuery](https://lucid.readme.io/reference/killextensionquery-sdk.md)
+- [KillExtensionResult](https://lucid.readme.io/reference/killextensionresult-sdk.md)
+- [LinearOffsetType](https://lucid.readme.io/reference/linearoffsettype-sdk.md)
+- [ListChildrenQuery](https://lucid.readme.io/reference/listchildrenquery-sdk.md)
+- [ListChildrenResult](https://lucid.readme.io/reference/listchildrenresult-sdk.md)
+- [ListCollectionFieldsQuery](https://lucid.readme.io/reference/listcollectionfieldsquery-sdk.md)
+- [ListCollectionFieldsResult](https://lucid.readme.io/reference/listcollectionfieldsresult-sdk.md)
+- [ListCollectionsQuery](https://lucid.readme.io/reference/listcollectionsquery-sdk.md)
+- [ListCollectionsResult](https://lucid.readme.io/reference/listcollectionsresult-sdk.md)
+- [ListDataItemsQuery](https://lucid.readme.io/reference/listdataitemsquery-sdk.md)
+- [ListDataSourcesQuery](https://lucid.readme.io/reference/listdatasourcesquery-sdk.md)
+- [ListDataItemsResult](https://lucid.readme.io/reference/listdataitemsresult-sdk.md)
+- [ListDataSourcesResult](https://lucid.readme.io/reference/listdatasourcesresult-sdk.md)
+- [ListDocumentElementsQuery](https://lucid.readme.io/reference/listdocumentelementsquery-sdk.md)
+- [ListDocumentElementsResult](https://lucid.readme.io/reference/listdocumentelementsresult-sdk.md)
+- [ListPagesQuery](https://lucid.readme.io/reference/listpagesquery-sdk.md)
+- [ListPagesResult](https://lucid.readme.io/reference/listpagesresult-sdk.md)
+- [ListPropertiesResult](https://lucid.readme.io/reference/listpropertiesresult-sdk.md)
+- [ListReferenceKeysQuery](https://lucid.readme.io/reference/listreferencekeysquery-sdk.md)
+- [ListPropertiesQuery](https://lucid.readme.io/reference/listpropertiesquery-sdk.md)
+- [ListShapeDataQuery](https://lucid.readme.io/reference/listshapedataquery-sdk.md)
+- [ListReferenceKeysResult](https://lucid.readme.io/reference/listreferencekeysresult-sdk.md)
+- [ListShapeDataResult](https://lucid.readme.io/reference/listshapedataresult-sdk.md)
+- [ListTextAreasQuery](https://lucid.readme.io/reference/listtextareasquery-sdk.md)
+- [ListTextAreasResult](https://lucid.readme.io/reference/listtextareasresult-sdk.md)
+- [LoadBlockClassesQuery](https://lucid.readme.io/reference/loadblockclassesquery-sdk.md)
+- [LoadBlockClassesResult](https://lucid.readme.io/reference/loadblockclassesresult-sdk.md)
+- [JSONSerializedLucidDictionary](https://lucid.readme.io/reference/jsonserializedluciddictionary-sdk.md)
+- [MeasureTextQuery](https://lucid.readme.io/reference/measuretextquery-sdk.md)
+- [MeasureTextResult](https://lucid.readme.io/reference/measuretextresult-sdk.md)
+- [MetadataPatchResponse](https://lucid.readme.io/reference/metadatapatchresponse-sdk.md)
+- [ModalConfig](https://lucid.readme.io/reference/modalconfig-sdk.md)
+- [NestedSerializedLucidDictionary](https://lucid.readme.io/reference/nestedserializedluciddictionary-sdk.md)
+- [OffsetItemsQuery](https://lucid.readme.io/reference/offsetitemsquery-sdk.md)
+- [OffsetItemsResult](https://lucid.readme.io/reference/offsetitemsresult-sdk.md)
+- [PatchChangeCollection](https://lucid.readme.io/reference/patchchangecollection-sdk.md)
+- [PatchDataItemsQuery](https://lucid.readme.io/reference/patchdataitemsquery-sdk.md)
+- [PanelConfig](https://lucid.readme.io/reference/panelconfig-sdk.md)
+- [PartialItemType](https://lucid.readme.io/reference/partialitemtype-sdk.md)
+- [PatchItems](https://lucid.readme.io/reference/patchitems-sdk.md)
+- [PatchDataItemsResult](https://lucid.readme.io/reference/patchdataitemsresult-sdk.md)
+- [PromptResult](https://lucid.readme.io/reference/promptresult-sdk.md)
+- [PromptQuery](https://lucid.readme.io/reference/promptquery-sdk.md)
+- [RawSendXHRResponse](https://lucid.readme.io/reference/rawsendxhrresponse-sdk.md)
+- [RawTriggerAuthFlowResult](https://lucid.readme.io/reference/rawtriggerauthflowresult-sdk.md)
+- [RawCreateUserImageResult](https://lucid.readme.io/reference/rawcreateuserimageresult-sdk.md)
+- [RawDataActionResult](https://lucid.readme.io/reference/rawdataactionresult-sdk.md)
+- [RegisterPanelQuery](https://lucid.readme.io/reference/registerpanelquery-sdk.md)
+- [ReferenceKeyDefinition](https://lucid.readme.io/reference/referencekeydefinition-sdk.md)
+- [RegisterPanelResult](https://lucid.readme.io/reference/registerpanelresult-sdk.md)
+- [RegisterUnfurlResult](https://lucid.readme.io/reference/registerunfurlresult-sdk.md)
+- [RegisterUnfurlQuery](https://lucid.readme.io/reference/registerunfurlquery-sdk.md)
+- [ReloadExtensionQuery](https://lucid.readme.io/reference/reloadextensionquery-sdk.md)
+- [SendAsyncOAuthRequestQuery](https://lucid.readme.io/reference/sendasyncoauthrequestquery-sdk.md)
+- [SendOAuthRequestQuery](https://lucid.readme.io/reference/sendoauthrequestquery-sdk.md)
+- [SendOAuthRequestResponse](https://lucid.readme.io/reference/sendoauthrequestresponse-sdk.md)
+- [ReloadExtensionResult](https://lucid.readme.io/reference/reloadextensionresult-sdk.md)
+- [SendPermanentTokenRequestQuery](https://lucid.readme.io/reference/sendpermanenttokenrequestquery-sdk.md)
+- [SendUIMessageQuery](https://lucid.readme.io/reference/senduimessagequery-sdk.md)
+- [SendPermanentTokenRequestResponse](https://lucid.readme.io/reference/sendpermanenttokenrequestresponse-sdk.md)
+- [SendUIMessageResult](https://lucid.readme.io/reference/senduimessageresult-sdk.md)
+- [SendXHRResponseFormat](https://lucid.readme.io/reference/sendxhrresponseformat-sdk.md)
+- [SerializedBadgeEnumPosition](https://lucid.readme.io/reference/serializedbadgeenumposition-sdk.md)
+- [SendXHRQuery](https://lucid.readme.io/reference/sendxhrquery-sdk.md)
+- [SerializedBaseFieldTypeDefinition](https://lucid.readme.io/reference/serializedbasefieldtypedefinition-sdk.md)
+- [SendXHRResponse](https://lucid.readme.io/reference/sendxhrresponse-sdk.md)
+- [SerializedCMYKColor](https://lucid.readme.io/reference/serializedcmykcolor-sdk.md)
+- [SerializedCollectionEnumFieldType](https://lucid.readme.io/reference/serializedcollectionenumfieldtype-sdk.md)
+- [SerializedColorObject](https://lucid.readme.io/reference/serializedcolorobject-sdk.md)
+- [SerializedCorrectedColor](https://lucid.readme.io/reference/serializedcorrectedcolor-sdk.md)
+- [SerializedFieldConstraint](https://lucid.readme.io/reference/serializedfieldconstraint-sdk.md)
+- [SerializedColorObjectFieldType](https://lucid.readme.io/reference/serializedcolorobjectfieldtype-sdk.md)
+- [SerializedFieldType](https://lucid.readme.io/reference/serializedfieldtype-sdk.md)
+- [SerializedFieldDefinition](https://lucid.readme.io/reference/serializedfielddefinition-sdk.md)
+- [SerializedDataError](https://lucid.readme.io/reference/serializeddataerror-sdk.md)
+- [SerializedEffect](https://lucid.readme.io/reference/serializedeffect-sdk.md)
+- [SerializedFieldTypeArray](https://lucid.readme.io/reference/serializedfieldtypearray-sdk.md)
+- [SerializedIsoDateObject](https://lucid.readme.io/reference/serializedisodateobject-sdk.md)
+- [SerializedFields](https://lucid.readme.io/reference/serializedfields-sdk.md)
+- [SerializedJsonFieldType](https://lucid.readme.io/reference/serializedjsonfieldtype-sdk.md)
+- [SerializedFieldTypeArraySubTypes](https://lucid.readme.io/reference/serializedfieldtypearraysubtypes-sdk.md)
+- [SerializedLabelOverrides](https://lucid.readme.io/reference/serializedlabeloverrides-sdk.md)
+- [SerializedLiteralFieldType](https://lucid.readme.io/reference/serializedliteralfieldtype-sdk.md)
+- [SerializedFormatting](https://lucid.readme.io/reference/serializedformatting-sdk.md)
+- [SerializedLucidCurrency](https://lucid.readme.io/reference/serializedlucidcurrency-sdk.md)
+- [SerializedItemsPatch](https://lucid.readme.io/reference/serializeditemspatch-sdk.md)
+- [SerializedLucidDateObject](https://lucid.readme.io/reference/serializedluciddateobject-sdk.md)
+- [SerializedFlattenedReference](https://lucid.readme.io/reference/serializedflattenedreference-sdk.md)
+- [SerializedFieldTypeDefinition](https://lucid.readme.io/reference/serializedfieldtypedefinition-sdk.md)
+- [SerializedManageWebhookResponseBody](https://lucid.readme.io/reference/serializedmanagewebhookresponsebody-sdk.md)
+- [SerializedMillisecondsDateObject](https://lucid.readme.io/reference/serializedmillisecondsdateobject-sdk.md)
+- [SerializedNDimensionalFieldTypeArray](https://lucid.readme.io/reference/serializedndimensionalfieldtypearray-sdk.md)
+- [SerializedLucidDictionary](https://lucid.readme.io/reference/serializedluciddictionary-sdk.md)
+- [SerializedRGBColor](https://lucid.readme.io/reference/serializedrgbcolor-sdk.md)
+- [SerializedPatchResponseBody](https://lucid.readme.io/reference/serializedpatchresponsebody-sdk.md)
+- [SerializedPatchChange](https://lucid.readme.io/reference/serializedpatchchange-sdk.md)
+- [SerializedShadow](https://lucid.readme.io/reference/serializedshadow-sdk.md)
+- [SerializedReferenceKeyType](https://lucid.readme.io/reference/serializedreferencekeytype-sdk.md)
+- [SerializedSourceForeignKey](https://lucid.readme.io/reference/serializedsourceforeignkey-sdk.md)
+- [SerializedTimeObject](https://lucid.readme.io/reference/serializedtimeobject-sdk.md)
+- [SerializedSchema](https://lucid.readme.io/reference/serializedschema-sdk.md)
+- [SerializedSimpleStaticDataGraphicSettings](https://lucid.readme.io/reference/serializedsimplestaticdatagraphicsettings-sdk.md)
+- [SetCurrentPageQuery](https://lucid.readme.io/reference/setcurrentpagequery-sdk.md)
+- [SetCurrentPageResult](https://lucid.readme.io/reference/setcurrentpageresult-sdk.md)
+- [SetPackageSettingsResult](https://lucid.readme.io/reference/setpackagesettingsresult-sdk.md)
+- [SetPackageSettingsQuery](https://lucid.readme.io/reference/setpackagesettingsquery-sdk.md)
+- [SetPropertyResult](https://lucid.readme.io/reference/setpropertyresult-sdk.md)
+- [SetReferenceKeyQuery](https://lucid.readme.io/reference/setreferencekeyquery-sdk.md)
+- [SetPropertyQuery](https://lucid.readme.io/reference/setpropertyquery-sdk.md)
+- [SetShapeDataResult](https://lucid.readme.io/reference/setshapedataresult-sdk.md)
+- [SetTextQuery](https://lucid.readme.io/reference/settextquery-sdk.md)
+- [SetSelectionQuery](https://lucid.readme.io/reference/setselectionquery-sdk.md)
+- [SetShapeDataQuery](https://lucid.readme.io/reference/setshapedataquery-sdk.md)
+- [SetReferenceKeyResult](https://lucid.readme.io/reference/setreferencekeyresult-sdk.md)
+- [ShowModalQuery](https://lucid.readme.io/reference/showmodalquery-sdk.md)
+- [SetTextStyleResult](https://lucid.readme.io/reference/settextstyleresult-sdk.md)
+- [SetTextResult](https://lucid.readme.io/reference/settextresult-sdk.md)
+- [ShowModalResult](https://lucid.readme.io/reference/showmodalresult-sdk.md)
+- [SetSelectionResult](https://lucid.readme.io/reference/setselectionresult-sdk.md)
+- [SetTextStyleQuery](https://lucid.readme.io/reference/settextstylequery-sdk.md)
+- [ShowPackageSettingsModalResult](https://lucid.readme.io/reference/showpackagesettingsmodalresult-sdk.md)
+- [ShowPackageSettingsModalQuery](https://lucid.readme.io/reference/showpackagesettingsmodalquery-sdk.md)
+- [SimpleImageFill](https://lucid.readme.io/reference/simpleimagefill-sdk.md)
+- [ShowPanelResult](https://lucid.readme.io/reference/showpanelresult-sdk.md)
+- [ShowPanelQuery](https://lucid.readme.io/reference/showpanelquery-sdk.md)
+- [SimpleFillStyle](https://lucid.readme.io/reference/simplefillstyle-sdk.md)
+- [SimpleStaticDataGraphicSettings](https://lucid.readme.io/reference/simplestaticdatagraphicsettings-sdk.md)
+- [StartDragBlockToCanvasQuery](https://lucid.readme.io/reference/startdragblocktocanvasquery-sdk.md)
+- [SleepForTestCaseQuery](https://lucid.readme.io/reference/sleepfortestcasequery-sdk.md)
+- [StartDragBlockToCanvasResult](https://lucid.readme.io/reference/startdragblocktocanvasresult-sdk.md)
+- [SleepForTestCaseResult](https://lucid.readme.io/reference/sleepfortestcaseresult-sdk.md)
+- [StartPDFUploadRequestQuery](https://lucid.readme.io/reference/startpdfuploadrequestquery-sdk.md)
+- [TextBadgeSettings](https://lucid.readme.io/reference/textbadgesettings-sdk.md)
+- [TextEditCompletionCallback](https://lucid.readme.io/reference/texteditcompletioncallback-sdk.md)
+- [ThrowForTestCaseQuery](https://lucid.readme.io/reference/throwfortestcasequery-sdk.md)
+- [ThrowForTestCaseResult](https://lucid.readme.io/reference/throwfortestcaseresult-sdk.md)
+- [TriggerAuthFlowQuery](https://lucid.readme.io/reference/triggerauthflowquery-sdk.md)
+- [TriggerAuthFlowResult](https://lucid.readme.io/reference/triggerauthflowresult-sdk.md)
+- [Tuple](https://lucid.readme.io/reference/tuple-sdk.md)
+- [TypedSerializedFlattenedReference](https://lucid.readme.io/reference/typedserializedflattenedreference-sdk.md)
+- [UnTypedSerializedFlattenedReference](https://lucid.readme.io/reference/untypedserializedflattenedreference-sdk.md)
+- [UnhookAllChangesQuery](https://lucid.readme.io/reference/unhookallchangesquery-sdk.md)
+- [UnhookAllChangesResult](https://lucid.readme.io/reference/unhookallchangesresult-sdk.md)
+- [UnhookCreateItemsQuery](https://lucid.readme.io/reference/unhookcreateitemsquery-sdk.md)
+- [UnhookCreateItemsResult](https://lucid.readme.io/reference/unhookcreateitemsresult-sdk.md)
+- [UnhookSelectionQuery](https://lucid.readme.io/reference/unhookselectionquery-sdk.md)
+- [UnhookSelectionResult](https://lucid.readme.io/reference/unhookselectionresult-sdk.md)
+- [UnhookDeleteItemsResult](https://lucid.readme.io/reference/unhookdeleteitemsresult-sdk.md)
+- [UnhookTextEditResult](https://lucid.readme.io/reference/unhooktexteditresult-sdk.md)
+- [Validator](https://lucid.readme.io/reference/validator-sdk.md)
+- [UnhookTextEditQuery](https://lucid.readme.io/reference/unhooktexteditquery-sdk.md)
+- [ValidatorWithMessage](https://lucid.readme.io/reference/validatorwithmessage-sdk-1.md)
+- [WithMutexResult](https://lucid.readme.io/reference/withmutexresult-sdk.md)
+- [WithSilentActionsQuery](https://lucid.readme.io/reference/withsilentactionsquery-sdk.md)
+- [WithSilentActionsResult](https://lucid.readme.io/reference/withsilentactionsresult-sdk.md)
+- [WithUndefinedAsOptional](https://lucid.readme.io/reference/withundefinedasoptional-sdk.md)
+- [WithMutexQuery](https://lucid.readme.io/reference/withmutexquery-sdk.md)
+- [WithUndefinedAsOptionalRecursive](https://lucid.readme.io/reference/withundefinedasoptionalrecursive-sdk.md)
+- [XHRResponse](https://lucid.readme.io/reference/xhrresponse-sdk.md)
+- [ZOrderResult](https://lucid.readme.io/reference/zorderresult-sdk.md)
+- [ZOrderQuery](https://lucid.readme.io/reference/zorderquery-sdk.md)
+- [UnhookDeleteItemsQuery](https://lucid.readme.io/reference/unhookdeleteitemsquery-sdk.md)
+- [AddDiagramFromLumaQuery](https://lucid.readme.io/reference/adddiagramfromlumaquery-sdk.md)
+- [AddAuthorizationFlowHandlerResult](https://lucid.readme.io/reference/addauthorizationflowhandlerresult-sdk.md)
+- [AddDiagramFromLumaResult](https://lucid.readme.io/reference/adddiagramfromlumaresult-sdk.md)
+- [AddAuthorizationFlowHandlerQuery](https://lucid.readme.io/reference/addauthorizationflowhandlerquery-sdk.md)
+- [ExtensionCardUserDataSearch](https://lucid.readme.io/reference/extensioncarduserdatasearch-sdk.md)
+- [AuthorizationFlowHandlerProvider](https://lucid.readme.io/reference/authorizationflowhandlerprovider-sdk.md)
+- [AddQuickActionQuery](https://lucid.readme.io/reference/addquickactionquery-sdk.md)
+- [ExtensionCardUserData](https://lucid.readme.io/reference/extensioncarduserdata-sdk.md)
+- [SerializedSchemaForApi](https://lucid.readme.io/reference/serializedschemaforapi-sdk.md)
+- [AddQuickActionResult](https://lucid.readme.io/reference/addquickactionresult-sdk.md)
+- [QuickActionTooltipQuery](https://lucid.readme.io/reference/quickactiontooltipquery-sdk.md)
+- [ValidatorWithList](https://lucid.readme.io/reference/validatorwithlist-sdk.md)
+- [DependenciesForItems](https://lucid.readme.io/reference/dependenciesforitems-sdk.md)
+- [ExtensionCardFieldsGroup](https://lucid.readme.io/reference/extensioncardfieldsgroup-sdk.md)
+- [AdditionalPanelTabsCallback](https://lucid.readme.io/reference/additionalpaneltabscallback-sdk.md)
+- [DocumentCollections](https://lucid.readme.io/reference/documentcollections-sdk.md)
+- [LucidCardPanelTab](https://lucid.readme.io/reference/lucidcardpaneltab-sdk.md)
+- [Pruner](https://lucid.readme.io/reference/pruner-sdk.md)
+- [LucidCardPanelTabs](https://lucid.readme.io/reference/lucidcardpaneltabs-sdk.md)
+- [ReadonlyWithUndefinedAsOptional](https://lucid.readme.io/reference/readonlywithundefinedasoptional-sdk.md)
+- [GetCardIntegrationConfigQuery](https://lucid.readme.io/reference/getcardintegrationconfigquery-sdk.md)
+- [SerializedFieldConstraintForApi](https://lucid.readme.io/reference/serializedfieldconstraintforapi-sdk.md)
+- [CreateGraphResult](https://lucid.readme.io/reference/creategraphresult-sdk.md)
+- [AsyncCanEditItemCallback](https://lucid.readme.io/reference/asynccanedititemcallback-sdk.md)
+- [GetCardIntegrationConfigResult](https://lucid.readme.io/reference/getcardintegrationconfigresult-sdk.md)
+- [SerializedLucidIconData](https://lucid.readme.io/reference/serializedlucidicondata-sdk.md)
+- [SerializedFieldConfiguration](https://lucid.readme.io/reference/serializedfieldconfiguration-sdk.md)
+- [TagCallback](https://lucid.readme.io/reference/tagcallback-sdk.md)
+- [AddCardsActions](https://lucid.readme.io/reference/addcardsactions-sdk.md)
+- [CheckUserFlagAssignmentResult](https://lucid.readme.io/reference/checkuserflagassignmentresult-sdk.md)
+- [CreateGraphQuery](https://lucid.readme.io/reference/creategraphquery-sdk.md)
+- [SerializedCustomFieldDisplaySettings](https://lucid.readme.io/reference/serializedcustomfielddisplaysettings-sdk.md)
+- [RawPoint](https://lucid.readme.io/reference/rawpoint-sdk.md)
+- [SerializedDisplayOptionForApi](https://lucid.readme.io/reference/serializeddisplayoptionforapi-sdk.md)
+- [AutoSyncSettings](https://lucid.readme.io/reference/autosyncsettings-sdk.md)
+- [ValidatorWithTracking](https://lucid.readme.io/reference/validatorwithtracking-sdk.md)
+- [UnsafeJsonSerializableOrUndefined](https://lucid.readme.io/reference/unsafejsonserializableorundefined-sdk.md)
+- [ExtensionFieldConfiguration](https://lucid.readme.io/reference/extensionfieldconfiguration-sdk.md)
+- [GetDeveloperModeStatusResult](https://lucid.readme.io/reference/getdevelopermodestatusresult-sdk.md)
+- [GetDeveloperModeStatusQuery](https://lucid.readme.io/reference/getdevelopermodestatusquery-sdk.md)
+- [GetListItemsForFieldCallback](https://lucid.readme.io/reference/getlistitemsforfieldcallback-sdk.md)
+- [NameAndEmail](https://lucid.readme.io/reference/nameandemail-sdk.md)
+- [UpdateCardIntegrationConfigResult](https://lucid.readme.io/reference/updatecardintegrationconfigresult-sdk.md)
+- [SerializedLucidDateRangeObject](https://lucid.readme.io/reference/serializedluciddaterangeobject-sdk.md)
+- [ExtensionCardFieldLabelIcons](https://lucid.readme.io/reference/extensioncardfieldlabelicons-sdk.md)
+- [CheckUserFlagAssignmentQuery](https://lucid.readme.io/reference/checkuserflagassignmentquery-sdk.md)
+- [DetailedPatchError](https://lucid.readme.io/reference/detailedpatcherror-sdk.md)
+- [UpdateCardIntegrationConfigQuery](https://lucid.readme.io/reference/updatecardintegrationconfigquery-sdk.md)
+- [ArrayAtLeastLength](https://lucid.readme.io/reference/arrayatleastlength-sdk.md)
+- [CheckUserFeatureFlagAssignmentQuery](https://lucid.readme.io/reference/checkuserfeatureflagassignmentquery-sdk.md)
+- [CheckUserFeatureFlagAssignmentResult](https://lucid.readme.io/reference/checkuserfeatureflagassignmentresult-sdk.md)
+- [ClearOAuthTokenQuery](https://lucid.readme.io/reference/clearoauthtokenquery-sdk.md)
+- [ClearOAuthTokenResult](https://lucid.readme.io/reference/clearoauthtokenresult-sdk.md)
+- [DataSourceType](https://lucid.readme.io/reference/datasourcetype-sdk.md)
+- [DependencyMappingSettings](https://lucid.readme.io/reference/dependencymappingsettings-sdk.md)
+- [IncomingUIMessageType](https://lucid.readme.io/reference/incominguimessagetype-sdk.md)
+- [LucidSpreadsheetIntegrationFailureType](https://lucid.readme.io/reference/lucidspreadsheetintegrationfailuretype-sdk.md)
+- [MetadataTypes](https://lucid.readme.io/reference/metadatatypes-sdk.md)
+- [RevokeOAuthTokenQuery](https://lucid.readme.io/reference/revokeoauthtokenquery-sdk.md)
+- [RevokeOAuthTokenResult](https://lucid.readme.io/reference/revokeoauthtokenresult-sdk.md)
+- [SerializedHierarchicalRelationshipFilterConfig](https://lucid.readme.io/reference/serializedhierarchicalrelationshipfilterconfig-sdk.md)
+- [UpstreamPatchType](https://lucid.readme.io/reference/upstreampatchtype-sdk.md)
+- [UpstreamUpdateType](https://lucid.readme.io/reference/upstreamupdatetype-sdk.md)
+- [CollectionProperties](https://lucid.readme.io/reference/collectionproperties-sdk.md)
+- [ValidatorWithMessage](https://lucid.readme.io/reference/validatorwithmessage-sdk.md)
+- [AnyScalarFieldType](https://lucid.readme.io/reference/anyscalarfieldtype-sdk.md)
+- [DEFAULT_IFRAME_HEIGHT](https://lucid.readme.io/reference/default_iframe_height-sdk.md)
+- [CollectionEnumFieldTypeKey](https://lucid.readme.io/reference/collectionenumfieldtypekey-sdk.md)
+- [DEFAULT_IFRAME_WIDTH](https://lucid.readme.io/reference/default_iframe_width-sdk.md)
+- [BadgePositionsClockwise](https://lucid.readme.io/reference/badgepositionsclockwise-sdk.md)
+- [FlattenedReferenceKeyName](https://lucid.readme.io/reference/flattenedreferencekeyname-sdk.md)
+- [PatchErrorTooltipField](https://lucid.readme.io/reference/patcherrortooltipfield-sdk.md)
+- [FlattenedReferenceKeyId](https://lucid.readme.io/reference/flattenedreferencekeyid-sdk.md)
+- [defaultBadgePositionSerialized](https://lucid.readme.io/reference/defaultbadgepositionserialized-sdk.md)
+- [defaultBadgePosition](https://lucid.readme.io/reference/defaultbadgeposition-sdk.md)
+- [PartialTextStyleFormatter](https://lucid.readme.io/reference/partialtextstyleformatter-sdk.md)
+- [CardFieldDisplaySettingsFormatter](https://lucid.readme.io/reference/cardfielddisplaysettingsformatter-sdk.md)
+- [ErrorBannerType](https://lucid.readme.io/reference/errorbannertype-sdk.md)
+- [OffsetTypeName](https://lucid.readme.io/reference/offsettypename-sdk.md)
+- [ScalarFieldTypeNames](https://lucid.readme.io/reference/scalarfieldtypenames-sdk.md)
+- [AuthorizationFlowHandlerStage](https://lucid.readme.io/reference/authorizationflowhandlerstage-sdk.md)
+- [BadgeLayerPos](https://lucid.readme.io/reference/badgelayerpos-sdk.md)
+- [BadgeResponsiveness](https://lucid.readme.io/reference/badgeresponsiveness-sdk.md)
+- [BannerType](https://lucid.readme.io/reference/bannertype-sdk.md)
+- [CollectionEnumFieldNames](https://lucid.readme.io/reference/collectionenumfieldnames-sdk.md)
+- [CommandName](https://lucid.readme.io/reference/commandname-sdk.md)
+- [ConditionCombination](https://lucid.readme.io/reference/conditioncombination-sdk.md)
+- [ConditionType](https://lucid.readme.io/reference/conditiontype-sdk.md)
+- [ConnectedShapesCondition](https://lucid.readme.io/reference/connectedshapescondition-sdk.md)
+- [ContainmentConditions](https://lucid.readme.io/reference/containmentconditions-sdk.md)
+- [DataErrorType](https://lucid.readme.io/reference/dataerrortype-sdk.md)
+- [DataGraphicIconSets](https://lucid.readme.io/reference/datagraphiciconsets-sdk.md)
+- [DataUpdateFilterType](https://lucid.readme.io/reference/dataupdatefiltertype-sdk.md)
+- [DependencyLineName](https://lucid.readme.io/reference/dependencylinename-sdk.md)
+- [ExtensionDataPanelListItemTextTagColor](https://lucid.readme.io/reference/extensiondatapanellistitemtexttagcolor-sdk.md)
+- [FieldConstraintType](https://lucid.readme.io/reference/fieldconstrainttype-sdk.md)
+- [FieldDisplayType](https://lucid.readme.io/reference/fielddisplaytype-sdk.md)
+- [FieldOptionType](https://lucid.readme.io/reference/fieldoptiontype-sdk.md)
+- [GetDocumentChunksType](https://lucid.readme.io/reference/getdocumentchunkstype-sdk.md)
+- [GetItemsAtSearchType](https://lucid.readme.io/reference/getitemsatsearchtype-sdk.md)
+- [GetLLMContextType](https://lucid.readme.io/reference/getllmcontexttype-sdk.md)
+- [HashAlgorithmEnum](https://lucid.readme.io/reference/hashalgorithmenum-sdk.md)
+- [HorizontalBadgePos](https://lucid.readme.io/reference/horizontalbadgepos-sdk.md)
+- [LegendItemType](https://lucid.readme.io/reference/legenditemtype-sdk.md)
+- [LineShape](https://lucid.readme.io/reference/lineshape-sdk.md)
+- [LucidCardFields](https://lucid.readme.io/reference/lucidcardfields-sdk.md)
+- [LucidProduct](https://lucid.readme.io/reference/lucidproduct-sdk.md)
+- [MenuLocation](https://lucid.readme.io/reference/menulocation-sdk.md)
+- [MenuType](https://lucid.readme.io/reference/menutype-sdk.md)
+- [MermaidDiagramType](https://lucid.readme.io/reference/mermaiddiagramtype-sdk.md)
+- [OffsetType](https://lucid.readme.io/reference/offsettype-sdk.md)
+- [OnClickHandlerKeys](https://lucid.readme.io/reference/onclickhandlerkeys-sdk.md)
+- [PanelLocation](https://lucid.readme.io/reference/panellocation-sdk.md)
+- [RuleFormattingType](https://lucid.readme.io/reference/ruleformattingtype-sdk.md)
+- [ScalarFieldTypeEnum](https://lucid.readme.io/reference/scalarfieldtypeenum-sdk.md)
+- [SemanticKind](https://lucid.readme.io/reference/semantickind-sdk.md)
+- [SemanticTypeConditions](https://lucid.readme.io/reference/semantictypeconditions-sdk.md)
+- [ShapeDataConditions](https://lucid.readme.io/reference/shapedataconditions-sdk.md)
+- [ShapeDataInheritance](https://lucid.readme.io/reference/shapedatainheritance-sdk.md)
+- [ShapeTypeConditions](https://lucid.readme.io/reference/shapetypeconditions-sdk.md)
+- [SimpleImageFillPosition](https://lucid.readme.io/reference/simpleimagefillposition-sdk.md)
+- [StatusValues](https://lucid.readme.io/reference/statusvalues-sdk.md)
+- [StrokeStyle](https://lucid.readme.io/reference/strokestyle-sdk.md)
+- [TextConditions](https://lucid.readme.io/reference/textconditions-sdk.md)
+- [TextMarkupNames](https://lucid.readme.io/reference/textmarkupnames-sdk.md)
+- [UnfurlCallbackType](https://lucid.readme.io/reference/unfurlcallbacktype-sdk.md)
+- [UnfurlIframeAspectRatio](https://lucid.readme.io/reference/unfurliframeaspectratio-sdk.md)
+- [UnfurlRefreshErrorType](https://lucid.readme.io/reference/unfurlrefresherrortype-sdk.md)
+- [VerticalBadgePos](https://lucid.readme.io/reference/verticalbadgepos-sdk.md)
+- [ZOrderOperation](https://lucid.readme.io/reference/zorderoperation-sdk.md)
+- [Legacy Data API](https://lucid.readme.io/reference/legacy-data-api.md)
+- [Rate Limits](https://lucid.readme.io/reference/rate-limits.md)
+- [Get Rate Limits](https://lucid.readme.io/reference/getratelimits.md): See what your current rate limits are.
+- [Data Set](https://lucid.readme.io/reference/data-set.md)
+- [Get Total Data Sets Count](https://lucid.readme.io/reference/getdatasetcount.md): This endpoint returns the number of data sets a user has access to. The return value is in the response headers as `Lucid-DataSets-Total`
+- [Get All Data Sets](https://lucid.readme.io/reference/getalldatasets.md): This endpoint returns all data sets that the user has access to. The results will be paginated. If the number of data sets exceeds the pagination limit, links will be provided to get the next set of results or the previous set of results (if applicable). The range of returned values can be determined by optional start and end parameters. If the difference between the end and start values is greater than the pagination limit, the endpoint returns data sets in the range from start to start + pagination limit. Items in the response are determined based on their creation order.
+- [Create Data Set](https://lucid.readme.io/reference/createdataset.md): Creates a new data set and a corresponding new data set grant for the user. Note that a data set cannot be created with data sources already inside it, so data sources must be added to a data set through either the Create Data Source endpoint or the Update Data Source endpoint.
+- [Get Data Set](https://lucid.readme.io/reference/getdataset.md): Gets a specific existing data set from Lucid.
+- [Update Data Set Name](https://lucid.readme.io/reference/updatedatasetname.md): This endpoint takes the payload specified below and updates the data set name. Updates will only occur if the user has access to the data set. Note that the other fields in a dataset cannot be updated through this endpoint.
+- [Delete Data Set](https://lucid.readme.io/reference/deletedataset.md): This removes the specified data set and its associated properties. Once deleted, none of the information can be recovered. The data sources in the set will be removed from the data set but otherwise they will not be deleted or altered.
+- [Data Set Grant](https://lucid.readme.io/reference/data-set-grant.md)
+- [Get Data Set Grant](https://lucid.readme.io/reference/getdatasetgrant.md): Gets the requested data set grant if the access tokens are valid and the user has access to the data set. Note that the id in the URI is the number at the end of the data set grant's uri, not the identifier field of the object.
+- [Delete Data Set Grant](https://lucid.readme.io/reference/deletedatasetgrant.md): Removes the specified data set grant ONLY if it's not the last data set grant. There must always be at least one data set grant for a given data set, therefore the last data set grant cannot be deleted. A response message is returned with the result of the deletion. Note that the id in the URI is the number at the end of the data set grant's URI, not the identifier field of the Data Set Grant.
+- [Get All Data Set Grants](https://lucid.readme.io/reference/getalldatasetgrants.md): Finds and returns all data set grants for the queried data set if the user has access to the data set.
+- [Create Data Set Grant](https://lucid.readme.io/reference/createdatasetgrant.md): Creates a new data set grant for the specified data set. The requesting user must have access to the data set in order for it to succeed.
+- [Data Set Properties](https://lucid.readme.io/reference/data-set-properties.md)
+- [Get Data Set Properties](https://lucid.readme.io/reference/getdatasetproperties.md): Gets all properties for the specified data set if the user has access to the data set.
+- [Update Data Set Properties](https://lucid.readme.io/reference/updatedatasetproperties.md): Allows a user to update the properties on a data set. This endpoint uses the supplied values to either update existing properties or add new properties.
+- [Delete Data Set Properties](https://lucid.readme.io/reference/deletedatasetproperties.md): Removes only the properties provided in the query parameter. The deleted properties cannot be undone. The deletion will only occur if the user has access to the data set.
+- [Data Source](https://lucid.readme.io/reference/data-source.md)
+- [Get Total Data Sources Count](https://lucid.readme.io/reference/getdatasourcecount.md): This endpoint returns the number of data sources a user has access to. The return value is in the response headers as `Lucid-DataSources-Total`
+- [Get All Data Sources](https://lucid.readme.io/reference/getalldatasources.md): This endpoint returns all data sources that the user has access to. The results will be paginated. If the number of data sources exceeds the pagination limit, links will be provided to get the next set of results or the previous set of results (if applicable). The range of returned values can be determined by optional start and end parameters. If the difference between the end and start values is greater than the pagination limit, the endpoint returns data sources in the range from start to start + pagination limit. Items in the response are determined based on their creation order.
+- [Create Data Source](https://lucid.readme.io/reference/createdatasource.md): Creates a new data source and a corresponding new data source grant for the user.
+- [Get Data Source](https://lucid.readme.io/reference/getdatasource.md): Gets a specific existing data source from Lucid. If the creator of the data source is the user making the request, the link parameters will be returned with the data source.
+- [Update Data Source](https://lucid.readme.io/reference/updatedatasource.md): This endpoint takes a JSON object and uses it to update the data source's name and/or adapter type. The JSON object of the updated data source is returned. Updates will only occur if the user has access to the data source.
+- [Delete Data Source](https://lucid.readme.io/reference/deletedatasource.md): This removes the specified data source and anything related to it (collections, schema, items, link parameters). Once deleted, none of the information can be recovered.
+- [Create Data Source from CSV](https://lucid.readme.io/reference/createdatasourcefromcsv.md): If able to successfully parse the attached file as a CSV file, a new data source with be created (with the same name as the attached file) that includes a single collection. The single collection in the newly created data source will contain the data from the CSV file. Each row will be an item, and each column will be labelled A, B, C, …, AA, AB, AC, .. in the order in which they were in the original file. There will be a single metadata collection created which represents the mapping between the id of each created item and the original row number of the row it was created from.
+- [Update Data Source from CSV](https://lucid.readme.io/reference/updatedatasourcefromcsv.md): If able to successfully parse the attached file as a CSV file, the endpoint will overwrite the contents of the single collection with the new data. The collection reference is left unchanged, but will have new items.  A specific collection in a data source can be replaced by including both the data source and collection query parameters. In this case, the items in that single collection will be overwritten with the values from the CSV. The target collection's id will remain the same, i.e., the original collection is the same, just the items have changed. The specified collection must belong to the specified data source.
+- [Collection](https://lucid.readme.io/reference/collection.md)
+- [Get Total Collections Count](https://lucid.readme.io/reference/gettotalcollectionscount.md): This endpoint returns the number of collections a user has access to. The return value is in the response headers as Lucid-Collections-Total.
+- [Get All Collections](https://lucid.readme.io/reference/getallcollections.md): This endpoint returns all collections that the user has access to. The results will be paginated. If the number of collections exceeds the pagination limit, links will be provided to get the next set of results or the previous set of results (if applicable). The range of returned values can be determined by optional start and end parameters. If the difference between the end and start values is greater than the pagination limit, the endpoint returns collections in the range from start to start + pagination limit. Items in the response are determined based on their creation order.
+- [Create Collection](https://lucid.readme.io/reference/createcollection.md): Creates a new collection for the specified data source. Only succeeds if the user has access to the data source.
+- [Get Collection](https://lucid.readme.io/reference/getcollection.md): Gets a specific existing collection from Lucid.
+- [Update Collection](https://lucid.readme.io/reference/updatecollection.md): This endpoint takes a JSON object and uses it to update the collection's name and/or data source. The JSON object of the updated collection is returned. Updates will only occur if the user has access to the data source. Only top level collections can be updated. Metadata collections cannot be updated.
+- [Delete Collection](https://lucid.readme.io/reference/deletecollection.md): This removes the collection and anything that belongs to it (metadata collections, schema, and items). Data sources will not be removed. This action cannot be undone and will only occur if the user has access to the data source.
+- [Get All Metadata Collections](https://lucid.readme.io/reference/getallmetadatacollections.md): This endpoint returns a list of Collections for any metadata collections that exist on the requested collection. The return will only occur if the user has access to the data source. Each metadata collection will have a link to its parent collection in the parent field.
+- [Create Metadata Collection](https://lucid.readme.io/reference/createmetadatacollection.md): Create a new metadata collection for a given collection. The user must have access to the data source in order to create a metadata collection. Metadata collections cannot be updated.
+- [Collection Properties](https://lucid.readme.io/reference/collection-properties.md)
+- [Get Collection Properties](https://lucid.readme.io/reference/getcollectionproperties.md): Gets all properties for the specified collection if the user has access to the data source.
+- [Update Collection Properties](https://lucid.readme.io/reference/updatecollectionproperties.md): Allows a user to update the properties on a collection. This endpoint uses the supplied values to either update existing properties or add new properties.
+- [Delete Collection Properties](https://lucid.readme.io/reference/deletecollectionproperties.md): Removes only the properties provided in the query parameter. The deleted properties cannot be undone. The deletion will only occur if the user has access to the collection.
+- [Schema](https://lucid.readme.io/reference/schema.md)
+- [Get Field Definition](https://lucid.readme.io/reference/getfielddefinition.md): Gets a specific existing field definition for a given collection
+- [Update Field Definition](https://lucid.readme.io/reference/updatefielddefinition.md): This endpoint takes a Field Definition, which is used to update the specified field definition. The easiest way to accomplish this is to modify the values in the response from the GET field definition endpoint and send a PATCH request.
+- [Delete Field Definition](https://lucid.readme.io/reference/deletefielddefinition.md): This removes the field definition from the collection's schema. This results of this action cannot be undone. The delete will only occur if the user has access to the data source. This action will also remove all data item values associated with the deleted field.
+- [Get All Field Definitions](https://lucid.readme.io/reference/getallfielddefinitions.md): This endpoint returns all field definitions for a given collection if the user has access.
+- [Update Field Definitions](https://lucid.readme.io/reference/updatefielddefinitions.md): This endpoint allows updating multiple field definitions at once. The easiest way to accomplish this is to modify the values in the response from the get all field definitions endpoint and send a PATCH request. Changing the values will update existing field definitions within the collection's schema. Any fields sent without a uri field will result in an addition to the schema if the name field is unique within the schema. Fields cannot be deleted with this endpoint.
+- [Delete Field Definitions](https://lucid.readme.io/reference/deletefielddefinitions.md): This endpoint removes only the field definitions provided in the query parameter. The fields in the query parameter must belong to the collection specified. The results of this deletion cannot be undone. The deletion will only occur if the user has access to the data source. NOTE: If the entire schema is removed then all of the values of each data item are also removed.
+- [Data Item](https://lucid.readme.io/reference/data-item.md)
+- [Get Total Data Items Count](https://lucid.readme.io/reference/gettotaldataitemscount.md): This endpoint returns the number of data items a user has access to. The return value is in the response headers as Lucid-Items-Total
+- [Get All Data Items](https://lucid.readme.io/reference/getalldataitems.md): This endpoint returns all data items within a collection that the user has access to. The results will be paginated. If the number of data items exceeds the pagination limit, links will be provided to get the next set of results or the previous set of results (if applicable). The range of returned values can be determined by optional start and end parameters. If the difference between the end and start values is greater than the pagination limit, the endpoint returns collections in the range from start to start + pagination limit. Items in the response are determined based on their creation order.  This endpoint also supports an optional filter string that can be used to filter down the data items returned based off the items' fields' values. If a filter is included, the start and end parameters only refer to items which satisfy the filter; this is also true of the total value in the response. For more details, see Data Item Filters.
+- [Create Data Items](https://lucid.readme.io/reference/createdataitems.md): If the user has access to the collection, new data items are created using the supplied values. Primary key constraints are not enforced. Any field name that is not part of the schema definition is ignored by default. The schema should be created prior to any data items being created.
+- [Update Data Items](https://lucid.readme.io/reference/updatedataitems.md): This endpoint allows updating multiple data items at once. The easiest way to accomplish is to modify the values in the response from Get All Data Items and send a PATCH request. Changing the values will update existing data item values. The collection field is ignored as the data item cannot be moved to a different collection. It the new value is null, it means the value is deleted. If the provided field name does not exist in the collection schema, that value is ignored.
+- [Delete Data Items](https://lucid.readme.io/reference/deletedataitems.md): Removes only the data items provided in the query parameter. The data items in the query parameter must belong to the collection specified. The deletion cannot be undone. The deletion will only occur if the user has access to the data source.
+- [Get Data Item](https://lucid.readme.io/reference/getdataitem.md): Gets a specific existing data item from a given collection
+- [Get Data Items By Key](https://lucid.readme.io/reference/getdataitemsbykey.md): Returns all data items in the specified collection whose field values match the values specified in a Data Item By Key Find JSON Object. If necessary, you can paginate this endpoint's results using query parameters. Note: For more complex data item search queries, consider using the filter parameter with Get All Data Items.
+- [Update Data Item](https://lucid.readme.io/reference/updatedataitem.md): Update values for the specified item. The easiest way to accomplish is to modify the values in the response from Get Data Item and send a PATCH request. Changing the values will update existing data item values. The collection field is ignored as the data item cannot be moved to a different collection. It the new value is null, it means the value is deleted. If the provided field name does not exist in the collection schema, that value is ignored.
+- [Delete Data Item](https://lucid.readme.io/reference/deletedataitem.md): Removes the specified data item from the collection. This deletion cannot be undone. The deletion will only occur if the user has access to the data source.
+- [Update Data Items By Key](https://lucid.readme.io/reference/updatedataitemsbykey.md): Find any data items whose fields match specified values and update those items using a patch. If the value of a field in a patch is null, that value will be deleted from the item. If the provided field name does not exist in the collection schema, that value is ignored. Attempts to update the Collection field will be ignored as a data item cannot be moved to a different collection.
+- [Delete Data Items By Key](https://lucid.readme.io/reference/deletedataitemsbykey.md): Finds all the items whose key values match those specified by the payload and deletes them. The deletion cannot be undone. The deletion will only occur if the user has access to the data source.
+- [Data Item Filters](https://lucid.readme.io/reference/data-item-filters.md)
