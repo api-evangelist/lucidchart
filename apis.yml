@@ -23,6 +23,12 @@ tags:
   - Diagramming
   - Visualization
   - Visual Workspace
+  - Software-as-a-Service
+tags_raw:
+  - Productivity
+  - Diagramming
+  - Visualization
+  - Visual Workspace
   - SaaS
 created: '2026-05-08'
 modified: '2026-05-08'
@@ -96,6 +102,9 @@ apis:
 - aid: lucidchart:lucid-oauth-api
   name: Lucid OAuth 2.0 API
   tags:
+  - Authentication
+  - Authorization
+  tags_raw:
   - OAuth
   - Authorization
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
@@ -125,6 +134,9 @@ apis:
 - aid: lucidchart:lucid-webhooks-api
   name: Lucid Webhooks API
   tags:
+  - Webhook
+  - Event
+  tags_raw:
   - Webhooks
   - Events
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
