@@ -4,6 +4,18 @@ name: Lucidchart
 kind: company
 description: >-
   Lucidchart is a web-based intelligent diagramming application by Lucid Software, part of the Lucid Visual Collaboration Suite (Lucidchart, Lucidspark, Lucidscale). The Lucid Developer Platform exposes a REST API for documents/folders/collaborators/content, an Extension API for in-editor extensions, an Embed SDK for embedding diagrams in external apps, and a SCIM API for enterprise provisioning.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
