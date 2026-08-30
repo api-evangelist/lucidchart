@@ -10,12 +10,9 @@
     },
     {
       "source": "https://lucid.co/blog",
-      "feed_url": "https://lucid.co/legal-rss.xml",
-      "title": "",
-      "saved": 0,
-      "method": "discovered"
+      "error": "HTTPError"
     }
   ],
-  "fetched": "2026-08-22T20:20:02Z",
+  "fetched": "2026-08-30T22:33:40Z",
   "post_count": 37
 }
