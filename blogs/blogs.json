@@ -2,20 +2,18 @@
   "repo": "lucidchart",
   "feeds": [
     {
+      "source": "https://lucid.co/blog",
+      "error": "HTTPError"
+    },
+    {
       "source": "https://lucid.co/legal-rss.xml",
       "feed_url": "https://lucid.co/legal-rss.xml",
       "title": "",
       "saved": 0,
-      "method": "feed",
-      "nature": "undetermined",
-      "nature_basis": null
-    },
-    {
-      "source": "https://lucid.co/blog",
-      "error": "HTTPError"
+      "method": "feed"
     }
   ],
-  "fetched": "2026-08-30T22:33:40Z",
+  "fetched": "2026-09-06T19:17:18Z",
   "post_count": 37,
   "feed_nature": "vendor-blog",
   "feed_nature_basis": "path_blog",
