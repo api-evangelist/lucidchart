@@ -1,8 +1,7 @@
 {
   "provider": "lucidchart",
   "sources": [
-    "lucidchart-documents-api-openapi.yml",
-    "lucidchart-folders-api-openapi.yml"
+    "_original/lucidchart-openapi.yml"
   ],
   "outputs": [
     "lucidchart-documents-api-openapi.yml",
@@ -11,6 +10,13 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "lucidchart-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "lucidchart-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lucidchart-folders-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

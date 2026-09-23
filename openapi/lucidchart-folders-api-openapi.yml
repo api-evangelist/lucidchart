@@ -1,15 +1,13 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Lucid REST Documents Folders API
+  title: Lucid REST Folders API
   description: 'The Lucid REST API allows developers to programmatically create, read,
 
     update, and manage Lucid documents and folders across Lucidchart,
 
     Lucidspark, and Lucidscale. Authentication is via OAuth 2.0 bearer tokens
 
-    or API keys.
-
-    '
+    or API keys.'
   version: '1.0'
   contact:
     name: Lucid Developer Platform
