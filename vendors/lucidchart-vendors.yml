@@ -1,0 +1,13 @@
+generated: '2026-09-25'
+method: probed
+source: 'reconcile-ptr-only.py: an MCP server the provider serves through a vendor implementation'
+registry: all/0-working/vendors.yml
+vendors:
+- vendor: readme
+  area: mcp-hosting
+  host: developer.lucid.co
+  evidence: mcp:https://developer.lucid.co/mcp
+  signal: mcp-handshake
+  confidence: high
+  kin_score:
+  - mcp_server
