@@ -1,0 +1,55 @@
+generated: '2026-10-14'
+method: searched
+checked:
+- bamboohr/integrations/bamboohr-integration-edges.yml
+- okta/integrations/okta-integration-edges.yml
+source:
+- bamboohr/integrations/bamboohr-integration-edges.yml
+- okta/integrations/okta-integration-edges.yml
+edges:
+- partner_name: BambooHR (own)
+  partner: bamboohr
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.bamboohr.com/integrations/listings/lucidchart
+  mirror_of: bamboohr/integrations/bamboohr-integration-edges.yml
+  apps:
+  - Lucidchart
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Planning & Charting
+- partner_name: Okta (own)
+  partner: okta
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.okta.com/integrations/lucid/
+  mirror_of: okta/integrations/okta-integration-edges.yml
+  apps:
+  - Lucid
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Lifecycle Management
+  badges:
+  - OKTA_VERIFIED
+  features:
+  - CREATE
+  - DEACTIVATE
+  - GROUP_LINKING
+  - GROUP_PUSH
+  - IDENTITY_SECURITY_POSTURE_MANAGEMENT
+  - SAML
+  - SECURE_IDENTITY_INTEGRATIONS_FUNDAMENTAL
+  - UPDATE
+  - WORKFLOWS_CONNECTORS
