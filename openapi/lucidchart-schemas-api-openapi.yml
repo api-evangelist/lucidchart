@@ -1,0 +1,188 @@
+openapi: 3.2.0
+info:
+  title: Lucid SCIM Schemas API
+  description: The Lucid SCIM 2.0 API enables identity providers to automatically provision and deprovision users and groups in a Lucid account. Supports standard SCIM operations for user lifecycle management.
+  termsOfService: https://lucid.co/developer-terms
+  license:
+    name: Lucid
+    url: https://lucid.co/developer-terms
+  version: 1.0.0
+servers:
+- url: https://users.lucid.app/scim/v2
+security:
+- Bearer: []
+tags:
+- name: Schemas
+  description: Endpoints that deal with lucid resource schemas.
+paths:
+  /Schemas/{id}:
+    get:
+      summary: Get Schema
+      description: Get a specific Lucid resource schema.
+      operationId: getSchema
+      tags:
+      - Schemas
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: ID of the Lucid resource schema to get.
+        example: /v2/Schemas/urn:ietf:params:scim:schemas:core:2.0:Group
+      responses:
+        '200':
+          description: OK. Returns a Schema.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Schema'
+        '401':
+          description: Unauthorized. Occurs if the bearer token is invalid.
+        '404':
+          description: Not Found. Occurs if the schema was not found.
+  /Schemas:
+    get:
+      summary: Get All Schemas
+      description: Gets all Lucid resource schemas.
+      operationId: getAllSchemas
+      tags:
+      - Schemas
+      responses:
+        '200':
+          description: OK. Returns a JSON object containing a list of Schemas.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAllSchemas'
+        '401':
+          description: Unauthorized. Occurs if the bearer token is invalid.
+components:
+  schemas:
+    Attribute:
+      description: An attribute definition for a SCIM schema resource. Complex attributes may contain subAttributes.
+      allOf:
+      - $ref: '#/components/schemas/SubAttribute'
+      - type: object
+        properties:
+          subAttributes:
+            type: array
+            description: Defines nested attributes for complex attribute types.
+            items:
+              $ref: '#/components/schemas/SubAttribute'
+    SubAttribute:
+      type: object
+      description: A leaf-level attribute definition. Like Attribute but without subAttributes, since sub-attributes cannot themselves be complex.
+      properties:
+        name:
+          type: string
+          description: The name of the attribute.
+          example: id
+        type:
+          type: string
+          enum:
+          - string
+          - boolean
+          - decimal
+          - integer
+          - dateTime
+          - reference
+          - complex
+          description: What the type of the attribute is.
+          example: string
+        multiValued:
+          type: boolean
+          description: Indicates whether the attribute can have multiple values.
+          example: false
+        description:
+          type: string
+          description: Description for the associated attribute.
+          example: A way to identify the user
+        required:
+          type: boolean
+          description: Whether or not the attribute is required.
+          example: false
+        caseExact:
+          type: boolean
+          description: If the attribute is case sensitive.
+          example: false
+        mutability:
+          type: string
+          enum:
+          - readOnly
+          - readWrite
+          - immutable
+          - writeOnly
+        returned:
+          type: string
+          enum:
+          - always
+          - never
+          - default
+          - request
+        uniqueness:
+          type: string
+          enum:
+          - none
+          - server
+          - global
+    Schema:
+      type: object
+      properties:
+        schemas:
+          type: array
+          items:
+            type: string
+          example:
+          - urn:ietf:params:scim:schemas:core:2.0:Schema
+        id:
+          type: string
+          description: The id of the schema resource.
+          example: urn:ietf:params:scim:schemas:core:2.0:Group
+        name:
+          type: string
+          description: The name of the schema resource.
+          example: Group
+        description:
+          type: string
+          description: The description of the schema resource.
+          example: A group of users
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attribute'
+        meta:
+          type: object
+    GetAllSchemas:
+      type: object
+      properties:
+        schemas:
+          type: array
+          items:
+            type: string
+          example:
+          - urn:ietf:params:scim:api:messages:2.0:ListResponse
+        totalResults:
+          type: integer
+          description: The total number of schemas to be returned.
+          example: 1
+        startIndex:
+          type: integer
+          description: The index of the first schema in the "Resources" list (for paginated results).
+          example: 1
+        itemsPerPage:
+          type: integer
+          description: The maximum number of schemas returned in the "Resources" list (for paginated results).
+          example: 50
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/Schema'
+          description: The list of schemas returned by the query.
+  securitySchemes:
+    Bearer:
+      type: http
+      scheme: bearer
+x-readme:
+  explorer-enabled: true
+  proxy-enabled: false

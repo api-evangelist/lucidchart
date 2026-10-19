@@ -165,26 +165,48 @@ apis:
   description: >-
     Subscribe to events on documents and folders (create, update, trash, restore) and receive HTTP callbacks
     at your endpoint.
-- aid: lucidchart:lucidchart-documents-api
-  name: Lucidchart Documents API
-  description: The Documents API from Lucidchart — 2 operation(s) for documents.
+- aid: lucidchart:lucidchart-groups-api
+  name: Lucidchart Groups API
+  description: Endpoints that deal with org groups or teams (dependent on which bearer token is used).
   humanURL: https://developer.lucid.co/api/v1/
   baseURL: https://api.lucid.co
   tags:
-  - Documents
+  - Groups
   properties:
   - type: OpenAPI
-    url: openapi/lucidchart-documents-api-openapi.yml
-- aid: lucidchart:lucidchart-folders-api
-  name: Lucidchart Folders API
-  description: The Folders API from Lucidchart — 2 operation(s) for folders.
+    url: openapi/lucidchart-groups-api-openapi.yml
+- aid: lucidchart:lucidchart-schemas-api
+  name: Lucidchart Schemas API
+  description: Endpoints that deal with lucid resource schemas.
   humanURL: https://developer.lucid.co/api/v1/
   baseURL: https://api.lucid.co
   tags:
-  - Folders
+  - Schemas
   properties:
   - type: OpenAPI
-    url: openapi/lucidchart-folders-api-openapi.yml
+    url: openapi/lucidchart-schemas-api-openapi.yml
+- aid: lucidchart:lucidchart-service-provider-config-api
+  name: Lucidchart Service Provider Config API
+  description: >-
+    Retrieve the SCIM service provider configuration, describing supported operations, authentication
+    schemes, and bulk/filter capabilities.
+  humanURL: https://developer.lucid.co/api/v1/
+  baseURL: https://api.lucid.co
+  tags:
+  - Service Provider Config
+  properties:
+  - type: OpenAPI
+    url: openapi/lucidchart-service-provider-config-api-openapi.yml
+- aid: lucidchart:lucidchart-users-api
+  name: Lucidchart Users API
+  description: Endpoints that deal with users.
+  humanURL: https://developer.lucid.co/api/v1/
+  baseURL: https://api.lucid.co
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/lucidchart-users-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/lucidchart-agentic-access.yml

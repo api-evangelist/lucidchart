@@ -1,22 +1,24 @@
 {
   "provider": "lucidchart",
   "sources": [
-    "_original/lucidchart-openapi.yml"
+    "_original/lucidchart-openapi.json"
   ],
   "outputs": [
-    "lucidchart-documents-api-openapi.yml",
-    "lucidchart-folders-api-openapi.yml"
+    "lucidchart-groups-api-openapi.yml",
+    "lucidchart-schemas-api-openapi.yml",
+    "lucidchart-service-provider-config-api-openapi.yml",
+    "lucidchart-users-api-openapi.yml"
   ],
   "archived": [],
-  "errors": [],
+  "errors": [
+    "lucidchart-openapi.json: dangling $ref: #/paths/~1Groups~1%7Bid%7D/get/parameters/0",
+    "lucidchart-openapi.json: dangling $ref: #/paths/~1Users~1%7Bid%7D/get/parameters/0"
+  ],
   "warnings": [],
   "notes": [
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
-    "lucidchart-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "lucidchart-openapi.json: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: written (+4 apis, 11 total)"
   ],
-  "skipped": [
-    "lucidchart-documents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "lucidchart-folders-api-openapi.yml: previously refined output, superseded by openapi/_original/"
-  ]
+  "skipped": []
 }

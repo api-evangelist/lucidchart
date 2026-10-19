@@ -1,0 +1,465 @@
+openapi: 3.2.0
+info:
+  title: Lucid SCIM Users API
+  description: The Lucid SCIM 2.0 API enables identity providers to automatically provision and deprovision users and groups in a Lucid account. Supports standard SCIM operations for user lifecycle management.
+  termsOfService: https://lucid.co/developer-terms
+  license:
+    name: Lucid
+    url: https://lucid.co/developer-terms
+  version: 1.0.0
+servers:
+- url: https://users.lucid.app/scim/v2
+security:
+- Bearer: []
+tags:
+- name: Users
+  description: Endpoints that deal with users.
+paths:
+  /Users/{id}:
+    get:
+      summary: Get User
+      description: Get a specific user on the account.
+      operationId: getUser
+      tags:
+      - Users
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: ID of the Lucid user.
+        example: lucid-1234
+      - $ref: '#/paths/~1Users/get/parameters/3'
+      - $ref: '#/paths/~1Users/get/parameters/4'
+      responses:
+        '200':
+          description: OK. Returns a User.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          description: Unauthorized. Occurs if bearer token is invalid.
+        '404':
+          description: Not Found. Occurs if the user was not found.
+    put:
+      summary: Modify User
+      description: Modify an existing user. To deactivate a user, set the `active` field to `false`.
+      operationId: modifyUserPut
+      tags:
+      - Users
+      parameters:
+      - $ref: '#/paths/~1Users~1%7Bid%7D/get/parameters/0'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUser'
+      responses:
+        '200':
+          description: OK. Returns the modified User.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Bad Request. Occurs if request body syntax is incorrect.
+        '401':
+          description: Unauthorized. Occurs if bearer token is invalid.
+        '404':
+          description: Not Found. Occurs if the user does not exist.
+        '409':
+          description: Conflict. Occurs if new username or email already exists.
+    patch:
+      summary: Modify User
+      description: Modify an existing user. To deactivate a user, set the `active` field to `false`.
+      operationId: modifyUserPatch
+      tags:
+      - Users
+      parameters:
+      - $ref: '#/paths/~1Users~1%7Bid%7D/get/parameters/0'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - schemas
+              - Operations
+              properties:
+                schemas:
+                  type: array
+                  items:
+                    type: string
+                  example:
+                  - urn:ietf:params:scim:schemas:core:2.0:User
+                Operations:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/UserOperation'
+      responses:
+        '200':
+          description: OK. Returns the modified User.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Bad Request. Occurs if request body syntax is incorrect.
+        '401':
+          description: Unauthorized. Occurs if bearer token is invalid.
+        '404':
+          description: Not Found. Occurs if the user does not exist.
+        '409':
+          description: Conflict. Occurs if new username or email already exists on account.
+    delete:
+      summary: Delete User
+      description: '> ❗️ This is a hard delete. We recommend deactivating users instead of deleting them. To deactivate a user, use PUT or PATCH and set the active field to false.
+
+
+        Delete a user from the account. Note that certain users cannot be deleted, such as account owners and default document owners.'
+      operationId: deleteUser
+      tags:
+      - Users
+      parameters:
+      - $ref: '#/paths/~1Users~1%7Bid%7D/get/parameters/0'
+      responses:
+        '204':
+          description: No Content. User was successfully deleted.
+        '400':
+          description: Bad Request. Occurs if an unexpected error prevents user deletion.
+        '401':
+          description: Unauthorized. Occurs if bearer token is invalid.
+        '404':
+          description: Not Found. Occurs if the user does not exist.
+        '409':
+          description: Conflict. Occurs if the user cannot be deleted (e.g., account owner or default document owner).
+  /Users:
+    get:
+      summary: Get All Users
+      description: Gets all users on an account.
+      operationId: getAllUsers
+      tags:
+      - Users
+      parameters:
+      - name: startIndex
+        in: query
+        required: false
+        schema:
+          type: number
+        description: Index of the first user in the list to return (1 indexed).
+        example: 1
+      - name: count
+        in: query
+        required: false
+        schema:
+          type: number
+        description: Quantity of users to return from this request.
+        example: 100
+      - name: filter
+        in: query
+        required: false
+        schema:
+          type: string
+        description: "See SCIM spec and optimization details below:\n* The only operator currently supported is eq\n* Filtered requests will result in a maximum of 10,000 users\n* While filtering should technically work on every attribute of a user, it is a very slow process for non-optimized attributes. We strongly recommend filtering only on the following optimized attributes whenever possible:\n  * email / emails.value / workemail\n  * username / displayname\n  * externalid\n  * urn:ietf:params:scim:schemas:extension:lucid:1.0:User.productLicenses.<name>\n"
+        example: email eq someEmail@example.com
+      - name: attributes
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+        description: 'Comma-separated list of attribute names to include in the response. The attribute id is always returned. Cannot be used with excludedAttributes.
+
+          '
+        example: userName,emails,active
+      - name: excludedAttributes
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+        description: 'Comma-separated list of attribute names to exclude from the response. The attribute id is always returned and cannot be excluded. Cannot be used with attributes.
+
+          '
+        example: groups,roles
+      responses:
+        '200':
+          description: OK. Returns a JSON object containing a list of users. Deactivated users will not be included in the totalResults or the JSON payload of users returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAllUsers'
+        '400':
+          description: Bad Request. Occurs if the filter parameter has invalid syntax or uses unsupported operators.
+        '401':
+          description: Unauthorized. Occurs if bearer token is invalid.
+    post:
+      summary: Create User
+      description: Create a new user.
+      operationId: createUser
+      tags:
+      - Users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUser'
+      responses:
+        '201':
+          description: OK. Returns the created User.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Bad Request. Occurs if request body syntax is incorrect.
+        '401':
+          description: Unauthorized. Occurs if bearer token is invalid.
+        '409':
+          description: Conflict. if username or email already exists on the account.
+        '424':
+          description: Failed Dependency. Occurs if add-on license requires base license to be active.
+components:
+  schemas:
+    EnterpriseUserExtension:
+      type: object
+      description: Enterprise extension attributes for the user.
+      properties:
+        costCenter:
+          type: string
+          description: The cost center associated with the user.
+          example: CC-100
+        organization:
+          type: string
+          description: The organization that the user belongs to.
+          example: Engineering
+        division:
+          type: string
+          description: The division that the user belongs to.
+          example: Product Development
+        department:
+          type: string
+          description: The department that the user belongs to.
+          example: Backend Engineering
+        manager:
+          type: object
+          description: The user's manager.
+          properties:
+            value:
+              type: string
+              description: The ID of the manager user. Will be in the form "lucid-1234" with 1234 being the ID of the Lucid user.
+              example: lucid-5678
+    UserGroup:
+      type: object
+      properties:
+        value:
+          type: string
+          description: Id of group.
+          example: lucid-group-1234
+        display:
+          type: string
+          description: Display name of group.
+          example: Group A
+      description: An object representing a user's group.
+    CreateUser:
+      allOf:
+      - $ref: '#/components/schemas/UserBase'
+      - type: object
+        required:
+        - schemas
+        - userName
+        - emails
+        properties:
+          password:
+            type: string
+            example: password
+            description: Passwords must be at least 8 characters in length.
+    GetAllUsers:
+      type: object
+      properties:
+        schemas:
+          type: array
+          items:
+            type: string
+          example:
+          - urn:ietf:params:scim:api:messages:2.0:ListResponse
+        totalResults:
+          type: integer
+          description: The total number of users matching the query.
+          example: 1
+        startIndex:
+          type: integer
+          description: The index of the first user in the "Resources" list (for paginated results).
+          example: 1
+        itemsPerPage:
+          type: integer
+          description: The maximum number of users returned in the "Resources" list (for paginated results).
+          example: 100
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+          description: The list of users returned by the query.
+    Name:
+      type: object
+      properties:
+        formatted:
+          type: string
+          description: The users first and last name.
+          example: John Doe
+        givenName:
+          type: string
+          description: The user's first name.
+          example: John
+        familyName:
+          type: string
+          description: The user's last name.
+          example: Doe
+      description: An object representing a user's name in various formats.
+    PhoneNumber:
+      type: object
+      properties:
+        value:
+          type: string
+          description: The phone number.
+          example: +1-555-123-4567
+        type:
+          type: string
+          description: The type of phone number (e.g., work, home, mobile). Only "work" type is currently supported.
+          example: work
+      description: An object representing a user's phone number.
+    UserOperation:
+      type: object
+      required:
+      - op
+      properties:
+        op:
+          type: string
+          enum:
+          - add
+          - remove
+          - replace
+          description: The operation to perform.
+          example: add
+        path:
+          type: string
+          description: Path to the field you want to change.
+          example: roles
+        value:
+          oneOf:
+          - type: boolean
+          - type: string
+          - type: object
+          - type: array
+            items: {}
+          description: Value to be added/replaced.
+          example:
+          - value: Billing Admin
+    User:
+      allOf:
+      - $ref: '#/components/schemas/UserBase'
+      - type: object
+        properties:
+          id:
+            type: string
+            description: Will be in the form "lucid-1234" with 1234 being the ID of the Lucid user.
+            example: lucid-1234
+          groups:
+            type: array
+            items:
+              $ref: '#/components/schemas/UserGroup'
+      description: A standard representation of a user.
+    UserBase:
+      type: object
+      description: Core attributes shared by all user representations.
+      properties:
+        schemas:
+          type: array
+          items:
+            type: string
+          description: URIs identifying the SCIM schemas that describe this resource's attributes.
+          example:
+          - urn:ietf:params:scim:schemas:core:2.0:User
+          - urn:ietf:params:scim:schemas:extension:enterprise:2.0:User
+        userName:
+          type: string
+          description: The user's username (usually their email).
+          example: john-doe@example.com
+        name:
+          $ref: '#/components/schemas/Name'
+        displayName:
+          type: string
+          description: The name that is displayed and represents the user (usually their email).
+          example: john-doe@example.com
+        emails:
+          type: array
+          items:
+            $ref: '#/components/schemas/Email'
+        active:
+          type: boolean
+          description: Whether the user can authenticate to Lucid.
+          example: false
+        externalId:
+          type: string
+          description: An identifier for the user as defined by the provisioning client.
+          example: external-123
+        title:
+          type: string
+          description: The user's job title.
+          example: Software Engineer
+        phoneNumbers:
+          type: array
+          items:
+            $ref: '#/components/schemas/PhoneNumber'
+          description: A list of phone numbers for the user. Currently only "work" type phone numbers are supported.
+        meta:
+          type: object
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Role'
+          description: A list of administrative roles assigned to the user. Assigning a role to a user allows that user to perform administrative actions associated with that role.
+        urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:
+          $ref: '#/components/schemas/EnterpriseUserExtension'
+    Role:
+      type: object
+      required:
+      - value
+      properties:
+        value:
+          type: string
+          description: Administrative role type.
+          example: DocumentAdmin
+          enum:
+          - AccountAdmin
+          - BillingAdmin
+          - Developer
+          - DocumentAdmin
+          - EnterpriseShieldAdmin
+          - TemplateAdmin
+    Email:
+      type: object
+      properties:
+        value:
+          type: string
+          description: The user's email.
+          example: john-doe@example.com
+        type:
+          type: string
+          description: A label indicating the attribute's function (e.g., 'work' or 'home').
+          example: work
+        primary:
+          type: boolean
+          description: Used to determine the primary email of the emails given.
+          example: true
+      description: An object representing a user's email.
+  securitySchemes:
+    Bearer:
+      type: http
+      scheme: bearer
+x-readme:
+  explorer-enabled: true
+  proxy-enabled: false

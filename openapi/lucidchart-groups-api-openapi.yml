@@ -1,0 +1,349 @@
+openapi: 3.2.0
+info:
+  title: Lucid SCIM Groups API
+  description: The Lucid SCIM 2.0 API enables identity providers to automatically provision and deprovision users and groups in a Lucid account. Supports standard SCIM operations for user lifecycle management.
+  termsOfService: https://lucid.co/developer-terms
+  license:
+    name: Lucid
+    url: https://lucid.co/developer-terms
+  version: 1.0.0
+servers:
+- url: https://users.lucid.app/scim/v2
+security:
+- Bearer: []
+tags:
+- name: Groups
+  description: Endpoints that deal with org groups or teams (dependent on which bearer token is used).
+paths:
+  /Groups/{id}:
+    get:
+      summary: Get Group or Team
+      description: Get a specific org group or team on the account.
+      operationId: getGroup
+      tags:
+      - Groups
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: ID of the Lucid group.
+        example: lucid-group-1234
+      - $ref: '#/paths/~1Groups/get/parameters/3'
+      - $ref: '#/paths/~1Groups/get/parameters/4'
+      responses:
+        '200':
+          description: OK. Returns a group or team.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        '401':
+          description: Unauthorized. Occurs if the bearer token is invalid.
+        '404':
+          description: Not Found. Occurs if the group was not found.
+    put:
+      summary: Modify Group or Team
+      description: Modify an existing org group or team.
+      operationId: modifyGroupPut
+      tags:
+      - Groups
+      parameters:
+      - $ref: '#/paths/~1Groups~1%7Bid%7D/get/parameters/0'
+      - $ref: '#/paths/~1Groups/get/parameters/3'
+      - $ref: '#/paths/~1Groups/get/parameters/4'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOrUpdateGroup'
+      responses:
+        '200':
+          description: OK. Returns the modified group or team.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        '401':
+          description: Unauthorized. Occurs if the bearer token is invalid.
+        '404':
+          description: Not Found. Occurs if the group was not found.
+        '409':
+          description: Conflict. Occurs if the group name already exists on the account. Org group and team namespaces are distinct, though the latter includes archived teams.
+    patch:
+      summary: Modify Group or Team
+      description: Modify an existing org group or team.
+      operationId: modifyGroupPatch
+      tags:
+      - Groups
+      parameters:
+      - $ref: '#/paths/~1Groups~1%7Bid%7D/get/parameters/0'
+      - $ref: '#/paths/~1Groups/get/parameters/3'
+      - $ref: '#/paths/~1Groups/get/parameters/4'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                schemas:
+                  type: array
+                  items:
+                    type: string
+                  description: URIs identifying the SCIM schemas that describe this resource's attributes.
+                  example:
+                  - urn:ietf:params:scim:schemas:core:2.0:Group
+                Operations:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/GroupOperation'
+                  description: Type of operation being performed (add, remove, or replace).
+      responses:
+        '200':
+          description: OK. Returns the modified group or team.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        '400':
+          description: Bad Request. Occurs if the request body syntax is incorrect.
+        '401':
+          description: Unauthorized. Occurs if bearer token is invalid.
+        '404':
+          description: Not Found. Occurs if the group was not found.
+        '409':
+          description: Conflict. Occurs if the group name already exists on the account. Org group and team namespaces are distinct, though the latter includes archived teams.
+    delete:
+      summary: Delete Group or Team
+      description: Delete an existing org group or archive an existing team.
+      operationId: deleteGroup
+      tags:
+      - Groups
+      parameters:
+      - $ref: '#/paths/~1Groups~1%7Bid%7D/get/parameters/0'
+      responses:
+        '204':
+          description: No Content. Occurs if the delete was successful.
+        '400':
+          description: Bad Request. May occur if an org group still has members.
+        '401':
+          description: Unauthorized. Occurs if the bearer token is invalid.
+        '404':
+          description: Not Found. Occurs if the group was not found.
+  /Groups:
+    get:
+      summary: Get All Groups or Teams
+      description: Gets all org groups or teams on an account. Supports pagination and filtering.
+      operationId: getAllGroups
+      tags:
+      - Groups
+      parameters:
+      - name: filter
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Filter groups/teams using SCIM filter syntax. Only single filter queries are supported. Currently supports filtering by displayName (case-sensitive exact match).
+        example: displayName eq "Engineering"
+      - name: count
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 100
+          minimum: 0
+        description: Maximum number of groups/teams to return per page for pagination. Negative values are interpreted as 0.
+        example: 50
+      - name: startIndex
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 1
+          minimum: 1
+        description: The 1-based index of the first result to return for pagination. Values less than 1 are interpreted as 1.
+        example: 1
+      - name: attributes
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+        description: Comma-separated list of attribute names to return in the response. The attribute id is always returned. Available attributes are schemas, displayName, members, and meta. Cannot be used with excludedAttributes.
+        example: displayName,members
+      - name: excludedAttributes
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+        description: Comma-separated list of attribute names to exclude from the response. The attribute id is always returned and cannot be excluded. Can exclude schemas, displayName, members, or meta. Cannot be used with attributes.
+        example: members
+      responses:
+        '200':
+          description: OK. Returns a list of org groups or teams.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAllGroups'
+        '401':
+          description: Unauthorized. Occurs if bearer token is invalid.
+    post:
+      summary: Create Group or Team
+      description: Create a new org group or team, or restore a matching archived, closed team.
+      operationId: createGroup
+      tags:
+      - Groups
+      parameters:
+      - $ref: '#/paths/~1Groups/get/parameters/3'
+      - $ref: '#/paths/~1Groups/get/parameters/4'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOrUpdateGroup'
+      responses:
+        '201':
+          description: Created. Returns the created group or team.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        '400':
+          description: Bad Request. Occurs if the group was not created.
+        '401':
+          description: Unauthorized. Occurs if the bearer token is invalid.
+        '409':
+          description: Conflict. Occurs if the group name already exists on the account.
+components:
+  schemas:
+    Group:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Will be in the form "lucid-group-1234" with 1234 being the ID of the Lucid org group or team.
+          example: lucid-group-1234
+        schemas:
+          type: array
+          items:
+            type: string
+          description: URIs identifying the SCIM schemas that describe this resource's attributes.
+          example:
+          - urn:ietf:params:scim:schemas:core:2.0:Group
+        displayName:
+          type: string
+          description: The name of the org group or team.
+          example: Group A
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Member'
+          description: The users (and, for org groups, subgroups) that are members of this org group or team.
+          example:
+          - value: lucid-1433
+            display: User 1
+          - value: lucid-5678
+            display: User 2
+          - value: lucid-group-9012
+            display: Subgroup A
+        meta:
+          type: object
+    CreateOrUpdateGroup:
+      type: object
+      properties:
+        schemas:
+          type: array
+          items:
+            type: string
+          description: URIs identifying the SCIM schemas that describe this resource's attributes.
+          example:
+          - urn:ietf:params:scim:schemas:core:2.0:Group
+        displayName:
+          type: string
+          description: The name of the org group or team.
+          example: My Group
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Member'
+    Member:
+      type: object
+      required:
+      - value
+      properties:
+        value:
+          type: string
+          description: The ID of the member. For org groups, this can be a user ID (e.g. "lucid-1234") or a subgroup ID (e.g. "lucid-group-5678"). For teams, only user IDs are supported.
+          example: lucid-1433
+        $ref:
+          type: string
+          description: The URI of the member. Points to /Users/{id} for user members, or for org groups, /Groups/{id} for subgroup members.
+          example: https://users.lucid.app/scim/v2/Users/lucid-1433
+        display:
+          type: string
+          description: The display name of the member (the user's name, or for org group subgroups, the subgroup's name).
+          example: User 2
+    GroupOperation:
+      type: object
+      required:
+      - op
+      properties:
+        op:
+          type: string
+          enum:
+          - add
+          - remove
+          - replace
+          description: The operation to perform.
+          example: add
+        path:
+          type: string
+          description: Path to the field you want to change.
+          example: members
+        value:
+          oneOf:
+          - type: string
+          - type: array
+            items: {}
+          description: Value to be added/replaced.
+          example:
+          - value: lucid-1234
+          - value: lucid-5678
+    GetAllGroups:
+      type: object
+      properties:
+        schemas:
+          type: array
+          items:
+            type: string
+          description: SCIM schema URIs for the list response.
+          example:
+          - urn:ietf:params:scim:api:messages:2.0:ListResponse
+        totalResults:
+          type: integer
+          description: The total number of org groups or teams matching the query (across all pages, not just the current page).
+          example: 42
+        startIndex:
+          type: integer
+          description: The 1-based index of the first result in the "Resources" list (for paginated results). Reflects the startIndex parameter sent in the request.
+          example: 1
+        itemsPerPage:
+          type: integer
+          description: The maximum number of results returned in the "Resources" list (for paginated results). Reflects the count parameter sent in the request.
+          example: 100
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/Group'
+          description: The list of org groups or teams returned by the query.
+  securitySchemes:
+    Bearer:
+      type: http
+      scheme: bearer
+x-readme:
+  explorer-enabled: true
+  proxy-enabled: false

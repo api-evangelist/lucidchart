@@ -1,0 +1,113 @@
+openapi: 3.2.0
+info:
+  title: Lucid SCIM Service Provider Config API
+  description: The Lucid SCIM 2.0 API enables identity providers to automatically provision and deprovision users and groups in a Lucid account. Supports standard SCIM operations for user lifecycle management.
+  termsOfService: https://lucid.co/developer-terms
+  license:
+    name: Lucid
+    url: https://lucid.co/developer-terms
+  version: 1.0.0
+servers:
+- url: https://users.lucid.app/scim/v2
+security:
+- Bearer: []
+tags:
+- name: Service Provider Config
+  description: Retrieve the SCIM service provider configuration, describing supported operations, authentication schemes, and bulk/filter capabilities.
+paths:
+  /ServiceProviderConfig:
+    get:
+      summary: Get Service Provider Config
+      description: Get the service provider configuration.
+      operationId: getServiceProviderConfig
+      tags:
+      - Service Provider Config
+      responses:
+        '200':
+          description: OK. Returns a ServiceProviderConfig.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceProviderConfig'
+        '401':
+          description: Unauthorized. Occurs if the bearer token is invalid.
+components:
+  schemas:
+    ServiceProviderConfig:
+      type: object
+      properties:
+        schemas:
+          type: array
+          items:
+            type: string
+          example:
+          - urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig
+        documentationUri:
+          type: string
+          description: Link to Lucid documentation.
+          example: https://lucidco.zendesk.com/hc/articles/360049427352-SCIM-Overview
+        patch:
+          type: object
+          description: Describes configuration of the PATCH endpoint.
+          example:
+            supported: true
+        bulk:
+          type: object
+          description: Describes configuration of the bulk operations endpoint.
+          example:
+            supported: false
+        filter:
+          type: object
+          description: Describes configuration of the "filter" option on GET endpoints.
+          example:
+            supported: true
+            maxResults: 100
+        changePassword:
+          type: object
+          description: Describes whether SCIM can be used to change a password.
+          example:
+            supported: false
+        sort:
+          type: object
+          description: Describes configuration of the "sort" option on GET endpoints.
+          example:
+            supported: false
+        etag:
+          type: object
+          description: Describes etag configuration.
+          example:
+            supported: true
+        authenticationSchemes:
+          type: array
+          items:
+            $ref: '#/components/schemas/AuthenticationScheme'
+        meta:
+          type: object
+    AuthenticationScheme:
+      type: object
+      properties:
+        name:
+          type: string
+          example: OAuth Bearer Token
+        description:
+          type: string
+          example: Authentication scheme using the OAuth Bearer Token Standard
+        specUri:
+          type: string
+          example: http://www.rfc-editor.org/info/rfc6750
+        documentationUri:
+          type: string
+          example: https://developer.lucid.co/reference/overview-scim#bearer-token-authorization
+        type:
+          type: string
+          example: oauthbearertoken
+        primary:
+          type: boolean
+          example: true
+  securitySchemes:
+    Bearer:
+      type: http
+      scheme: bearer
+x-readme:
+  explorer-enabled: true
+  proxy-enabled: false
