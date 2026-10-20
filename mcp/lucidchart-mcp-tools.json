@@ -1,0 +1,135 @@
+{
+  "endpoint": "https://developer.lucid.co/mcp",
+  "captured": "2026-10-20",
+  "method": "initialize + tools/list (anonymous, no tool called; roadmap#992)",
+  "protocol_version": "2025-06-18",
+  "server_info": {
+    "name": "Lucid",
+    "version": "1.0.0"
+  },
+  "result": {
+    "tools": [
+      {
+        "name": "list-endpoints",
+        "title": "List API Endpoints",
+        "description": "Lists all API paths and their HTTP methods with summaries, organized by path. Results can be passed directly into 'get-endpoint'.",
+        "inputSchema": {
+          "type": "object",
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "properties": {
+            "title": {
+              "type": "string",
+              "description": "Title of the OpenAPI spec. Use tool 'list-specs' or 'search-endpoints' to see available specs."
+            }
+          },
+          "required": [
+            "title"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "get-endpoint",
+        "title": "Get Endpoint Details",
+        "description": "Gets detailed information about a specific API endpoint, including security schemes and servers",
+        "inputSchema": {
+          "type": "object",
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "properties": {
+            "path": {
+              "type": "string",
+              "description": "The API endpoint path (e.g. /api/v1/users)."
+            },
+            "method": {
+              "type": "string",
+              "description": "The HTTP method (e.g. GET, POST, PUT, DELETE)."
+            },
+            "title": {
+              "type": "string",
+              "description": "Title of the OpenAPI spec. Use tool 'list-specs' or 'search-endpoints' to see available specs."
+            }
+          },
+          "required": [
+            "path",
+            "method",
+            "title"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "search-endpoints",
+        "title": "Search API Endpoints",
+        "description": "Performs a deep search through paths, operations, and parameters to discover relevant API endpoints. Use this tool to find specific API capabilities, required parameters, or data models based on search keywords. Results can be passed directly into 'get-endpoint'.",
+        "inputSchema": {
+          "type": "object",
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "properties": {
+            "pattern": {
+              "type": "string",
+              "description": "Search pattern (case-insensitive)"
+            }
+          },
+          "required": [
+            "pattern"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "list-specs",
+        "title": "List OpenAPI Specs",
+        "description": "Lists all available OpenAPI specs. Use the title to select a spec.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "extension-sdk",
+        "title": "Extension Sdk",
+        "description": "Modify an existing Lucid editor extension or use the lucid-extension-sdk. Use when the user asks to add, edit, or debug functionality in a Lucid editor extension, add a menu item / modal / custom shape / data connector, call an SDK API, or answer questions about the lucid-extension-sdk. Not for scaffolding a new package — use the build-extension tool for that.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        }
+      },
+      {
+        "name": "build-extension",
+        "title": "Build Extension",
+        "description": "Scaffold and run a Lucid editor extension using lucid-package and lucid-extension-sdk. Use when the user asks to create a Lucid extension, start a new Lucid editor extension, or build an extension for Lucid (lucid.app / Lucidchart / Lucidspark). Not for modifying an existing extension's code.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        }
+      }
+    ]
+  }
+}
