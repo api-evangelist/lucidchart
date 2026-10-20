@@ -55,3 +55,27 @@ tool_quality:
   scored: false
   note: Facts from the saved tools/list capture (mcp_tool_quality.py); recorded, not scored. Checks learned
     from Glimind's agent-readiness audit.
+tools:
+- name: list-endpoints
+  description: Lists all API paths and their HTTP methods with summaries, organized by path. Results can
+    be passed directly into 'get-endpoint'.
+- name: get-endpoint
+  description: Gets detailed information about a specific API endpoint, including security schemes and
+    servers
+- name: search-endpoints
+  description: Performs a deep search through paths, operations, and parameters to discover relevant API
+    endpoints. Use this tool to find specific API capabilities, required parameters, or data models based
+    on search keywords. Results can be passed directly into 'get-endpoint'.
+- name: list-specs
+  description: Lists all available OpenAPI specs. Use the title to select a spec.
+- name: extension-sdk
+  description: Modify an existing Lucid editor extension or use the lucid-extension-sdk. Use when the
+    user asks to add, edit, or debug functionality in a Lucid editor extension, add a menu item / modal
+    / custom shape / data connector, call an SDK API, or answer questions about the lucid-extension-sdk.
+    Not for scaffolding a new package — use the build-extension tool for that.
+- name: build-extension
+  description: Scaffold and run a Lucid editor extension using lucid-package and lucid-extension-sdk.
+    Use when the user asks to create a Lucid extension, start a new Lucid editor extension, or build an
+    extension for Lucid (lucid.app / Lucidchart / Lucidspark). Not for modifying an existing extension's
+    code.
+tools_count: 6
