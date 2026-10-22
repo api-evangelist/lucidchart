@@ -3,6 +3,9 @@ method: searched
 checked:
 - bamboohr/integrations/bamboohr-integration-edges.yml
 - okta/integrations/okta-integration-edges.yml
+- https://addons.mozilla.org/api/v5/addons/addon/<slug>/
+- https://addons.mozilla.org/api/v5/addons/search/?type=extension&app=firefox
+- https://chromewebstore.google.com/sitemap
 source:
 - bamboohr/integrations/bamboohr-integration-edges.yml
 - okta/integrations/okta-integration-edges.yml
@@ -53,3 +56,37 @@ edges:
   - SECURE_IDENTITY_INTEGRATIONS_FUNDAMENTAL
   - UPDATE
   - WORKFLOWS_CONNECTORS
+- partner_name: Mozilla Firefox Add-ons (AMO)
+  partner: null
+  partner_match: null
+  type: marketplace
+  marketplace: firefox-add-ons
+  channel: partner-built
+  relationship: platform-app
+  direction: third-party
+  evidence: https://addons.mozilla.org/en-US/firefox/addon/free-visio-viewer/
+  app: Free Visio Viewer (Mac, Windows, Linux)
+  listing_count: 2
+  category: browser extension (Firefox Add-ons)
+  partner_url: https://addons.mozilla.org/
+  contract_reference:
+    register: 'Firefox Add-ons (addons.mozilla.org public API v5 search: authors, homepage, support_url)'
+    spec_file: null
+    role: firefox-add-on-publisher
+    registered_name: Lucidchart
+    register_id: https://addons.mozilla.org/api/v5/addons/addon/free-visio-viewer/
+    matched_domain: lucidchart.com
+    matched_by: domain
+    matched_name: Lucidchart
+    builder: publisher
+    signal_note: ONE edge per provider for the store; listing alone = participation. The AMO author name (builder
+      publisher) or homepage + support_url both on the provider's domain (builder domain-attested) identifies it;
+      extension / user counts are context, never counted. No Mozilla repo in all/*, so no platform-side edge exists
+      to mirror.
+    detected_by: sweep-browser-extension-stores.py
+    detected: '2026-10-21'
+  detected_by: sweep-browser-extension-stores.py
+  first_seen: '2026-10-21'
+  apps:
+  - Free Visio Viewer (Mac, Windows, Linux)
+  - Free OmniGraffle (.graffle) Viewer
